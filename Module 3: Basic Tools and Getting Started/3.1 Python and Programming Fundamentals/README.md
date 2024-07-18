@@ -94,7 +94,7 @@ Due to space constraints, we cannot list all Python syntax here. Fortunately, th
 | [Python Tutorial - Python Full Course for Beginners](https://www.youtube.com/watch?v=_uQrJ0TkZlc) | video | A beginner-friendly Python video tutorial, where the author spends six hours covering common Python syntax. |
 | [python-course.eu](https://python-course.eu/python-tutorial/) | doc | Provides a comprehensive and in-depth introduction to the Python language. |
 | [Project Based Learning](https://github.com/practical-tutorials/project-based-learning?tab=readme-ov-file#python) | doc | Learning Python through projects. |
-|
+
 
 
 
