@@ -1,7 +1,7 @@
 # Pytorch and Tensorflow
 
 ## Introduction
-In the field of deep learning, PyTorch and TensorFlow are two of the most popular frameworks. While both are used for building and training neural networks, they have different histories and design philosophies. In this tutorial, we will explore the relationship and development history of PyTorch and TensorFlow, and delve into their features and connections. We will also provide a step-by-step guide on installing PyTorch on the [**`reComputer J3010`**]((https://www.seeedstudio.com/reComputer-J3010-p-5589.html)) and basic usage of PyTorch.
+In the field of deep learning, PyTorch and TensorFlow are two of the most popular frameworks. While both are used for building and training neural networks, they have different histories and design philosophies. In this tutorial, we will explore the relationship and development history of PyTorch and TensorFlow, and delve into their features and connections. We will also provide a step-by-step guide on installing PyTorch on the [reComputer J3010](https://www.seeedstudio.com/reComputer-J3010-p-5589.html) and basic usage of PyTorch.
 
 <p align="center">
   <a href="https://www.python.org/">
