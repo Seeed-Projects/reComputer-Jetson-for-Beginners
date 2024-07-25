@@ -43,21 +43,21 @@ TensorFlow, developed by Google Brain, is an open-source machine learning librar
 
 ## Main Features of PyTorch and TensorFlow
 
-**PyTorch's Main Features:**
+**PyTorch's Main Features**
 
 1. **Dynamic Computation Graphs**: PyTorch uses dynamic computation graphs, allowing users to change the network structure at runtime. This makes debugging and development particularly convenient.
 2. **Flexibility**: Due to its dynamic nature, PyTorch excels in handling complex models and custom operations, making it well-suited for research and rapid prototyping.
 3. **Community Support**: PyTorch has an active community providing numerous tutorials, examples, and third-party libraries.
 4. **TorchScript**: Allows users to convert PyTorch code into a static graph for optimization and deployment.
 
-**TensorFlow's Main Features:**
+**TensorFlow's Main Features**
 
 1. **Static Computation Graphs**: TensorFlow uses static computation graphs, offering higher performance and optimization potential, especially suited for large-scale production environments.
 2. **End-to-End Platform**: TensorFlow provides full support from training to deployment, including TensorFlow Lite, TensorFlow.js, and TensorFlow Serving.
 3. **High Performance**: Through the XLA compiler and various hardware accelerators (such as TPUs), TensorFlow can achieve efficient model training and inference.
 4. **Keras Integration**: Starting with TensorFlow 2.0, Keras has become its high-level API, simplifying the model building process.
 
-**Relationship Between PyTorch and TensorFlow:**
+**Relationship Between PyTorch and TensorFlow**
 
 Despite being competitors, PyTorch and TensorFlow share many similarities and have influenced each other. Here are some key points of their relationship:
 
