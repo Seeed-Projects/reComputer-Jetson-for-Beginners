@@ -160,4 +160,3 @@ From the results printed in the terminal, it can be observed that the GPU's comp
 |:---------:|:---------:|:---------:|
 | [Getting Started with CUDA Programming(zh)](https://zhuanlan.zhihu.com/p/34587739) | doc | A Minimalist Tutorial for Getting Started with CUDA Programming by Chinese |
 | [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html) | doc | The programming guide to the CUDA model and interface. |
-|

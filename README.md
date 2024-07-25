@@ -32,6 +32,9 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 | **Model 2**     | **reComputer Jetson Platform Overview** |
 | **Model 3**     | **Basic Tools and Getting Started** |
 | Model 3.1   | [Python and Programming Fundamentals](./3-Basic-Tools-and-Getting-Started/3.1-Python-and-Programming-Fundamentals/README.md) |
+| Model 3.2   | [AI and ML](./3-Basic-Tools-and-Getting-Started/3.2-AI-and-ML/README.md) |
+| Model 3.3   | [Pytorch and Tensorflow](./3-Basic-Tools-and-Getting-Started/3.3-Pytorch-and-Tensorflow/README.md) |
+| Model 3.4   | [CUDA](./3-Basic-Tools-and-Getting-Started/3.4-CUDA/README.md) |
 | **Model 4**     | **Computer Vision Applications** |
 | **Model 5**     | **Generative AI Applications** |
 | **Model 6**     | **Robotics Applications** |
