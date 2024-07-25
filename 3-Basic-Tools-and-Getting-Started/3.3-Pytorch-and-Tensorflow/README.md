@@ -57,7 +57,7 @@ TensorFlow, developed by Google Brain, is an open-source machine learning librar
 3. **High Performance**: Through the XLA compiler and various hardware accelerators (such as TPUs), TensorFlow can achieve efficient model training and inference.
 4. **Keras Integration**: Starting with TensorFlow 2.0, Keras has become its high-level API, simplifying the model building process.
 
-**Relationship Between PyTorch and TensorFlow**
+**Relationship Between PyTorch and TensorFlow:**
 
 Despite being competitors, PyTorch and TensorFlow share many similarities and have influenced each other. Here are some key points of their relationship:
 
@@ -69,7 +69,7 @@ Despite being competitors, PyTorch and TensorFlow share many similarities and ha
 
 ## Installing PyTorch on reComputer J3010
 
-### Set Up Your Environment:
+### Set Up Your Environment
 
 - JetPack 5/6:
     Make sure you have NVIDIA JetPack 5 or 6 installed on your reComputer J3010. JetPack includes the necessary libraries and tools for developing on NVIDIA Jetson platforms.
@@ -80,7 +80,7 @@ Despite being competitors, PyTorch and TensorFlow share many similarities and ha
 ### Installing PyTorch Using a .whl File
 To install PyTorch on your reComputer J3010 with the specified JetPack and CUDA versions, follow these steps:
 
-### 1. Download the PyTorch Wheel File
+#### 1. Download the PyTorch Wheel File
 
 Choose the correct wheel file based on your JetPack and CUDA version:
 
@@ -105,7 +105,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
     - [PyTorch 1.12.0](https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl)
     - [PyTorch 1.11.0](https://nvidia.box.com/shared/static/ssf2v7pf5i245fk4i0q926hy4imzs2ph.whl)
 
-### 2. Install the Wheel File
+#### 2. Install the Wheel File
 
 1. **Open a Terminal**:
    - Navigate to the directory where you downloaded the `.whl` file.
@@ -124,7 +124,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
     </a>
     </p>
     
-### 3. Verify the Installation
+#### 3. Verify the Installation
 
 1. **Check Installation**:
    Open Python and run the following to verify:
@@ -134,7 +134,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
    ```
    This should print the installed PyTorch version.
 
-### 4. Optional - Install Additional Libraries
+#### 4. Optional - Install Additional Libraries
 1. **Install Torchvision**:
      - Installing Dependencies
         ```bash
@@ -186,7 +186,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
    ```
 
 
-## Verify Installation
+#### Verify Installation
 - To verify that PyTorch has been installed correctly on your system, launch an interactive Python interpreter from the terminal and run the following commands:
 
     ```python
