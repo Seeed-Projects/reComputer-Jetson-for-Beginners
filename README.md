@@ -37,9 +37,9 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 | Model 3.4   | [CUDA](./3-Basic-Tools-and-Getting-Started/3.4-CUDA/README.md) |
 | Model 3.5   | [TensorRT](./3-Basic-Tools-and-Getting-Started/3.5-TensorRT/README.md) |
 | ...  | ... |
-| **Model 4**     | **Computer Vision Applications** |
-| **Model 5**     | **Generative AI Applications** |
-| **Model 6**     | **Robotics Applications** |
+| **Model 4**     | **Computer Vision** |
+| **Model 5**     | **Generative AI** |
+| **Model 6**     | **Robotics** |
 | **Model 7**     | **Algorithm Optimization and Deployment** |
 | **Model 8**     | **Practical Applications of the Jetson Platform** |
 | **Model 9**     | **Course Summary and Outlook** |
