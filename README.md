@@ -28,21 +28,20 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 
 | **Chapter** | **Content** |
 |:-----------:|:-----------:|
-| **Model 1**     | **Introduction** |
-| **Model 2**     | **reComputer Jetson Platform Overview** |
-| **Model 3**     | **Basic Tools and Getting Started** |
-| Model 3.1   | [Python and Programming Fundamentals](./3-Basic-Tools-and-Getting-Started/3.1-Python-and-Programming-Fundamentals/README.md) |
-| Model 3.2   | [AI and ML](./3-Basic-Tools-and-Getting-Started/3.2-AI-and-ML/README.md) |
-| Model 3.3   | [Pytorch and Tensorflow](./3-Basic-Tools-and-Getting-Started/3.3-Pytorch-and-Tensorflow/README.md) |
-| Model 3.4   | [CUDA](./3-Basic-Tools-and-Getting-Started/3.4-CUDA/README.md) |
-| Model 3.5   | [TensorRT](./3-Basic-Tools-and-Getting-Started/3.5-TensorRT/README.md) |
-| ...  | ... |
-| **Model 4**     | **Computer Vision** |
-| **Model 5**     | **Generative AI** |
-| **Model 6**     | **Robotics** |
-| **Model 7**     | **Algorithm Optimization and Deployment** |
-| **Model 8**     | **Practical Applications of the Jetson Platform** |
-| **Model 9**     | **Course Summary and Outlook** |
+| **Module 1**     | **Introduction** |
+| **Module 2**     | **reComputer Jetson Platform Overview** |
+| **Module 3**     | **Basic Tools and Getting Started** |
+| Module 3.1   | [Python and Programming Fundamentals](./3-Basic-Tools-and-Getting-Started/3.1-Python-and-Programming-Fundamentals/README.md) |
+| Module 3.2   | [AI and ML](./3-Basic-Tools-and-Getting-Started/3.2-AI-and-ML/README.md) |
+| Module 3.3   | [Pytorch and Tensorflow](./3-Basic-Tools-and-Getting-Started/3.3-Pytorch-and-Tensorflow/README.md) |
+| Module 3.4   | [CUDA](./3-Basic-Tools-and-Getting-Started/3.4-CUDA/README.md) |
+| **Module 4**     | **Computer Vision Applications** |
+| **Module 5**     | **Generative AI Applications** |
+| **Module 6**     | **Robotics Applications** |
+| **Module 7**     | **Algorithm Optimization and Deployment** |
+| **Module 8**     | **Practical Applications of the Jetson Platform** |
+| **Module 9**     | **Course Summary and Outlook** |
+
 
 ## 📜 License
 This project is licensed under the [MIT License](https://github.com/Seeed-Projects/reComputer-Jetson-for-Beginners/blob/main/LICENSE).
