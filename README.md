@@ -42,6 +42,7 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 | **Module 8**     | **Practical Applications of the Jetson Platform** |
 | **Module 9**     | **Course Summary and Outlook** |
 
+
 ## 📜 License
 This project is licensed under the [MIT License](https://github.com/Seeed-Projects/reComputer-Jetson-for-Beginners/blob/main/LICENSE).
 
