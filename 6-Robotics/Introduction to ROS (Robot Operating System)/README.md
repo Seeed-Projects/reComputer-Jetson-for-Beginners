@@ -11,7 +11,7 @@ To follow this tutorial, you will need the following hardware and software:
 - **Software:** Jetpack 5.1.1, Ubuntu 20.04, ROS Noetic, Python and C++.
 
 <div align="center">
-    <img width={800} 
+    <img width={600} 
     src="https://files.seeedstudio.com/wiki/reComputer-J4012/5.png" />
 </div>
 
