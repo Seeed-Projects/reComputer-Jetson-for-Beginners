@@ -9,11 +9,12 @@ This tutorial provides a concise overview of ROS (Robot Operating System) and gu
 To follow this tutorial, you will need the following hardware and software:
 - **Hardware:** [reComputer J3010 (Nvidia Jetson Orin Nano)]((https://www.seeedstudio.com/reComputer-J3010-w-o-power-adapter-p-5631.html)), display, keyboard, and mouse.
 - **Software:** Jetpack 5.1.1, Ubuntu 20.04, ROS Noetic, Python and C++.
-<p align="center">
-  <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
-    <img src="https://files.seeedstudio.com/wiki/reComputer-J4012/5.png" alt="J3010">
-  </a>
-</p>
+
+<div align="center">
+    <img width={800} 
+    src="https://files.seeedstudio.com/wiki/reComputer-J4012/5.png" />
+</div>
+
 
 ## Introduction to the Development of ROS
 
@@ -23,11 +24,11 @@ ROS (Robot Operating System) is an open-source framework for robot software deve
 
 - **ROS system (ROS):** The plumbing system that handles communication between processes. It is the middleware that allows different robot parts to communicate with each other.
 - **ROS packages:** Libraries and tools needed to write robot applications.
-<p align="center">
-  <a href="https://www.ros.org/blog/ecosystem/">
-    <img src="https://www.ros.org/imgs/ros-equation.png" alt="J3010">
-  </a>
-</p>
+
+<div align="center">
+    <img width={800} 
+    src="https://www.ros.org/imgs/ros-equation.png" />
+</div>
 
 ### [Why ROS?](https://www.ros.org/blog/why-ros/)
 
@@ -45,11 +46,10 @@ ROS simplifies the process of creating complex and robust robot behavior across 
 
 The history of ROS (Robot Operating System) is intertwined with the broader evolution of robotics:
 
-<p align="center">
-  <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
-    <img src="./images/Development-history-of-mobile-robot.png" alt="J3010">
-  </a>
-</p>
+  <div align="center">
+      <img width={800} 
+      src="./images/Development-history-of-mobile-robot.png" />
+  </div>
 
 #### Early Robotics Developments
 - **1959:** The journey of robotics began with the development of the first automated robot.
@@ -81,7 +81,7 @@ The history of ROS (Robot Operating System) is intertwined with the broader evol
 - **2014:** Introduction of social and service robots like Pepper, highlighting advancements in human-robot interaction.
 - **2021:** ROS evolves to support sophisticated and versatile robotic systems for various applications.
 
-### ROS Releases Timeline
+### [ROS Releases Timeline](https://docs.ros.org/en/rolling/Releases.html)
 
 | Release Name | Distribution | Release Date | EOL Date       |
 |--------------|--------------|--------------|----------------|
@@ -105,7 +105,6 @@ The history of ROS (Robot Operating System) is intertwined with the broader evol
 
 Today, ROS is maintained by Open Robotics, a non-profit organization dedicated to developing the core ROS system, including ROS 2.0, which incorporates improvements for real-time and embedded systems, along with other tools and libraries.
 
-For more information, visit the [ROS Releases Page](https://docs.ros.org/en/rolling/Releases.html).
 
 
 ## ROS Environment Installation and Quick Experience
