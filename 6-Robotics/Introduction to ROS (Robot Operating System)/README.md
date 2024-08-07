@@ -193,3 +193,65 @@ To quickly experience ROS, let's create a ROS workspace and run a simple demo.
   </div>
 
 This quick demo shows a graphical turtle robot that you can control using the keyboard.
+
+### Installation of Common Development Software for ROS
+
+#### Installation of VScode and ROS Development Extensions
+1. **For the installation of VSCode, please refer to the previous tutorial: [3.1-Python and Programming Fundamentals](https://github.com/Seeed-Projects/reComputer-Jetson-for-Beginners/blob/main/3-Basic-Tools-and-Getting-Started/3.1-Python-and-Programming-Fundamentals/README.md)**
+
+2. **Install tools such as `Python`, `ROS`, `C++`, and `CMake Tools` from the VSCode Extensions Marketplace.**
+    <div align="center">
+        <img width={400}
+        src="./images/vscode_plugs.png" />
+    </div>
+
+#### Install the Terminator multi-functional terminal.
+1. **Install**
+    ```bash
+    sudo apt-get update
+   sudo apt install terminator
+   ```
+    <div align="center">
+        <img width={400} 
+        src="./images/terminator.png" />
+    </div>
+2. **Show Applications ---> Search for "Terminator" ---> Right-click and select "Add to Favorites"**
+
+3. **Common Terminator Shortcuts**
+    - **Alt + Up**: Move to the terminal above
+    - **Alt + Down**: Move to the terminal below
+    - **Alt + Left**: Move to the terminal on the left
+    - **Alt + Right**: Move to the terminal on the right
+    - **Ctrl + Shift + O**: Split terminal horizontally
+    - **Ctrl + Shift + E**: Split terminal vertically
+    - **Ctrl + Shift + Right**: Move the splitter to the right in a vertically split terminal
+    - **Ctrl + Shift + Left**: Move the splitter to the left in a vertically split terminal
+    - **Ctrl + Shift + Up**: Move the splitter up in a horizontally split terminal
+    - **Ctrl + Shift + Down**: Move the splitter down in a horizontally split terminal
+    - **Ctrl + Shift + S**: Hide/Show the scroll bar
+    - **Ctrl + Shift + F**: Search
+    - **Ctrl + Shift + C**: Copy selected content to clipboard
+    - **Ctrl + Shift + V**: Paste clipboard content
+    - **Ctrl + Shift + W**: Close the current terminal
+    - **Ctrl + Shift + Q**: Quit the current window, closing all terminals within it
+    - **Ctrl + Shift + X**: Maximize the current terminal
+    - **Ctrl + Shift + Z**: Maximize the current terminal and enlarge the font
+    - **Ctrl + Shift + N or Ctrl + Tab**: Move to the next terminal
+    - **Ctrl + Shift + P or Ctrl + Shift + Tab**: Move to the previous terminal
+    - **F11**: Toggle full screen
+    - **Ctrl + Shift + T**: Open a new tab
+    - **Ctrl + PageDown**: Move to the next tab
+    - **Ctrl + PageUp**: Move to the previous tab
+    - **Ctrl + Shift + PageDown**: Swap the current tab with the next tab
+    - **Ctrl + Shift + PageUp**: Swap the current tab with the previous tab
+    - **Ctrl + Plus (+)**: Increase font size
+    - **Ctrl + Minus (-)**: Decrease font size
+    - **Ctrl + Zero (0)**: Reset font size to the original
+    - **Ctrl + Shift + R**: Reset terminal state
+    - **Ctrl + Shift + G**: Reset terminal state and clear the screen
+    - **Super + g**: Bind all terminals, allowing input to be mirrored across all terminals
+    - **Super + Shift + G**: Unbind all terminals
+    - **Super + t**: Bind all terminals in the current tab, mirroring input across them
+    - **Super + Shift + T**: Unbind terminals in the current tab
+    - **Ctrl + Shift + I**: Open a new window, sharing the process with the original window
+    - **Super + i**: Open a new window with a separate process from the original window
