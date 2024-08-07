@@ -9,12 +9,11 @@ This tutorial provides a concise overview of ROS (Robot Operating System) and gu
 To follow this tutorial, you will need the following hardware and software:
 - **Hardware:** [reComputer J3010 (Nvidia Jetson Orin Nano)]((https://www.seeedstudio.com/reComputer-J3010-w-o-power-adapter-p-5631.html)), display, keyboard, and mouse.
 - **Software:** Jetpack 5.1.1, Ubuntu 20.04, ROS Noetic, Python and C++.
-
-<div align="center">
-    <img width={600} 
-    src="https://files.seeedstudio.com/wiki/reComputer-J4012/5.png" />
-</div>
-
+<p align="center">
+  <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+    <img src="https://files.seeedstudio.com/wiki/reComputer-J4012/5.png" alt="J3010">
+  </a>
+</p>
 
 ## Introduction to the Development of ROS
 
@@ -24,11 +23,11 @@ ROS (Robot Operating System) is an open-source framework for robot software deve
 
 - **ROS system (ROS):** The plumbing system that handles communication between processes. It is the middleware that allows different robot parts to communicate with each other.
 - **ROS packages:** Libraries and tools needed to write robot applications.
-
-<div align="center">
-    <img width={800} 
-    src="https://www.ros.org/imgs/ros-equation.png" />
-</div>
+<p align="center">
+  <a href="https://www.ros.org/blog/ecosystem/">
+    <img src="https://www.ros.org/imgs/ros-equation.png" alt="J3010">
+  </a>
+</p>
 
 ### [Why ROS?](https://www.ros.org/blog/why-ros/)
 
@@ -46,10 +45,11 @@ ROS simplifies the process of creating complex and robust robot behavior across 
 
 The history of ROS (Robot Operating System) is intertwined with the broader evolution of robotics:
 
-  <div align="center">
-      <img width={800} 
-      src="./images/Development-history-of-mobile-robot.png" />
-  </div>
+<p align="center">
+  <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+    <img src="./images/Development-history-of-mobile-robot.png" alt="J3010">
+  </a>
+</p>
 
 #### Early Robotics Developments
 - **1959:** The journey of robotics began with the development of the first automated robot.
