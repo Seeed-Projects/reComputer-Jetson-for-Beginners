@@ -70,7 +70,7 @@ The main difference between C++ and Python lies in steps 3 and 4. The following 
 
 4. **Edit `CMakeLists.txt`**
       
-      Add the following in the end your package's `CMakeLists.txt`:
+      Add the following in the end of your package's `CMakeLists.txt`:
       ```cmake
       add_executable(<node_name> src/hello.cpp)
       target_link_libraries(<node_name> ${catkin_LIBRARIES})
@@ -138,16 +138,34 @@ You should see the output: `Hello World!`
     cd <workspace_name>
     catkin_make
     ```
+    For example:
+    ```bash
+    mkdir -p seeed_ws/src
+    cd seeed_ws
+    catkin_make
+    ```
 
 2. **Create ROS Package and Add Dependencies**
     ```bash
     cd src
     catkin_create_pkg <package_name> roscpp rospy std_msgs
     ```
-
+    For example:
+      ```bash
+      cd src
+      catkin_create_pkg hello_world roscpp rospy std_msgs
+      ```
 3. **Add `scripts` Directory and Create Python File**
 
     Navigate to your package directory, create a `scripts` directory, and a new Python file (e.g., `hello.py`):
+
+    for example:
+    ```bash
+    mkdir ~/seeed_ws/src/hello_world/scripts
+    cd ~/seeed_ws/src/hello_world/scripts
+    touch hello.py
+    ```
+
     ```python
     #!/usr/bin/env python
 
@@ -160,23 +178,32 @@ You should see the output: `Hello World!`
 
 4. **Add Executable Permissions**
     ```bash
-    chmod +x scripts/hello.py
+    sudo chmod +x hello.py
     ```
 
 5. **Edit `CMakeLists.txt`**
     
-    Add the following to your package's `CMakeLists.txt`:
+    Add the following in the end of your package's `CMakeLists.txt`:
     ```cmake
     catkin_install_python(PROGRAMS scripts/hello.py
       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
     )
     ```
+    <p align="center">
+      <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+      <img src="./images/cmakelists_dir.png" alt="J3010">
+      </a>
+    </p>
 6. **Compile the Workspace**
     ```bash
     cd <workspace_name>
     catkin_make
     ```
-
+    for example:
+    ```bash
+    cd ~/seeed_ws
+    catkin_make
+    ```
 7. **Run the Program**
     Open one terminal and start ROS core:
     ```bash
@@ -188,11 +215,17 @@ You should see the output: `Hello World!`
     source devel/setup.bash
     rosrun <package_name> hello.py
     ```
+    For example:
+    ```bash
+    cd ~/seeed_ws
+    source devel/setup.bash
+    rosrun hello_world hello.py
+    ```
     You should see the output: `Hello World!`
 
 ## Note
 To make sourcing the workspace setup file more convenient, add it to your `.bashrc`:
 ```bash
-echo "source ~/workspace_name/devel/setup.bash" >> ~/.bashrc
+echo "source ~/<workspace_name>/devel/setup.bash" >> ~/.bashrc
 ```
 This ensures that the workspace is sourced automatically whenever a new terminal is opened.
