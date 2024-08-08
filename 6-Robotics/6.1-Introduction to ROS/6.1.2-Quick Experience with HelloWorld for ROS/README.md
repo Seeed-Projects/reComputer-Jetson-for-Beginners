@@ -63,9 +63,9 @@ The main difference between C++ and Python lies in steps 3 and 4. The following 
     }
     ```
       <p align="center">
-      <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
-      <img src="./images/hello_world_c.png" alt="J3010">
-      </a>
+        <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+        <img src="./images/hello_world_c.png" alt="J3010">
+        </a>
       </p>
 
 4. **Edit `CMakeLists.txt`**

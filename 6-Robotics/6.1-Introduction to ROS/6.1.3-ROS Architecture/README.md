@@ -4,6 +4,12 @@
 
 The ROS filesystem structure on the hard disk is organized as follows:
 
+  <p align="center">
+    <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+    <img src="./images/filesystem.jpg" alt="J3010">
+    </a>
+  </p>
+
 ```
 WorkSpace --- Custom workspace
 
@@ -125,3 +131,24 @@ sudo apt install ros-<distro>-rqt-common-plugins
 ```
 
 Replace `<distro>` with your ROS version (e.g., kinetic, melodic, noetic).
+
+### Computational Graph Demonstration
+
+Next, we'll demonstrate the computational graph using ROS's built-in turtle simulation.
+
+1. **Run the Example:**
+   Follow the previous instructions to run the turtle simulation.
+
+2. **View the Computational Graph:**
+   Open a new terminal and enter:
+   ```bash
+   rqt_graph
+   ```
+   or
+   ```bash
+   rosrun rqt_graph rqt_graph
+   ```
+
+You will see a network topology graph that displays the relationships between different nodes, similar to the image below.
+
+  ![Computational Graph Example](./images/computatioinal.png)
