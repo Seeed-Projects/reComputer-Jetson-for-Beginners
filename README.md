@@ -14,7 +14,7 @@ Welcome to the reComputer Jetson Orin Beginner Guide! Dive deep into the NVIDIA 
 - **Comprehensive Tool Coverage**:
   - Master NVIDIA's core technologies: CUDA, JetPack SDK, TensorRT, and Deepstream.
   - Utilize popular AI frameworks such as PyTorch and TensorFlow.
-s
+
 - **Hands on Industry-Relevant and cutting-edge Projects**:
   - Build an end-to-end single AI Network Video Recorder (NVR) system in the Computer Vision module.
   - Assemble a complete Autonomous Mobile Robot (AMR) in the Robotics module.
