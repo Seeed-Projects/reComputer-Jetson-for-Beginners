@@ -31,10 +31,11 @@ Before beginning, ensure you have:
 
 > Note: While all Nvidia Jetson Orin-based devices are suitable, ensure your device has at least 8GB of memory.
 
-## About reComputer Jetson Orin 
-[![Watch the video](https://img.youtube.com/vi/-KAyUHzRxHc/hqdefault.jpg)](https://www.youtube.com/watch?v=-KAyUHzRxHc)
+## About reComputer Jetson Orin
 
-The [reComputer Jetson Orin](https://www.seeedstudio.com/tag/nvidia.html) is a compact yet powerful intelligent edge box that delivers modern AI performance of up to 100 TOPS to the edge. It features an NVIDIA Jetson Orin module, an open-source carrier board, a heatsink, and a power adapter. Key specifications include 4x USB 3.2, HDMI, GbE, M.2 key E for WIFI, M.2 Key M for SSD, RTC, CAN, and a 40-pin connector. Preinstalled with Jetpack, reComputer simplifies development and is ideal for edge AI solution providers focusing on video analytics, object detection, natural language processing, medical imaging, and robotics in smart cities, security, and industrial automation.
+[![Watch the video](https://img.youtube.com/vi/-KAyUHzRxHc/hqdefault.jpg)](https://www.youtube.com/watch?v=-KAyUHzRxHc "Click to watch the video")
+
+The [reComputer Jetson Orin](https://www.seeedstudio.com/tag/nvidia.html) is a powerful and compact intelligent edge box designed to bring up to 100 TOPS to the edge. It features an NVIDIA Jetson Orin module, an open-source carrier board, a heatsink, and a power adapter. Key specifications include 4x USB 3.2, HDMI, GbE, M.2 key E for WIFI, M.2 Key M for SSD, RTC, CAN, and a 40-pin connector. Preinstalled with Jetpack, reComputer simplifies development and is ideal for edge AI solution providers focusing on video analytics, object detection, natural language processing, medical imaging, and robotics in smart cities, security, and industrial automation.
 
 The [reComputer Jetson Orin](https://www.seeedstudio.com/tag/nvidia.html) is a compact yet powerful intelligent edge box that delivers modern AI performance of up to 100 TOPS to the edge. It features an NVIDIA Jetson Orin module, an open-source carrier board, a heatsink, and a power adapter. Key specifications include 4x USB 3.2, HDMI, GbE, M.2 key E for WIFI, M.2 Key M for SSD, RTC, CAN, and a 40-pin connector. Preinstalled with Jetpack, reComputer simplifies development and is ideal for edge AI solution providers focusing on video analytics, object detection, natural language processing, medical imaging, and robotics in smart cities, security, and industrial automation.
 
