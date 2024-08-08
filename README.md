@@ -59,6 +59,7 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | **Module 8**| **Practical Applications of the Jetson Platform** |
 | **Module 9**| **Course Summary and Outlook**                    |
 
+
 ## 📜 License
 This project is licensed under the [MIT License](https://github.com/Seeed-Projects/reComputer-Jetson-for-Beginners/blob/main/LICENSE).
 
