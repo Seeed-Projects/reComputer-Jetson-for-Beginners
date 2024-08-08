@@ -9,17 +9,17 @@ In ROS, topic communication is one of the fundamental ways for nodes to exchange
 #### 1. Theoretical Model
 
 Topic communication involves three main components:
-1. **ROS Master**: Manages the registration and connection of nodes.
-2. **Talker** (Publisher): Sends messages.
-3. **Listener** (Subscriber): Receives messages.
+-  **ROS Master**: Manages the registration and connection of nodes.
+-  **Talker** (Publisher): Sends messages.
+-  **Listener** (Subscriber): Receives messages.
 
 The ROS Master helps establish connections between Talkers and Listeners. Here's a step-by-step breakdown of how the communication happens:
 
-1. **Talker Registration**: The Talker registers itself with the ROS Master, including the topic name of its messages.
-2. **Listener Registration**: The Listener registers itself with the ROS Master, specifying the topic it wants to subscribe to.
-3. **Matching**: The ROS Master matches the Talker and Listener based on the topic name and sends the necessary connection information.
-4. **Connection Establishment**: The Listener requests a connection to the Talker, and the Talker confirms it.
-5. **Message Exchange**: Once connected, the Talker starts sending messages to the Listener.
+-  **Talker Registration**: The Talker registers itself with the ROS Master, including the topic name of its messages.
+-  **Listener Registration**: The Listener registers itself with the ROS Master, specifying the topic it wants to subscribe to.
+-  **Matching**: The ROS Master matches the Talker and Listener based on the topic name and sends the necessary connection information.
+-  **Connection Establishment**: The Listener requests a connection to the Talker, and the Talker confirms it.
+-  **Message Exchange**: Once connected, the Talker starts sending messages to the Listener.
 
 **Key Points**:
 - The ROS Master is only needed for establishing the connection.

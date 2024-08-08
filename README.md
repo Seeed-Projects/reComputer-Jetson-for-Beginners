@@ -38,6 +38,11 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 | **Module 4**     | **Computer Vision Applications** |
 | **Module 5**     | **Generative AI Applications** |
 | **Module 6**     | **Robotics Applications** |
+| **Module 6.1**     | **Introduction to ROS** |
+| **Module 6.1.1**     | **[Overview of ROS and Environment Setup](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.1-Overview%20of%20ROS%20and%20Environment%20Setup/README.md)** |
+| **Module 6.1.2**     | **[Quick Experience with HelloWorld for ROS](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.2-Quick%20Experience%20with%20HelloWorld%20for%20ROS/README.md)** |
+| **Module 6.1.3**     | **[ROS Architecture](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.3-ROS%20Architecture/README.md)** |
+| **Module 6.1.4**     | **[ROS Communication Mechanism](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.4-ROS%20Communication%20Mechanism/README.md)** |
 | **Module 7**     | **Algorithm Optimization and Deployment** |
 | **Module 8**     | **Practical Applications of the Jetson Platform** |
 | **Module 9**     | **Course Summary and Outlook** |
