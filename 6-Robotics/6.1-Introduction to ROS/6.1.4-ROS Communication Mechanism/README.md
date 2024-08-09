@@ -390,10 +390,6 @@ int main(int argc, char **argv) {
 }
 ```
 
-In this code:
-- We define a service callback function `add` that takes the request (two integers) and computes their sum, which is then returned in the response.
-- The service is advertised under the name `"add_two_ints"`, and the server waits for incoming requests using `ros::spin()`.
-
 **2. Client Implementation:**
 `add_two_ints_client`
 ```cpp
@@ -427,11 +423,6 @@ int main(int argc, char **argv) {
     return 0;
 }
 ```
-
-In this client code:
-- The client sends two integers to the server as a request. 
-- The service client is created and used to call the `"add_two_ints"` service. 
-- If the call is successful, the client prints the sum returned by the server.
 
 **CMakeLists.txt Configuration:**
 
@@ -476,10 +467,6 @@ if __name__ == "__main__":
     add_two_ints_server()
 ```
 
-In this Python code:
-- The server is implemented with a callback function `handle_add_two_ints`, which adds two integers and returns the sum.
-- The service is named `"add_two_ints"` and is advertised to the ROS master.
-
 **2. Client Implementation:**
 
 ```python
@@ -510,10 +497,6 @@ if __name__ == "__main__":
     rospy.loginfo("Sum: %d", result)
 ```
 
-In the Python client:
-- The client node waits for the `"add_two_ints"` service to be available.
-- Once available, it sends two integers as a request and receives the sum in response.
-
 **CMakeLists.txt Configuration:**
 
 Add the following lines in your `CMakeLists.txt` for the Python scripts:
@@ -541,7 +524,3 @@ To work with services in ROS, you'll use the `rosservice` command. Here's a list
 | `rosservice args`   | Prints the arguments required for a service. |
 
 For more details, visit the [ROS Services Documentation](http://wiki.ros.org/Services).
-
-### Summary
-
-These demos illustrate how to implement basic service communication in ROS using both C++ and Python. The server provides a service that adds two integers, and the client sends requests to use this service. This foundational example can be extended to more complex operations as needed for your specific ROS application.
