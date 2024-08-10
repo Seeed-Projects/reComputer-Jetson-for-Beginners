@@ -43,7 +43,7 @@ The course encompasses a wealth of content, ranging from an introduction to the 
 | **Module 6.1.2**     | **[Quick Experience with HelloWorld for ROS](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.2-Quick%20Experience%20with%20HelloWorld%20for%20ROS/README.md)** |
 | **Module 6.1.3**     | **[ROS Architecture](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.3-ROS%20Architecture/README.md)** |
 | **Module 6.1.4**     | **[ROS Communication Mechanism](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.4-ROS%20Communication%20Mechanism/README.md)** |
-| **Module 6.1.5**     | **[ROS Communication Mechanism](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.5-Common%20ROS%20Commands/README.md)** |
+| **Module 6.1.5**     | **[Common ROS Commands](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.5-Common%20ROS%20Commands/README.md)** |
 | **Module 7**     | **Algorithm Optimization and Deployment** |
 | **Module 8**     | **Practical Applications of the Jetson Platform** |
 | **Module 9**     | **Course Summary and Outlook** |

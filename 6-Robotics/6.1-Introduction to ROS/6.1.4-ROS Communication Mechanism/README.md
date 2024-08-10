@@ -228,8 +228,8 @@ You should see messages being published and received, displayed in the terminal.
 
 You should see messages being published and received, displayed in the terminal.
 
-
-### Introduction to Service Communication
+----
+## Introduction to Service Communication
 
 Service communication in ROS differs from topic communication by being bidirectional. It allows not only the sending of messages but also receiving feedback. This model consists of two main parts:
 1. **Client**: The entity that sends a request.
