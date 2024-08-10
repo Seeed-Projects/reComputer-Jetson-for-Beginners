@@ -318,20 +318,26 @@ Let's dive into a hands-on example where we create a custom service that sums tw
      ---
      int32 sum
      ```
+      <p align="center">
+        <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+        <img src="./images/srv_code.png" alt="J3010">
+        </a>
+      </p>
 
 2. **Update the package.xml**:
    Add the necessary dependencies for generating message files in package's `package.xml`:
     ```xml
     <build_depend>message_generation</build_depend>
     <exec_depend>message_runtime</exec_depend>
-  
+    ```
+    <p align="center">
+      <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+      <img src="./images/package_xml.png" alt="J3010">
+    </a>
 
 3. **Update CMakeLists.txt**:
    - Include the necessary configurations to generate the service files in package's `CMakeLists.txt`:
      ```cmake
-     catkin_package(
-       CATKIN_DEPENDS roscpp rospy std_msgs
-      )
      find_package(catkin REQUIRED COMPONENTS
        roscpp
        rospy
@@ -349,6 +355,12 @@ Let's dive into a hands-on example where we create a custom service that sums tw
        std_msgs
      )
      ```
+      <p align="center">
+        <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+        <img src="./images/srv_cmakelists.png" alt="J3010">
+        </a>
+      </p>
+
 
 4. **Compile Your Package**:
    - Compile your package to generate the service message headers:
@@ -358,12 +370,13 @@ Let's dive into a hands-on example where we create a custom service that sums tw
      source devel/setup.bash
      ```
 
-#### Implementing Service Communication (C++)
+### Implementing Service Communication (C++)
 
 This example demonstrates how to implement service communication in ROS using C++. We will create a simple service where the server adds two integers provided by the client and returns the sum.
 
 **1. Server Implementation:**
-`add_two_ints_server`
+
+`add_two_ints_server.cpp`
 ```cpp
 #include "ros/ros.h"
 #include "service_communication/AddInts.h"
@@ -391,7 +404,8 @@ int main(int argc, char **argv) {
 ```
 
 **2. Client Implementation:**
-`add_two_ints_client`
+
+`add_two_ints_client.cpp`
 ```cpp
 #include "ros/ros.h"
 #include "service_communication/AddInts.h"
@@ -439,62 +453,85 @@ target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
 target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 ```
 
-#### Python Demo
+#### Compile and run demo
+Open one terminal:
+```bash
+cd ~/seeed_ws
+catkin_make
+roscore
+```
+Open another terminal:
+```bash
+cd ~/seeed_ws
+source devel/setup.bash
+ rosrun service_communication server
+```
+
+Open another terminal:
+```bash
+cd ~/seeed_ws
+source devel/setup.bash
+rosrun service_communication client 1 5
+```
+
+<p align="center">
+  <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+  <img src="./images/run_service_c.png" alt="J3010">
+  </a>
+</p>
+
+#### Implementing Service Communication (Python)
 
 This Python example achieves the same functionality as the C++ example, where a service is used to add two integers.
 
+Create a `scripts` folder under the package and create `add_two_ints_server.py` and `add_two_ints_client.py` files inside it.
+```bash
+cd ~/seeed/src/service_communication/
+mkdir scripts
+cd scripts
+touch add_two_ints_server.py add_two_ints_client.py
+```
+
 **1. Server Implementation:**
 
+`add_two_ints_server.py`
 ```python
 #!/usr/bin/env python
-
 import rospy
-from your_package_name.srv import AddTwoInts, AddTwoIntsResponse
-
-def handle_add_two_ints(req):
-    sum_result = req.a + req.b
-    rospy.loginfo("Request: a=%d, b=%d", req.a, req.b)
-    rospy.loginfo("Sending back response: [%d]", sum_result)
-    return AddTwoIntsResponse(sum_result)
-
-def add_two_ints_server():
-    rospy.init_node('add_two_ints_server')
-    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints)
-    rospy.loginfo("Ready to add two integers.")
-    rospy.spin()
-
+from service_communication.srv import AddInts,AddIntsRequest, AddIntsResponse
+def doReq(req):
+    sum = req.num1 + req.num2
+    rospy.loginfo("data:num1 = %d, num2 = %d, sum = %d",req.num1, req.num2, sum)
+    resp = AddIntsResponse(sum)
+    return resp
 if __name__ == "__main__":
-    add_two_ints_server()
+    rospy.init_node("addints_server_p")
+    server = rospy.Service("AddInts",AddInts,doReq)
+    rospy.spin()
 ```
 
 **2. Client Implementation:**
 
+`add_two_ints_client.py`
 ```python
 #!/usr/bin/env python
 
 import sys
 import rospy
-from your_package_name.srv import AddTwoInts
-
-def add_two_ints_client(x, y):
-    rospy.wait_for_service('add_two_ints')
-    try:
-        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
-        resp = add_two_ints(x, y)
-        return resp.sum
-    except rospy.ServiceException as e:
-        rospy.logerr("Service call failed: %s", e)
+from service_communication.srv import *
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        rospy.logerr("Usage: add_two_ints_client X Y")
+        rospy.logerr("error")
         sys.exit(1)
-
-    x = int(sys.argv[1])
-    y = int(sys.argv[2])
-    rospy.init_node('add_two_ints_client')
-    result = add_two_ints_client(x, y)
-    rospy.loginfo("Sum: %d", result)
+    rospy.init_node("AddInts_Client_p")
+    client = rospy.ServiceProxy("AddInts",AddInts)
+    client.wait_for_service()
+    req = AddIntsRequest()
+    req.num1 = int(sys.argv[1])
+    req.num2 = int(sys.argv[2]) 
+    resp = client.call(req)
+    rospy.loginfo("result:%d",resp.sum)
 ```
 
 **CMakeLists.txt Configuration:**
@@ -508,6 +545,28 @@ catkin_install_python(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 ```
+
+#### Compile and run demo
+Open one terminal:
+```bash
+cd ~/seeed_ws
+catkin_make
+roscore
+```
+Open another terminal:
+```bash
+cd ~/seeed_ws
+source devel/setup.bash
+rosrun service_communication add_two_ints_server.py
+```
+
+Open another terminal:
+```bash
+cd ~/seeed_ws
+source devel/setup.bash
+rosrun service_communication add_two_ints_client.py 1 5
+```
+
 
 #### Service Communication Commands
 
