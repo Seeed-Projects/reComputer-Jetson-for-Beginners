@@ -69,7 +69,7 @@ archive
 
 Each image has a corresponding text file that contains the complete annotation information for that image. The `data.json` file records the locations of the training, testing, and validation sets, and you need to modify the paths:
 
-```json
+```sh
 train: ./train/images
 val: ./valid/images
 test: ./test/images
