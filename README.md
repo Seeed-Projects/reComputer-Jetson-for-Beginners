@@ -50,6 +50,11 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | Module 3.3  | [Pytorch and TensorFlow](./3-Basic-Tools-and-Getting-Started/3.3-Pytorch-and-Tensorflow/README.md) |
 | Module 3.4  | [CUDA](./3-Basic-Tools-and-Getting-Started/3.4-CUDA/README.md) |
 | **Module 4**| **Computer Vision Applications**                  |
+| Module 4.1|  [Overview-of-Computer-Vision](./4-Computer-Vision/4.1-Overview-of-Computer-Vision/README.md)|
+| Module 4.2|  [Real-time-Video-Processing](./4-Computer-Vision/4.2-Real-time-Video-Processing/README.md)|
+| **Module 4.3**| **Object Detection and Recognition**|
+| Module 4.3.1| [Train and Deploy YOLOv8](./4-Computer-Vision/4.3-Object%20Detection%20and%20Recognition/4.3.1-Train%20and%20Deploy%20YOLOv8%20on%20reComputer/README.md)|
+| Module 4.3.2| [Deploy YOLOv8 using TensorRT and DeepStream SDK Support](./4-Computer-Vision/4.3-Object%20Detection%20and%20Recognition/4.3.2-Deploy%20YOLOv8%20on%20NVIDIA%20Jetson%20using%20TensorRT%20and%20DeepStream%20SDK%20Support/README.md)|
 | **Module 5**| **Generative AI Applications**                    |
 | **Module 6**     | **ROS Robotics** |
 | Module 6.1     | Introduction to ROS |
@@ -63,7 +68,7 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | Module 6.1.8     | [TF Coordinate Transformation in ROS](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.8-TF%20Coordinate%20Transformation%20in%20ROS/README.md) |
 | Module 6.2| ROS Robot Simulation  |
 | Module 6.3| Development with Physical ROS Robots |
-| Module 6.4| **ROS Project Practice: Advanced Features |
+| Module 6.4| ROS Project Practice: Advanced Features |
 | **Module 7**| **Algorithm Optimization and Deployment**          |
 | **Module 8**| **Practical Applications of the Jetson Platform** |
 | **Module 9**| **Course Summary and Outlook**                    |
