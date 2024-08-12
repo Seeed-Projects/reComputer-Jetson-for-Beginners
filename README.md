@@ -60,6 +60,9 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | **Module 6.1.3**     | **[ROS Architecture](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.3-ROS%20Architecture/README.md)** |
 | **Module 6.1.4**     | **[ROS Communication Mechanism](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.4-ROS%20Communication%20Mechanism/README.md)** |
 | **Module 6.1.5**     | **[Common ROS Commands](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.5-Common%20ROS%20Commands/README.md)** |
+| **Module 6.1.6**     | **[ROS Operation Management](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.6-ROS%20Operation%20Management/README.md)** |
+| **Module 6.1.7**     | **[ROS Operation Management](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.7-Common%20Components%20and%20Features%20of%20ROS/README.md)** |
+| **Module 6.1.8**     | **[TF Coordinate Transformation in ROS](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.8-TF%20Coordinate%20Transformation%20in%20ROS/README.md)** |
 | **Module 6.2**| **ROS Robot Simulation**  |
 | **Module 6.3**| **Development with Physical ROS Robots**  |
 | **Module 6.4**| **ROS Project Practice: Advanced Features**  |
