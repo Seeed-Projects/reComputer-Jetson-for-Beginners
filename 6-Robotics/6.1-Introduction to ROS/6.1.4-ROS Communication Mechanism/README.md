@@ -6,6 +6,11 @@
 
 In ROS, topic communication is one of the fundamental ways for nodes to exchange information. This tutorial will guide you through the process of setting up basic topic communication using both C++ and Python. We will implement a simple publisher-subscriber model where the publisher sends text messages at a frequency of 10Hz, and the subscriber receives and prints these messages.
 
+  <p align="center">
+    <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+    <img src="./images/Topic.png" alt="J3010">
+  </a>
+
 #### 1. Theoretical Model
 
 Topic communication involves three main components:
@@ -228,6 +233,18 @@ You should see messages being published and received, displayed in the terminal.
 
 You should see messages being published and received, displayed in the terminal.
 
+### ROS Topic Common Commands
+
+- `rostopic bw`: Display bandwidth usage of a topic
+- `rostopic delay`: Display delay of a topic with a header
+- `rostopic echo`: Print messages to the screen
+- `rostopic find`: Find topics by type
+- `rostopic hz`: Display publishing frequency of a topic
+- `rostopic info`: Display information about a topic
+- `rostopic list`: List all active topics
+- `rostopic pub`: Publish data to a topic
+- `rostopic type`: Print the type of a topic
+
 ----
 ## Introduction to Service Communication
 
@@ -244,10 +261,25 @@ When a client sends a request to a server, it waits for the server to process th
   
 The communication process can be illustrated as follows:
 
-1. **Client Sends a Request**: The client sends a request and waits.
-2. **Server Processes the Request**: The server processes the request and generates a response.
-3. **Server Sends the Response**: The server sends the response back to the client.
-4. **Client Receives the Response**: The client continues its execution after receiving the response.
+1. **Talker Node advertises a service via ROS Master:**
+   - The Talker node advertises a service (e.g., `advertiseService("bar", foo:1234)`) via the ROS Master, indicating its availability.
+
+2. **Listener Node looks up the service via ROS Master:**
+   - The Listener node sends a request to the ROS Master to find the service (e.g., `lookupService("bar")`).
+
+3. **ROS Master returns the service address:**
+   - The ROS Master responds with the service address (e.g., `foo:3456`) for the Listener node to connect.
+
+4. **Listener Node requests data from Talker Node:**
+   - The Listener node sends a service request to the Talker node, using XML/RPC for communication.
+
+5. **Talker Node replies with the requested data:**
+   - The Talker node processes the request and sends back the reply data over TCP.
+
+    <p align="center">
+      <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+      <img src="./images/Service.png" alt="J3010">
+    </a>
 
 **Key Points**:
 - The client is blocked until it receives a response from the server.
@@ -571,15 +603,332 @@ rosrun service_communication add_two_ints_client.py 1 5
 #### Service Communication Commands
 
 To work with services in ROS, you'll use the `rosservice` command. Here's a list of common `rosservice` commands and their functions:
+- `rosservice args`: Print the arguments required by a service
+- `rosservice call`: Call a service with the provided arguments
+- `rosservice find`: Find services by type
+- `rosservice info`: Print information about a service
+- `rosservice list`: List all active services
+- `rosservice type`: Print the type of a service
+- `rosservice uri`: Print the ROSRPC URI of a service
 
-| **Command**         | **Function** |
-|---------------------|--------------|
-| `rosservice list`   | Displays a list of available services. |
-| `rosservice info`   | Prints information about a specific service. |
-| `rosservice type`   | Prints the type of the service. |
-| `rosservice uri`    | Prints the ROSRPC URI of the service. |
-| `rosservice find`   | Finds services by type. |
-| `rosservice call`   | Calls a service with provided arguments. |
-| `rosservice args`   | Prints the arguments required for a service. |
 
-For more details, visit the [ROS Services Documentation](http://wiki.ros.org/Services).
+---
+## Introduction to the ROS Parameter Server
+
+The ROS Parameter Server is a shared, multi-user, network-accessible storage space for parameters. It provides a way to store and retrieve parameters at runtime, which can be used to configure nodes or share data between them. Parameters on the server can be of various data types, including integers, booleans, strings, doubles, lists, and dictionaries. The Parameter Server is managed by the **ROS Master**, and nodes interact with it by setting, retrieving, or deleting parameters.
+
+### Theoretical Model of the Parameter Server
+
+
+The Parameter Server involves three main roles:
+1. **ROS Master**: Manages the Parameter Server, acting as a central storage for parameters.
+2. **Talker**: A node that sets parameters on the server.
+3. **Listener**: A node that retrieves parameters from the server.
+
+
+The process of interacting with the Parameter Server typically involves the following steps:
+
+1. **Setting Parameters (Talker)**:
+   - The Talker node sends a parameter to the Parameter Server via RPC (Remote Procedure Call), including the parameter's name and value. The ROS Master stores this parameter in its list.
+
+2. **Retrieving Parameters (Listener)**:
+   - The Listener node requests a parameter from the Parameter Server by sending a query with the parameter's name.
+
+3. **Returning Parameters (ROS Master)**:
+   - The ROS Master searches for the requested parameter in its storage and returns the corresponding value to the Listener.
+
+    <p align="center">
+      <a href="https://wiki.seeedstudio.com/reComputer_Intro/">
+      <img src="./images/Parameter_Server.png" alt="J3010">
+    </a>
+
+**Supported Data Types**:
+- 32-bit integers
+- Booleans
+- Strings
+- Doubles
+- ISO8601 dates
+- Lists
+- Base64-encoded binary data
+- Dictionaries
+
+### C++ Implementation
+
+**Setting Parameters (C++):**
+
+We'll start by setting various types of parameters on the Parameter Server using two different APIs: `ros::NodeHandle` and `ros::param`.
+
+`set_parameters.cpp`
+```cpp
+#include "ros/ros.h"
+
+int main(int argc, char *argv[]) {
+    ros::init(argc, argv, "set_parameters");
+
+    std::vector<std::string> students = {"Alice", "Bob", "Charlie", "David"};
+    std::map<std::string, std::string> friends = {{"John", "Doe"}, {"Jane", "Smith"}};
+
+    // Using ros::NodeHandle to set parameters
+    ros::NodeHandle nh;
+    nh.setParam("int_param", 42);
+    nh.setParam("double_param", 3.14159);
+    nh.setParam("bool_param", true);
+    nh.setParam("string_param", "Hello ROS");
+    nh.setParam("vector_param", students);
+    nh.setParam("map_param", friends);
+
+    // Using ros::param to set parameters
+    ros::param::set("int_param_param", 84);
+    ros::param::set("double_param_param", 6.28318);
+    ros::param::set("bool_param_param", false);
+    ros::param::set("string_param_param", "Goodbye ROS");
+    ros::param::set("vector_param_param", students);
+    ros::param::set("map_param_param", friends);
+
+    return 0;
+}
+```
+  Add flowing code in end of your package's `CMakeLists.txt`:
+
+  ```cmake
+  add_executable(set_parameters src/set_parameters.cpp)
+  target_link_libraries(set_parameters ${catkin_LIBRARIES})
+  ```
+
+In this example:
+- We set various types of parameters on the Parameter Server, including integers, doubles, booleans, strings, vectors, and maps.
+- We used both `ros::NodeHandle` and `ros::param` APIs to set the parameters.
+
+**Retrieving Parameters (C++):**
+
+Next, we'll retrieve the parameters that we previously set on the Parameter Server.
+
+`get_parameters.cpp`
+```cpp
+#include "ros/ros.h"
+
+int main(int argc, char *argv[]) {
+    ros::init(argc, argv, "get_parameters");
+
+    // Using ros::NodeHandle to retrieve parameters
+    ros::NodeHandle nh;
+    int int_value;
+    double double_value;
+    bool bool_value;
+    std::string string_value;
+    std::vector<std::string> students;
+    std::map<std::string, std::string> friends;
+
+    nh.getParam("int_param", int_value);
+    nh.getParam("double_param", double_value);
+    nh.getParam("bool_param", bool_value);
+    nh.getParam("string_param", string_value);
+    nh.getParam("vector_param", students);
+    nh.getParam("map_param", friends);
+
+    ROS_INFO("Retrieved values:");
+    ROS_INFO("int_param: %d", int_value);
+    ROS_INFO("double_param: %.5f", double_value);
+    ROS_INFO("bool_param: %d", bool_value);
+    ROS_INFO("string_param: %s", string_value.c_str());
+
+    for (const auto &student : students) {
+        ROS_INFO("Student: %s", student.c_str());
+    }
+
+    for (const auto &friend_pair : friends) {
+        ROS_INFO("Friend: %s = %s", friend_pair.first.c_str(), friend_pair.second.c_str());
+    }
+
+    return 0;
+}
+```
+
+Add flowing code in end of your package's `CMakeLists.txt`:
+
+```cmake
+add_executable(get_parameters src/get_parameters.cpp)
+target_link_libraries(get_parameters ${catkin_LIBRARIES})
+```
+
+In this example:
+- We retrieve the parameters set on the server using the `ros::NodeHandle` API.
+- The retrieved parameters are then printed to the ROS log for verification.
+
+**Deleting Parameters (C++):**
+
+Finally, let's see how to delete parameters from the Parameter Server.
+
+``delete_parameters.cpp``
+```cpp
+#include "ros/ros.h"
+
+int main(int argc, char *argv[]) {
+    ros::init(argc, argv, "delete_parameters");
+
+    ros::NodeHandle nh;
+    bool success;
+
+    // Using ros::NodeHandle to delete parameters
+    success = nh.deleteParam("int_param");
+    ROS_INFO("Delete int_param: %s", success ? "Success" : "Failure");
+
+    // Using ros::param to delete parameters
+    success = ros::param::del("int_param_param");
+    ROS_INFO("Delete int_param_param: %s", success ? "Success" : "Failure");
+
+    return 0;
+}
+```
+Add flowing code in end of your package's `CMakeLists.txt`:
+
+```cmake
+add_executable(delete_parameters src/delete_parameters.cpp)
+target_link_libraries(delete_parameters ${catkin_LIBRARIES})
+```
+
+In this example:
+- We use both `ros::NodeHandle` and `ros::param` APIs to delete parameters from the server.
+- The success of the deletion is logged.
+
+### 2.2 Python Implementation
+
+**Setting Parameters (Python):**
+
+Let's now set parameters using Python. The process is very similar to the C++ version.
+
+```python
+#!/usr/bin/env python
+
+import rospy
+
+if __name__ == "__main__":
+    rospy.init_node("set_parameters_py")
+
+    # Setting various types of parameters
+    rospy.set_param("int_param", 42)
+    rospy.set_param("double_param", 3.14159)
+    rospy.set_param("bool_param", True)
+    rospy.set_param("string_param", "Hello ROS")
+    rospy.set_param("list_param", ["apple", "banana", "cherry"])
+    rospy.set_param("dict_param", {"first_name": "John", "last_name": "Doe"})
+
+    # Modifying a parameter
+    rospy.set_param("int_param", 84)
+```
+
+Add flowing code in end of your package's `CMakeLists.txt`:
+
+```cmake
+catkin_install_python(PROGRAMS
+  scripts/set_parameters_py.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+
+In this example:
+- We set various types of parameters, including integers, doubles, booleans, strings, lists, and dictionaries.
+- We also demonstrate modifying an existing parameter.
+
+**Retrieving Parameters (Python):**
+
+Next, we'll retrieve the parameters that we set.
+
+```python
+#!/usr/bin/env python
+
+import rospy
+
+if __name__ == "__main__":
+    rospy.init_node("get_parameters_py")
+
+    # Retrieving parameters
+    int_value = rospy.get_param("int_param", 0)
+    double_value = rospy.get_param("double_param", 0.0)
+    bool_value = rospy.get_param("bool_param", False)
+    string_value = rospy.get_param("string_param", "")
+    list_value = rospy.get_param("list_param", [])
+    dict_value = rospy.get_param("dict_param", {})
+
+    rospy.loginfo("Retrieved values:")
+    rospy.loginfo("int_param: %d", int_value)
+    rospy.loginfo("double_param: %.5f", double_value)
+    rospy.loginfo("bool_param: %s", bool_value)
+    rospy.loginfo("string_param: %s", string_value)
+    rospy.loginfo("list_param: %s", list_value)
+    rospy.loginfo("dict_param: %s", dict_value)
+```
+
+Add flowing code in end of your package's `CMakeLists.txt`:
+```cmake
+catkin_install_python(PROGRAMS
+  scripts/set_parameters_py.py
+  scripts/get_parameters_py.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+
+
+In this example:
+- We use `rospy.get_param` to retrieve parameters set on the server.
+- The retrieved values are logged using `rospy.loginfo`.
+
+**Deleting Parameters (Python):**
+
+Finally, let's delete parameters from the Parameter Server using Python.
+
+```python
+#!/usr/bin/env python
+
+import rospy
+
+if __name__ == "__main__":
+    rospy.init_node("delete_parameters_py")
+
+    try:
+        rospy.delete_param("int_param")
+        rospy.loginfo("int_param deleted successfully.")
+    except KeyError:
+        rospy.logwarn("int_param does not exist.")
+
+    try:
+        rospy.delete_param("non_existent_param")
+        rospy.loginfo("non_existent_param deleted successfully.")
+    except KeyError:
+        rospy.logwarn("non_existent_param does not exist.")
+```
+
+Add flowing code in end of your package's `CMakeLists.txt`:
+```cmake
+catkin_install_python(PROGRAMS
+  scripts/set_parameters_py.py
+  scripts/get_parameters_py.py
+  scripts/delete_parameters_py.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+
+In this example:
+- We attempt to delete a parameter and handle the case where the parameter does not exist using exception handling (`KeyError`).
+
+### ROS Parameter Server Common Commands
+`rosparam` includes command-line tools for getting and setting ROS parameters on the parameter server, using YAML-encoded files.
+
+- `rosparam set`: Set a parameter
+- `rosparam get`: Get a parameter
+- `rosparam load`: Load parameters from an external file
+- `rosparam dump`: Dump parameters to an external file
+- `rosparam delete`: Delete a parameter
+- `rosparam list`: List all parameters
+
+Examples:
+
+- `rosparam list`: List all parameters on the parameter server.
+- `rosparam set <param_name> <value>`: Set a parameter with a specific value.
+- `rosparam get <param_name>`: Get the value of a specific parameter.
+- `rosparam delete <param_name>`: Delete a specific parameter.
+- `rosparam load <file_name.yaml>`: Load parameters from a YAML file.
+- `rosparam dump <file_name.yaml>`: Dump the current parameters to a YAML file.
+
+
+
