@@ -3,7 +3,7 @@
 
 This guide explains how to deploy a trained AI model into NVIDIA Jetson Platform and perform inference using TensorRT and DeepStream SDK. Here we use TensorRT to maximize the inference performance on the Jetson platform.
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/car.gif" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/car.gif" style={{width:1000, height:'auto'}}/></div>
 
 ## Prerequisites
 
@@ -291,13 +291,13 @@ uri=file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.m
 deepstream-app -c deepstream_app_config.txt
 ```
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/FP32-1.gif" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/FP32-1.gif" style={{width:1000, height:'auto'}}/></div>
 
 The above result is running on Jetson AGX Orin 32GB H01 Kit with FP32 and YOLOv8s 640x640. We can see that the FPS is around 60 and that is not the true FPS because when we set **type=2** under **[sink0]** in **deepstream_app_config.txt** file, the FPS is limited to the fps of the monitor and the monitor we used for this testing is a 60Hz monitor. However, if you change this value to **type=1**, you will be able to obtain the maximum FPS, but there will be no live detection output.
 
 For the same video source and the same model as used above, after changing **type=1** under **[sink0]**, the below result can be obtained.
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/FP32-no-screen.gif" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/FP32-no-screen.gif" style={{width:1000, height:'auto'}}/></div>
 
 As you can see, we can get an fps of about 139 which relates to the real fps value.
 
@@ -382,7 +382,7 @@ network-mode=1
 deepstream-app -c deepstream_app_config.txt
 ```
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/2.png" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/2.png" style={{width:1000, height:'auto'}}/></div>
 
 Here we get an FPS value of about 350!
 
@@ -420,7 +420,7 @@ num-sources=9
 
 Now if you run the application again with **deepstream-app -c deepstream_app_config.txt** command, you will see the following output
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/7.jpg" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/7.jpg" style={{width:1000, height:'auto'}}/></div>
 
 ## trtexec Tool
 
@@ -471,7 +471,7 @@ Here we can take the mean latency as 3.2ms which translates to 313FPS.
 
 We have done performance benchmarks for different YOLOv8 models running on [reComputer J4012](https://www.seeedstudio.com/reComputer-J4012-p-5586.html), [AGX Orin 32GB H01 Kit](https://www.seeedstudio.com/AGX-Orin-32GB-H01-Kit-p-5569.html) and [reComputer J2021](https://www.seeedstudio.com/reComputer-J2021-p-5438.html)
 
-<div style={{textAlign:'center'}}><img src="https://files.seeedstudio.com/wiki/YOLOV8/14.png" style={{width:1000, height:'auto'}}/></div>
+<div style={{textAlign:'center'}}><img src="./images/14.png" style={{width:1000, height:'auto'}}/></div>
 
 To learn about more performance benchmarks we have done using YOLOv8 models, please check [our blog](https://www.seeedstudio.com/blog/2023/03/30/yolov8-performance-benchmarks-on-nvidia-jetson-devices).
 

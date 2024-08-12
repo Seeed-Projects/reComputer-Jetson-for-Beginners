@@ -11,7 +11,7 @@ or above.
 
 <div align="center">
     <img width={800} 
-     src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_J4012.png" />
+     src="./images/reComputer_J4012.png" />
 </div>
 
 <div class="get_one_now_container" style={{textAlign: 'center'}}>
@@ -91,7 +91,7 @@ to annotate the images.
 **Step 1.** Collect raw data:
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/raw_datas.png" />
+    <img width={800} src="./images/raw_datas.png" />
 </div>
 
 **Step 2.** Install and run the annotation tool:
@@ -110,7 +110,7 @@ docker run -it -p 8080:8080 -v $(pwd)/label_studio_data:/label-studio/data heart
 [Label Studio Reference Documentation](https://labelstud.io/blog/quickly-create-datasets-for-training-yolo-object-detection-with-label-studio/#output-the-dataset-in-yolo-format)
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/labeling.png" />
+    <img width={800} src="./images/labeling.png" />
 </div>
 
 After completing the annotation, you can export the dataset in YOLO format and organize the annotated data along with the downloaded data. The simplest approach is to copy all the images to the train/images folder of the public dataset and the generated annotation text files to the train/labels folder of the public dataset.
@@ -205,13 +205,13 @@ Then comes the lengthy waiting process. Considering the possibility of closing t
 terminal multiplexer. Thus, the interface I see during the process looks like this:
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/training.png" />
+    <img width={800} src="./images/training.png" />
 </div>
 
 Tmux is optional; as long as the model is training normally. After the training program finishes, you can find the model weight files saved during the training process in the designated folder:
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/models.png" />
+    <img width={800} src="./images/models.png" />
 </div>
 
 ## Validation
@@ -292,7 +292,7 @@ python3 inference.py
 ```
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/inference_pt.png" />
+    <img width={800} src="./images/inference_pt.png" />
 </div>
 
 The result indicates that the inference speed of the model before quantization is 21.9 FPS
@@ -307,7 +307,7 @@ yolo export model=/home/nvidia/Everything_Happens_Locally/runs/detect/train2/wei
 After the program to complete(about 10-20 minutes), a `.engine` file will be generated in the same directory as the input model. This file is the quantized model.
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/model_engine.png" />
+    <img width={800} src="./images/model_engine.png" />
 </div>
 
 **Step 4.** Test the inference speed using the quantized model. 
