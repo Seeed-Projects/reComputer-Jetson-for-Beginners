@@ -325,7 +325,7 @@ python3 inference.py
 ```
 
 <div align="center">
-    <img width={800} src="https://files.seeedstudio.com/wiki/reComputer/Application/reComputer_is_all_you_need/inference_engine.png" />
+    <img width={800} src="./images/inference_engine.png" />
 </div>
 
 From the perspective of inference efficiency, the quantized model shows a significant improvement in inference speed.
