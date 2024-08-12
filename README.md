@@ -70,7 +70,7 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | Module 6.1.8     | [TF Coordinate Transformation in ROS](./6-Robotics/6.1-Introduction%20to%20ROS/6.1.8-TF%20Coordinate%20Transformation%20in%20ROS/README.md) |
 | Module 6.2| ROS Robot Simulation  |
 | Module 6.3| Development with Physical ROS Robots |
-| Module 6.4| **ROS Project Practice: Advanced Features |
+| Module 6.4| ROS Project Practice: Advanced Features |
 | **Module 7**| **Algorithm Optimization and Deployment**          |
 | **Module 8**| **Practical Applications of the Jetson Platform** |
 | **Module 9**| **Course Summary and Outlook**                    |
