@@ -4,6 +4,12 @@
 
 Welcome to the reComputer Jetson Orin Beginner Guide! Dive deep into the NVIDIA Jetson Orin platform with this comprehensive guide designed to help developers harness Jetson Orin’s powerful AI computing capabilities. By leveraging cutting-edge technology, you will be well-equipped to innovate in AI and robotics. Join us to explore the vast potential of Jetson and set the stage for pioneering developments in the industry!
 
+<p align="center">
+  <a href="https://github.com/Seeed-Projects/reComputer-Jetson-for-Beginners">
+    <img src="./1-Introduction/images/jetson-for-beginners- banner.jpg" alt="jetson-for-beginners- banner">
+  </a>
+</p>
+
 ## 🔦 Features
 
 - **From Beginner to Master**:
