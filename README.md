@@ -61,6 +61,7 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | **Module 4.3**| **Object Detection and Recognition**|
 | Module 4.3.1| [Train and Deploy YOLOv8](./4-Computer-Vision/4.3-Object%20Detection%20and%20Recognition/4.3.1-Train%20and%20Deploy%20YOLOv8%20on%20reComputer/README.md)|
 | Module 4.3.2| [Deploy YOLOv8 using TensorRT and DeepStream SDK Support](./4-Computer-Vision/4.3-Object%20Detection%20and%20Recognition/4.3.2-Deploy%20YOLOv8%20on%20NVIDIA%20Jetson%20using%20TensorRT%20and%20DeepStream%20SDK%20Support/README.md)|
+| **Module 4.4**| [**Project Practice-Intelligent Surveillance System**](./4-Computer-Vision/4.4-Project%20Practice-Intelligent%20Surveillance%20System/README.md)|
 | **Module 5**| **Generative AI Applications**                    |
 | **Module 6**     | **ROS Robotics** |
 | Module 6.1     | Introduction to ROS |

@@ -325,17 +325,24 @@ Manually configure the IP camera and Deepstream output video stream.
      src="https://files.seeedstudio.com/wiki/reComputer-Jetson/ai-nvr/confing_camera.png" />
 </div>
 
-Here, we need to enter a valid camera address or the RTSP stream path.
+Here, we need to enter a valid camera address or the RTSP stream path. The DeepStream output stream is rtsp://192.168.49.161:8555/ds-test.  This depends on the DeepStream configuration file, which can be modified according to your needs.
 
-The DeepStream output stream is rtsp://192.168.49.161:8555/ds-test. 
+Once the configuration is successful, you can view all the feeds on the video wall.
 
-This depends on the DeepStream configuration file, which can be modified according to your needs.
+`Video Wall` -->  `Select All`  --> `Start`
+
+<div align="center">
+    <img width={900} 
+     src="https://files.seeedstudio.com/wiki/reComputer-Jetson/ai-nvr/result.png" />
+</div>
+
+
+## References
+- https://developer.nvidia.com/embedded/jetpack/jetson-platform-services-get-started
 
 
 ## More Reference Materials
 
 | **Tutorial** | **Type** | **Description** |
 |:---------:|:---------:|:---------:|
-| [DeepStream Official Documentation](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Overview.html) | doc | Welcome to the DeepStream Documentation. |
-| [gstreamer-1.0](https://valadoc.org/gstreamer-1.0/index.htm) | doc | Powerful framework for creating multimedia applications. |
-| [Develop and Optimize Edge AI apps with NVIDIA DeepStream](https://www.nvidia.cn/on-demand/session/gtcspring22-s41777/) | video | Learn how the latest features of DeepStream are making it easier than ever to achieve real-time performance even for complex video AI applications. |
+| [Jetson Platform Services Official Documentation](https://developer.nvidia.com/embedded/jetpack/jetson-platform-services-get-started) | doc | Welcome to the Jetson Platform Services Documentation. |
