@@ -181,9 +181,23 @@ Choose the correct wheel file based on your JetPack and CUDA version:
         </a>
         </p>
 2. **Install Other Libraries**:
-   ```bash
-   sudo pip3 install torchaudio
-   ```
+  - Install build tools and dependencies 
+    ```bash
+    pip install cmake ninja
+    sudo apt install ffmpeg libavformat-dev libavcodec-dev libavutil-dev libavdevice-dev libavfilter-dev
+    ```
+  -  Build TorchAudio
+      ```bash
+      git clone https://github.com/pytorch/audio
+      cd audio
+      USE_CUDA=1 pip install -v -e . --no-use-pep517
+      ```
+  - Check the installation
+      ```bash
+      import torchaudio
+      print(torchaudio.__version__)
+      torchaudio.utils.ffmpeg_utils.get_build_config()
+      ```
 
 
 #### Verify Installation
