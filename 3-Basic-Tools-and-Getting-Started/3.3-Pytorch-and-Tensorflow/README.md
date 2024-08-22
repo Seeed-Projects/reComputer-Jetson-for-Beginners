@@ -181,25 +181,6 @@ Choose the correct wheel file based on your JetPack and CUDA version:
         </a>
         </p>
 
-## Installing Torchaudio on reComputer
-    Reference link:
-    [Torch v2.4.0](https://pytorch.org/audio/2.4.0/)
-    [Torch v2.3.0](https://pytorch.org/audio/2.3.0/)
-    [Torch v2.2.0](https://pytorch.org/audio/2.2.0/)
-    [Torch v2.1.2](https://pytorch.org/audio/2.1.2/)
-    [Torch v2.1.1](https://pytorch.org/audio/2.1.1/)
-    [Torch v2.1.0](https://pytorch.org/audio/2.1.0/)
-    [Torch v2.0.1](https://pytorch.org/audio/2.0.1/)
-    [Torch v0.13.1](https://pytorch.org/audio/0.13.1/)
-    [Torch v0.13.0](https://pytorch.org/audio/0.13.0/)
-    [Torch v0.12.0](https://pytorch.org/audio/0.12.0/)
-    [Torch v0.11.0](https://pytorch.org/audio/0.11.0/)
-    [Torch v0.10.0](https://pytorch.org/audio/0.10.0/)
-    [Torch v0.9.0](https://pytorch.org/audio/0.9.0/)
-    [Torch v0.8.0](https://pytorch.org/audio/0.8.0/)
-    [Torch v0.7.0](https://pytorch.org/audio/0.7.0/)
-
-
 #### Verify Installation
 - To verify that PyTorch has been installed correctly on your system, launch an interactive Python interpreter from the terminal and run the following commands:
 
@@ -225,7 +206,39 @@ Choose the correct wheel file based on your JetPack and CUDA version:
     </a>
     </p>
 
+## Installing Torchaudio on reComputer
 
+  Reference link:
+
+  - [Torch v2.4.0](https://pytorch.org/audio/2.4.0/)
+
+  - [Torch v2.3.0](https://pytorch.org/audio/2.3.0/)
+
+  - [Torch v2.2.0](https://pytorch.org/audio/2.2.0/)
+
+  - [Torch v2.1.2](https://pytorch.org/audio/2.1.2/)
+
+  - [Torch v2.1.1](https://pytorch.org/audio/2.1.1/)
+
+  - [Torch v2.1.0](https://pytorch.org/audio/2.1.0/)
+
+  - [Torch v2.0.1](https://pytorch.org/audio/2.0.1/)
+
+  - [Torch v0.13.1](https://pytorch.org/audio/0.13.1/)
+
+  - [Torch v0.13.0](https://pytorch.org/audio/0.13.0/)
+
+  - [Torch v0.12.0](https://pytorch.org/audio/0.12.0/)
+
+  - [Torch v0.11.0](https://pytorch.org/audio/0.11.0/)
+
+  - [Torch v0.10.0](https://pytorch.org/audio/0.10.0/)
+
+  - [Torch v0.9.0](https://pytorch.org/audio/0.9.0/)
+
+  - [Torch v0.8.0](https://pytorch.org/audio/0.8.0/)
+  
+  - [Torch v0.7.0](https://pytorch.org/audio/0.7.0/)
 
 ## More Tutorial Content
 
