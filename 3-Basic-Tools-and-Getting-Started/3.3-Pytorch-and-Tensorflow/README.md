@@ -206,7 +206,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
     </a>
     </p>
 
-## Installing Torchaudio on reComputer
+## Installing Torchaudio on reComputer Nvidia Jetson
 
   Reference link:
 
