@@ -67,7 +67,7 @@ Despite being competitors, PyTorch and TensorFlow share many similarities and ha
 
 - **Interoperability**: Both frameworks are continually improving their interoperability. For instance, the ONNX (Open Neural Network Exchange) format allows model conversion between PyTorch and TensorFlow, enhancing compatibility and collaboration between the two.
 
-## Installing PyTorch on reComputer J3010
+## Installing PyTorch on reComputer Nvidia Jetson
 
 ### Set Up Your Environment
 
@@ -180,24 +180,24 @@ Choose the correct wheel file based on your JetPack and CUDA version:
             <img src="./images/fig3.png">
         </a>
         </p>
-2. **Install Other Libraries**:
-  - Install build tools and dependencies 
-    ```bash
-    pip install cmake ninja
-    sudo apt install ffmpeg libavformat-dev libavcodec-dev libavutil-dev libavdevice-dev libavfilter-dev
-    ```
-  -  Build TorchAudio
-      ```bash
-      git clone https://github.com/pytorch/audio
-      cd audio
-      USE_CUDA=1 pip install -v -e . --no-use-pep517
-      ```
-  - Check the installation
-      ```bash
-      import torchaudio
-      print(torchaudio.__version__)
-      torchaudio.utils.ffmpeg_utils.get_build_config()
-      ```
+
+## Installing Torchaudio on reComputer
+    Reference link:
+    [Torch v2.4.0](https://pytorch.org/audio/2.4.0/)
+    [Torch v2.3.0](https://pytorch.org/audio/2.3.0/)
+    [Torch v2.2.0](https://pytorch.org/audio/2.2.0/)
+    [Torch v2.1.2](https://pytorch.org/audio/2.1.2/)
+    [Torch v2.1.1](https://pytorch.org/audio/2.1.1/)
+    [Torch v2.1.0](https://pytorch.org/audio/2.1.0/)
+    [Torch v2.0.1](https://pytorch.org/audio/2.0.1/)
+    [Torch v0.13.1](https://pytorch.org/audio/0.13.1/)
+    [Torch v0.13.0](https://pytorch.org/audio/0.13.0/)
+    [Torch v0.12.0](https://pytorch.org/audio/0.12.0/)
+    [Torch v0.11.0](https://pytorch.org/audio/0.11.0/)
+    [Torch v0.10.0](https://pytorch.org/audio/0.10.0/)
+    [Torch v0.9.0](https://pytorch.org/audio/0.9.0/)
+    [Torch v0.8.0](https://pytorch.org/audio/0.8.0/)
+    [Torch v0.7.0](https://pytorch.org/audio/0.7.0/)
 
 
 #### Verify Installation
@@ -224,6 +224,8 @@ Choose the correct wheel file based on your JetPack and CUDA version:
         <img src="./images/fig4.png">
     </a>
     </p>
+
+
 
 ## More Tutorial Content
 
