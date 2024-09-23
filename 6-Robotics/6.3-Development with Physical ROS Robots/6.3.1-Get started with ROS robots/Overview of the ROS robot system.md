@@ -69,3 +69,11 @@ This part has low computational power requirements but high real-time requiremen
   ![Imgur](https://i.imgur.com/3NgbrXq.png)
   
   (The above four components are mounted on a frame to form a  chassis)
+---
+  **If you want to know about related products, you can click the link below:**
+  
+  [ReComputer J1020 v2 nano. ](https://www.seeedstudio.com/reComputer-J1020-v2-p-5498.html)
+  
+  [Ros robot kit. ](https://www.aliexpress.us/item/3256801169020544.html?gatewayAdapt=glo2usa)
+
+  
