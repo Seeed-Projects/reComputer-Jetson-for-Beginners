@@ -58,3 +58,12 @@ Introduction to the functions of the APP homepage:
 After connecting the Bluetooth APP to the robot's Bluetooth module, the robot's control mode will not switch immediately. The control mode of the robot will be displayed in real-time in the lower-left corner of the OLED screen on the robot.
 
 Once the connection is established, lightly push the control joystick forward on the main page of the APP to switch the robot's control mode to APP control mode. After switching to the APP control mode, you will be able to control the robot, view waveforms, and adjust parameters using the APP.
+  (The above four components are mounted on a frame to form a  chassis)
+---
+  **If you want to know about related products, you can click the link below:**
+  
+  [ReComputer J1020 v2 nano. ](https://www.seeedstudio.com/reComputer-J1020-v2-p-5498.html)
+  
+  [Ros robot kit. ](https://www.aliexpress.us/item/3256801169020544.html?gatewayAdapt=glo2usa)
+
+  
