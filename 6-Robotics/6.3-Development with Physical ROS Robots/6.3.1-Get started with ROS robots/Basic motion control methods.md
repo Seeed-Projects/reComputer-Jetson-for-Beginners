@@ -21,9 +21,9 @@ For users with iPhones, you only need to search for WHEELTEC in the App Store to
 
 1. **Power the robot**
 
-       After turning on the robot's power switch, you will see the red indicator light of the        Bluetooth module blinking, indicating that the Bluetooth module is in               an unconnected state.
+       After turning on the robot's power switch, you will see the red indicator light of the Bluetooth module blinking, indicating that the Bluetooth module is in an unconnected state.
 
-<img title="" src="https://i.imgur.com/dB5bSsv.jpg" alt="Imgur" data-align="center" width="493">
+   <img title="" src="https://i.imgur.com/dB5bSsv.jpg" alt="Imgur" data-align="center" width="493">
 
 2. **Open Bluetooth app**
    
@@ -59,6 +59,8 @@ After connecting the Bluetooth APP to the robot's Bluetooth module, the robot's 
 
 Once the connection is established, lightly push the control joystick forward on the main page of the APP to switch the robot's control mode to APP control mode. After switching to the APP control mode, you will be able to control the robot, view waveforms, and adjust parameters using the APP.
   (The above four components are mounted on a frame to form a  chassis)
+
+  
 ---
   **If you want to know about related products, you can click the link below:**
   
