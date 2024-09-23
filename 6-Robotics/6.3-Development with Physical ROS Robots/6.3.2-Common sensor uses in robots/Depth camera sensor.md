@@ -58,4 +58,12 @@ The following image is the result of running MultiStream on the Gemini2 device. 
 ![Multistream](https://i.imgur.com/3bBEggL.png)
 
 
+---
+  **If you want to know about related products, you can click the link below:**
+  
+  [ReComputer J1020 v2 nano. ](https://www.seeedstudio.com/reComputer-J1020-v2-p-5498.html)
+  
+  [Ros robot kit. ](https://www.aliexpress.us/item/3256801169020544.html?gatewayAdapt=glo2usa)
+
+  
 
