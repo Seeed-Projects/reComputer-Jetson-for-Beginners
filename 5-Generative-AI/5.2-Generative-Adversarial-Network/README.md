@@ -1,0 +1,3 @@
+# Generative Adversarial Networks
+
+Generative Adversarial Networks (GANs) are a type of deep learning model composed of two parts: a generator and a discriminator. The generator is responsible for producing data that appears realistic, attempting to "fool" the discriminator, while the discriminator is tasked with distinguishing between the generated data and real data. The two networks compete with each other and continually improve: the generator aims to create more realistic data, while the discriminator works to enhance its ability to identify generated data. Ultimately, the generator can produce results that are very similar to real data, and GANs have wide applications in areas such as image generation and data augmentation.

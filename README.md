@@ -52,7 +52,7 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | **Module 2**| **reComputer Jetson Platform Overview**           |
 | **Module 3**| [**Basic Tools and Getting Started**](./3-Basic-Tools-and-Getting-Started/README.MD)|
 | **Module 4**| [**Computer Vision Applications**](./4-Computer-Vision/README.md)|
-| **Module 5**| **Generative AI Applications**                    |
+| **Module 5**| [**Generative AI Applications**](./5-Generative-AI/README.md)                    |
 | **Module 6**     | [**ROS Robotics**](./6-Robotics/README.MD) |
 | **Module 7**| **Algorithm Optimization and Deployment**          |
 | **Module 8**| **Practical Applications of the Jetson Platform** |
