@@ -86,6 +86,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
 
 - **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.2**:
   - [PyTorch 2.3](https://nvidia.box.com/shared/static/mp164asf3sceb570wvjsrezk1p4ftj8t.whl) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
+  - [torchvision 0.18](https://nvidia.box.com/shared/static/xpr06qe6ql3l6rj22cu3c45tz1wzi36p.whl) rename to `torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl`
 
 - **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.4**:
   - [PyTorch 2.3](https://nvidia.box.com/shared/static/zvultzsmd4iuheykxy17s4l2n91ylpl8.whl)
@@ -135,7 +136,7 @@ Choose the correct wheel file based on your JetPack and CUDA version:
    This should print the installed PyTorch version.
 
 #### 4. Optional - Install Additional Libraries
-1. **Install Torchvision**:
+1. **Install Torchvision** (download whl directly above or build from source below):
      - Installing Dependencies
         ```bash
         sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev
