@@ -96,22 +96,13 @@ Choose the correct wheel file based on your JetPack and CUDA version:
   - [PyTorch 2.3](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/Ed30wfVKAydNqwsmo_qICDwBu_mcOJ4S3jTuyI11nNer8A?e=tjDWmv) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
   - [torchvision 0.18](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/EY4l6JaUyc5JlPCwlgOUFw0BeVeilxUjcqZLoK4M7WH3TQ?e=lMxO11) rename to `torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl`
 
-
-
-- **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.2**:
-  - [PyTorch 2.3](https://nvidia.box.com/shared/static/mp164asf3sceb570wvjsrezk1p4ftj8t.whl) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
-  - [torchvision 0.18](https://nvidia.box.com/shared/static/xpr06qe6ql3l6rj22cu3c45tz1wzi36p.whl) rename to `torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl`
-
-- **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.4**:
-  - [PyTorch 2.3](https://nvidia.box.com/shared/static/zvultzsmd4iuheykxy17s4l2n91ylpl8.whl)
-
 - **JetPack 6.0 DP (L4T R36.2.0)**:
   - [PyTorch 2.2.0](https://developer.download.nvidia.cn/compute/redist/jp/v60dp/pytorch/torch-2.2.0a0+6a974be.nv23.11-cp310-cp310-linux_aarch64.whl)
   - [PyTorch 2.1.0](https://nvidia.box.com/shared/static/0h6tk4msrl9xz3evft9t0mpwwwkw7a32.whl)
 
 - **JetPack 5.x**:
   - **JetPack 5.1 (L4T R35.2.1) / JetPack 5.1.1 (L4T R35.3.1) / JetPack 5.1.2 (L4T R35.4.1)**:
-    - [PyTorch 2.1.0](https://developer.download.nvidia.cn/compute/redist/jp/v512/pytorch/torch-2.1.0a0+41361538.nv23.06-cp38-cp38-linux_aarch64.whl)
+    - [PyTorch 2.1.0](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/EbQ3kJ4pMKRCm5AN6wbDCxAB1l2NUKUQ-7R57XY6E6sHHg?e=h8mbr9)
   - **JetPack 5.1 (L4T R35.2.1) / JetPack 5.1.1 (L4T R35.3.1)**:
     - [PyTorch 2.0.0](https://nvidia.box.com/shared/static/i8pukc49h3lhak4kkn67tg9j4goqm0m7.whl)
     - [PyTorch 1.14.0](https://developer.download.nvidia.com/compute/redist/jp/v51/pytorch/torch-1.14.0a0+44dac51c.nv23.02-cp38-cp38-linux_aarch64.whl)
