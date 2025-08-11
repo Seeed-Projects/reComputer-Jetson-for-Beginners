@@ -84,15 +84,13 @@ To install PyTorch on your reComputer J3010 with the specified JetPack and CUDA 
 
 Choose the correct wheel file based on your JetPack and CUDA version:
 
-- **Jetpack 6.2**
-
-  - [Torch-TensorRT in JetPack](https://docs.pytorch.org/TensorRT/getting_started/jetpack.html)
 
 
-- **JetPack 6.1 (L4T R36.4) + CUDA 12.6**:
+- **JetPack 6.1 & 6.2 (L4T R36.4) + CUDA 12.6**:
   - [PyTorch 2.5](https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl)
   - [torchvision 0.20](http://jetson.webredirect.org/jp6/cu126/+f/5f9/67f920de3953f/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl)
 
+  also [Torch-TensorRT in JetPack](https://docs.pytorch.org/TensorRT/getting_started/jetpack.html)
 
 - **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.2**:
   - [PyTorch 2.3](https://nvidia.box.com/shared/static/mp164asf3sceb570wvjsrezk1p4ftj8t.whl) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
