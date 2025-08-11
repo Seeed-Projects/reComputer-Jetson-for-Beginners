@@ -87,14 +87,14 @@ Choose the correct wheel file based on your JetPack and CUDA version:
 
 
 - **JetPack 6.1 & 6.2 (L4T R36.4) + CUDA 12.6**:
-  - [PyTorch 2.5](https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl)
-  - [torchvision 0.20](http://jetson.webredirect.org/jp6/cu126/+f/5f9/67f920de3953f/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl)
+  - [PyTorch 2.5](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/EXZ8MsYzCYdGjR9g3tQwnAIBj1kJodvl-9XQVa9U8XFPZA?e=QJntmH)
+  - [torchvision 0.20](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/EbaNmRnWK9BHiYRpX4G1VdYBCsxh9qtdQHtsxEN5nAUJhw?e=liIOJ0)
 
   also [Torch-TensorRT in JetPack](https://docs.pytorch.org/TensorRT/getting_started/jetpack.html)
 
 - **JetPack 6.0 (L4T R36.2 / R36.3) + CUDA 12.2**:
-  - [PyTorch 2.3](https://nvidia.box.com/shared/static/mp164asf3sceb570wvjsrezk1p4ftj8t.whl) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
-  - [torchvision 0.18](https://nvidia.box.com/shared/static/xpr06qe6ql3l6rj22cu3c45tz1wzi36p.whl) rename to `torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl`
+  - [PyTorch 2.3](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/Ed30wfVKAydNqwsmo_qICDwBu_mcOJ4S3jTuyI11nNer8A?e=tjDWmv) rename to `torch-2.3.0-cp310-cp310-linux_aarch64.whl`
+  - [torchvision 0.18](https://seeedstudio88-my.sharepoint.com/:u:/g/personal/youjiang_yu_seeedstudio88_onmicrosoft_com/EY4l6JaUyc5JlPCwlgOUFw0BeVeilxUjcqZLoK4M7WH3TQ?e=lMxO11) rename to `torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl`
 
 
 
