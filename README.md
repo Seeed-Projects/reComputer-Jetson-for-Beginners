@@ -48,15 +48,15 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 <!-- TODO: A poster needs to be de.3................................................. signed here -->
 | **Chapter** | **Content**                                      |
 |:-----------:|:------------------------------------------------:|
-| **Module 1**| **Introduction**                                 |
-| **Module 2**| **reComputer Jetson Platform Overview**           |
+| **Module 1**| **Introduction** (incomplete)|
+| **Module 2**| [**reComputer Jetson Platform Overview**](./2-reComputer-Jetson-Platform-Overview/README.md)|
 | **Module 3**| [**Basic Tools and Getting Started**](./3-Basic-Tools-and-Getting-Started/README.MD)|
 | **Module 4**| [**Computer Vision Applications**](./4-Computer-Vision/README.md)|
-| **Module 5**| [**Generative AI Applications**](./5-Generative-AI/README.md)                    |
-| **Module 6**     | [**ROS Robotics**](./6-Robotics/README.MD) |
-| **Module 7**| **Algorithm Optimization and Deployment**          |
-| **Module 8**| **Practical Applications of the Jetson Platform** |
-| **Module 9**| **Course Summary and Outlook**                    |
+| **Module 5**| [**Generative AI Applications**](./5-Generative-AI/README.md)|
+| **Module 6**     | [**ROS Robotics**](./6-Robotics/README.MD)|
+| **Module 7**| **Algorithm Optimization and Deployment** (incomplete)|
+| **Module 8**| **Practical Applications of the Jetson Platform** (incomplete)|
+| **Module 9**| **Course Summary and Outlook** (incomplete)|
 
 
 
