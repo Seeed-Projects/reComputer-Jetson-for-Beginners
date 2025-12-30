@@ -1,0 +1,3 @@
+# Autoregressive Models and Generative Text Models
+
+Autoregressive models are a class of generative models that generate sequential data by recursively predicting the next value. Each output at each step depends on all previous inputs or previously generated outputs, making them commonly used in time series and natural language processing tasks. Generative text models are a typical application of autoregressive models, predicting and generating the next word based on previously generated words, gradually constructing entire text passages. Notable generative text models, such as the GPT series, use autoregressive mechanisms to generate coherent and fluent text, which is utilized in dialogue systems, text generation, and other tasks.

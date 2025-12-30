@@ -1,0 +1,3 @@
+# Variational Autoencoders
+
+Variational Autoencoders (VAE) are a type of generative model used to learn the probability distribution of complex data. VAE compresses the input data into a probability distribution of latent variables through an encoder, and then samples from that distribution using a decoder to generate new data that resembles the input. Unlike traditional autoencoders, VAE optimizes the reconstruction error of the data and the similarity of the latent variable distribution during training, allowing the model to generate diverse and continuous data. VAE is widely used in applications such as image generation and anomaly detection.
