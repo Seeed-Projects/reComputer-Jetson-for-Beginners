@@ -33,7 +33,7 @@ Welcome to the reComputer Jetson Orin Beginner Guide! Dive deep into the NVIDIA 
 ## 📋 Preparation
 Before beginning, ensure you have:
 1. Basic knowledge of Linux commands.
-2. A Jetson device—[Seeed reComputer J4012](https://www.seeedstudio.com/reComputer-J4012-p-5586.html) recommended.
+2. A Jetson device—[reComputer Super Devloper Kit](https://www.seeedstudio.com/reComputer-Super-J401-Carrier-Board-p-6642.html) recommended.
 
 > Note: While all Nvidia Jetson Orin-based devices are suitable, ensure your device has at least 8GB of memory.
 
@@ -50,12 +50,6 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 |:-----------:|:------------------------------------------------:|
 | **Module 1**| **Introduction**                                 |
 | **Module 2**| [**reComputer Jetson Platform Overview**](./2-reComputer-Jetson-Platform-Overview/README.md) |
-| Module 2.1  | [**What Is reComputer Jetson**](./2-reComputer-Jetson-Platform-Overview/2.1-What-Is-reComputer/README.md) |
-| Module 2.2  | [**NVIDIA Jetson Module**](./2-reComputer-Jetson-Platform-Overview/2.2-NVIDIA-Jetson-Module/README.md) |
-| Module 2.3  | [**Seeed Jetson Compatible Carrier Board**](./2-reComputer-Jetson-Platform-Overview/2.3-Seeed-Jetson-Compatible-Carrier-Board/README.md) |
-| Module 2.4  | [**Jetson Full System Series**](./2-reComputer-Jetson-Platform-Overview/2.4-Jetson-Full-System-Series/README.md) |
-| Module 2.5  | [**Accessory Support**](./2-reComputer-Jetson-Platform-Overview/2.5-Accessory-Support/README.md) |
-| Module 2.6  | [**Application**](./2-reComputer-Jetson-Platform-Overview/2.6-Application/README.md) |
 | **Module 3**| [**Basic Tools and Getting Started**](./3-Basic-Tools-and-Getting-Started/README.MD)|
 | **Module 4**| [**Computer Vision Applications**](./4-Computer-Vision/README.md)|
 | **Module 5**| [**Generative AI Applications**](./5-Generative-AI/README.md)                    |
