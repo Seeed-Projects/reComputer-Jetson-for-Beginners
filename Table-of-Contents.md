@@ -5,7 +5,13 @@ Explore a broad range of topics from Jetson platform basics to generative AI dep
 | **Chapter** | **Content**                                      |
 |:-----------:|:------------------------------------------------:|
 | **Module 1**| **Introduction**                                 |
-| **Module 2**| **reComputer Jetson Platform Overview**           |
+| **Module 2**| [**reComputer Jetson Platform Overview**](./2-reComputer-Jetson-Platform-Overview/README.md) |
+| Module 2.1  | [What Is reComputer Jetson](./2-reComputer-Jetson-Platform-Overview/2.1-What-Is-reComputer/README.md) |
+| Module 2.2  | [NVIDIA Jetson Module](./2-reComputer-Jetson-Platform-Overview/2.2-NVIDIA-Jetson-Module/README.md) |
+| Module 2.3  | [Seeed Jetson Compatible Carrier Board](./2-reComputer-Jetson-Platform-Overview/2.3-Seeed-Jetson-Compatible-Carrier-Board/README.md) |
+| Module 2.4  | [Jetson Full System Series](./2-reComputer-Jetson-Platform-Overview/2.4-Jetson-Full-System-Series/README.md) |
+| Module 2.5  | [Accessory Support](./2-reComputer-Jetson-Platform-Overview/2.5-Accessory-Support/README.md) |
+| Module 2.6  | [Application](./2-reComputer-Jetson-Platform-Overview/2.6-Application/README.md) |
 | **Module 3**| **Basic Tools and Getting Started**               |
 | Module 3.1  | [Python and Programming Fundamentals](./3-Basic-Tools-and-Getting-Started/3.1-Python-and-Programming-Fundamentals/README.md) |
 | Module 3.2  | [AI and ML](./3-Basic-Tools-and-Getting-Started/3.2-AI-and-ML/README.md) |

@@ -1,49 +1,82 @@
-# What is reComputer
-
-The reComputer Jetson series  is a comprehensive selection for NVIDIA Jetson compatible carrier boards and full systems, covering full range of Jetson modules from Jetson Nano and Xavier NX, to the advanced Orin Nano, Orin NX, and AGX Orin. Designed for reliability and ease of use, this series empowers developers and businesses to bring AI to the edge. Our commitment is to simplify access to cutting-edge technology, accelerating the development and deployment of intelligent devices and applications. This enables the creation of AI models like YOLOv8, YOLOv10, CLIP, LLM, VLM, Whisper, and RAG to be easily deployed across industries, from vision AI in video analytics and robotics sensing, to human-like interactions in Generative AI area.
-
+# 2.1 What Is reComputer Jetson
 
 <p align="center">
-    <img src="./images/Seeed-NVIDIA-Jetson-Family.png" height="400" alt="Seeed-NVIDIA-Jetson-Family">
+    <img src="./images/Seeed-NVIDIA-Jetson-Family.png" height="360" alt="Seeed NVIDIA Jetson Family">
 </p>
 
-Taking our TOP1 shinning star - reComputer J4012 Jetson Orin NX 16GB as an example. When you make an order on Seeed bazaar, you'll receive a package containing a reComputer Edge box, and a power adapter as 19V/5A(Barrel Jack 5.5/2.5mm) standard. 
+`reComputer Jetson` is not a single device. It is Seeed Studio's edge AI product matrix built around NVIDIA Jetson SoMs. It combines the compute module, carrier board, thermal solution, storage, enclosure, power design, and software support into a platform that helps developers move from evaluation to deployment faster.
 
+## In One Sentence
 
-<p align="center">
-    <img src="./images/computer-vision.png" height="400" alt="computer-vision">
-</p>
+If a `Jetson module` is the AI compute core, then `reComputer` is the practical edge AI device or development platform built around that core for real integration, deployment, and maintenance.
 
-### 🛍️ Get a reComputer Jetson Orin NX Device 
+## What a reComputer Usually Includes
 
-| **Device Model** | **Description**            | **Link**           |
-|:----------------:|:--------------------------:|:------------------:|
-| reComputer J4011| powered by NVIDIA Jetson Orin NX 8GB|[**Make an Order**](https://www.seeedstudio.com/reComputer-J4011-p-5585.html)|
-| reComputer J4012| powered by NVIDIA Jetson Orin NX 16GB| [**Make an Order**](https://www.seeedstudio.com/reComputer-J4012-p-5586.html)|
+| **Layer** | **Purpose** | **Typical Components** |
+|:---------:|:------------|:-----------------------|
+| Jetson SoM | Provides compute | CPU, GPU, DLA, memory |
+| Carrier Board | Provides interfaces and power delivery | USB, CSI, GbE, CAN, M.2, GPIO |
+| Storage / Wireless | Provides system storage and connectivity | NVMe SSD, Wi-Fi, Bluetooth, 4G/5G |
+| Thermal / Enclosure | Provides stable operation | Heatsink, fan, enclosure, mounting features |
+| BSP / SDK | Provides the software foundation | JetPack, Jetson Linux, CUDA, TensorRT |
 
-The reComputer J4012 edge device is composed with one reComputer J401 carrier board, one Jetson Orin NX 16GB module, one heatsink with fan, and one aluminum enclosure:
+## Understanding the reComputer Jetson Product Matrix
 
-### - Jetson Orin NX Module
+The most practical way to understand the Seeed Studio reComputer Jetson product matrix is to look at it from two dimensions:
 
-The NVIDIA® Jetson Orin™ NX delivers AI supercomputer performance in a compact system-on-module (SOM) smaller than a credit card. Powered by a low-power NVIDIA Orin SoC, it combines the NVIDIA Ampere™ GPU architecture with advanced 64-bit processing, multi-function video and image capabilities, and Deep Learning Accelerators. 
+- `device compute tier`: this roughly maps to the underlying Jetson platform generation
+- `application scenario`: this determines the system form factor, interfaces, and deployment style
 
-With up to 100 INT8 TOPs for compute and 50 INT8 TOPs for deep learning, it supports running multiple neural networks and processing high-resolution sensor data simultaneously. The Jetson Orin NX offers a blend of performance and power efficiency with diverse I/Os, including high-speed CSI and PCIe, as well as low-speed I2Cs and GPIOs, ideal for embedded and edge computing devices where size, weight, and power are critical.
+### Device Compute Tiers
 
+In Seeed Studio's naming scheme, `J10 / J20 / J30 / J40 / J50 / J60` can be understood as broad compute tiers. One important detail is that a `series prefix does not correspond to a single fixed performance number`. Different module capacities, power modes, and JetPack generations can lead to different figures within the same tier.
 
-### - reComputer J401 Carrier Board
+| **Series Prefix** | **Typical Jetson Platform** | **Official Compute Reference** | **How to Think About It** |
+|:-----------------:|:----------------------------|:-------------------------------|:--------------------------|
+| J10 | Jetson Nano | `0.5 TFLOPS (FP16)` | An early entry-level platform suitable for Linux, JetPack, and basic vision experiments |
+| J20 | Jetson Xavier NX | `21 TOPS` | Better suited than J10 for more complex vision and traditional edge AI workloads, and still relevant in many existing deployments |
+| J30 | Jetson Orin Nano | `up to 67 TOPS` | The current entry to mid-range mainstream option for learning, basic multi-camera vision, and lightweight generative AI |
+| J40 | Jetson Orin NX | `up to 157 TOPS` | A compact high-performance option better suited to robotics, multi-camera systems, and larger model inference |
+| J50 | Jetson AGX Orin | `up to 275 TOPS` | Designed for higher-end autonomous systems and multi-sensor fusion workloads |
+| J60 | Jetson AGX Thor | `up to 2070 FP4 TFLOPS` | A next-generation platform for physical AI and robotics, with performance metrics that extend beyond traditional INT8 TOPS |
 
-The reComputer J401 carrier board is an advanced, open-source extension board for NVIDIA Jetson Orin Nano/ Orin Nano modules. It breaks out typical IO interfaces from the SoM, inlcuding 4x USB 3.2, HDMI 2.1, 2x CSI, 1x RJ45 for GbE, M.2 Key E for WiFi/BLE connection, M.2 Key M for storage expansion, CAN, and GPIO, Pre-installed JetPack 5.1.1 on 128GB NVMe SSD, and also supporting the latest JetPack 6 BSP , all for accelarating your solution to market in ease.
+The point of this table is not to memorize numbers. The more useful mental model is:
 
-<p align="center">
-    <img src="./images/computer-vision.png" height="400" alt="computer-vision">
-</p>
+- `J10 / J20` are earlier-generation or installed-base platforms
+- `J30 / J40` form the core of today's reComputer entry-level and mainstream deployment range
+- `J50 / J60` move into higher-end robotics and more demanding edge AI workloads
 
-### - Heatsink with Fan
+For this tutorial, most readers should focus on `J30` and `J40`. If your goal is to learn JetPack, OpenCV, YOLO, Docker, and basic ROS, `J30` is often enough. If you already know you want to work on multi-sensor robots, more video streams, or larger generative AI models, `J40` is usually the better fit.
 
-This Aluminum Heatsink offers essential, active, physical, and strong fan air cooling function for reComputer J401 carrier board, to avoid overheating and throttling problems while operating tough computing tasks. It is designed for continuous deployment, and can be customized to air flow speed through PWM function.
+### Application-Oriented Product Families
 
+| **Family** | **Positioning** | **Keywords** |
+|:----------:|:----------------|:-------------|
+| Classic | General entry-level and standard deployment | Easy to start with, balanced interfaces, good for learning and PoCs |
+| Mini | More flexible in size and power input | Compact, wide-voltage input, mobile-device friendly |
+| Industrial | Built for industrial environments | Fanless, serial, CAN, dual Ethernet, PoE |
+| Super | Higher-performance platforms based on Orin Nano / NX | JetPack 6, 157 TOPS, 4x CSI, dual Ethernet |
+| Robotics | Built for robot-body integration | 5G, GMSL2, dual Ethernet, multiple USB, CAN |
 
-### - Aluminum Enclosure
+One important conclusion follows from this: when choosing a reComputer platform, you should not only ask "Which Jetson should I buy?" You should also ask "What form factor and interface combination does my project actually need?"
 
-The whole device with aluminum case is compact as  130mm x120mm x 58.5mm, which can be easily embedded into various scenarios from autonomous machine to industrial system supporting multiple installation modes such as desktop and wall mounting. We also provide comprehensive certifications such as ROHS, CE, FCC, KC, UKCA,  ensuring your product ready-to-go for the market. 
+## Key Concepts for Beginners
 
+- `reComputer` is a platform family, not a single SKU.
+- The `Jetson module` determines the compute ceiling, while the `carrier board and system design` determine what you can connect, how the device is powered, and how well it can be deployed.
+- The same Jetson Orin NX can deliver a very different real-world experience in the Classic, Industrial, Super, and Robotics families.
+
+## Section Summary
+
+Everything else in Chapter 2 can be understood through this idea:
+
+`reComputer = NVIDIA Jetson module + Seeed carrier board / system design + JetPack software stack`
+
+## References
+
+- [Seeed reComputer-Jetson Guide](https://wiki.seeedstudio.com/reComputer_Intro/)
+- [Seeed reComputer J1010 Getting Started](https://wiki.seeedstudio.com/reComputer_J1010_with_Jetson_getting_start/)
+- [Seeed reComputer J20 Getting Started](https://wiki.seeedstudio.com/recomputer_j20_with_jetson_getting_start/)
+- [Seeed reComputer J30/J40 Getting Started](https://wiki.seeedstudio.com/reComputer_J30_40_with_Jetson_getting_start/)
+- [Seeed reComputer Robotics J501 Mini Getting Started](https://wiki.seeedstudio.com/recomputer_j501_mini_getting_started/)
+- [NVIDIA Jetson Modules](https://developer.nvidia.com/embedded/jetson-modules)
