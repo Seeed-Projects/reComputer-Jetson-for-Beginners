@@ -7,12 +7,21 @@
 
 The reComputer Super features dual RJ45 Gigabit Ethernet ports, providing high-speed networking capabilities. This dual Ethernet configuration enables a variety of advanced networking scenarios, such as network redundancy, load balancing, and segmentation.
 
+![Dual Ethernet Ports](./images/super-ethernet-ports.jpg)
+
 ## Hardware Overview
 
 The reComputer Super is equipped with two Gigabit Ethernet ports, allowing for flexible network configurations:
 
 - **Port 1**: Primary Ethernet port
 - **Port 2**: Secondary Ethernet port
+
+![Ethernet Speed Test](./images/super-ethernet-test.png)
+
+There are 2 LEDs (green and yellow) on each Ethernet port:
+
+- Green LED: ON only when connected to 1000M/10G network.
+- Yellow LED: Shows the network activity status.
 
 ## Basic Network Configuration
 

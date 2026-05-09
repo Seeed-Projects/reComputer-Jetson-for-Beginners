@@ -7,6 +7,8 @@
 
 The reComputer Super features 4x MIPI CSI (Camera Serial Interface) ports, allowing you to connect up to 4 CSI cameras simultaneously. This makes it ideal for multi-camera applications such as 360-degree vision, stereo vision, and multi-angle object tracking.
 
+![reComputer Super](./images/super-product.png)
+
 ## Hardware Requirements
 
 - reComputer Super with JetPack 6.2 installed
@@ -22,6 +24,8 @@ Before connecting or disconnecting CSI cameras, ensure the reComputer Super is p
 ### Step 2: Open the Back Cover
 
 Open the back cover of the reComputer Super to access the CSI ports.
+
+![CSI Connection](./images/super-csi-connection.jpg)
 
 ### Step 3: Connect the Cameras
 
@@ -50,6 +54,8 @@ sudo apt install v4l-utils
 ```
 
 ## Preview the Cameras
+
+![CSI Preview](./images/super-csi-preview.png)
 
 ### Preview a Single Camera
 
