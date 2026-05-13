@@ -1,0 +1,3 @@
+ <node name="node1" pkg="pkg1" type="exe1">
+    <param name="param1" value="False"/>
+ </node>

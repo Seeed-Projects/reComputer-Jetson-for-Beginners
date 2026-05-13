@@ -1,0 +1,5 @@
+<param name="param_name" type="type1" value="val"/>                         # type can be omitted; ROS infers it
+<param name="param_name" textfile="$(find pkg)/path/file"/>                 # read file content as a string
+<param name="param_name" command="$(find pkg)/exe '$(find pkg)/arg.txt'"/>
+Example:
+<param name="param" type="yaml" command="cat '$(find pkg)/*.yaml'"/>        # store command output in the parameter
