@@ -1,0 +1,3 @@
+<node pkg="some" type="some" name="some">
+    <remap from="origin" to="new" />
+</node>

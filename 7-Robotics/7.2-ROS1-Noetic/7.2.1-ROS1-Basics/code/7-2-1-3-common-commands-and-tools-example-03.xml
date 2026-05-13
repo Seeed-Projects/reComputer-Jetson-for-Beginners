@@ -1,0 +1,12 @@
+<launch>
+    <node
+        pkg=""
+        type=""
+        name=""
+        respawn="true"
+        required="true"
+        launch-prefix="xterm -e"
+        output="screen"
+        ns="namespace"
+    />
+</launch>

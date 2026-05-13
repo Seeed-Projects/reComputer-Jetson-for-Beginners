@@ -1,0 +1,2 @@
+add_executable(turtle_vel_command_server src/turtle_vel_command_server.cpp)
+target_link_libraries(turtle_vel_command_server ${catkin_LIBRARIES})

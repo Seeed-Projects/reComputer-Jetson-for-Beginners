@@ -1,19 +1,10 @@
-# ROS1 Noetic
+# ROS 1 Noetic
 
-This module is the target landing area for `xiaobai-lesson` Chapter 8.
+This module contains the ROS 1 Noetic lessons for the GitHub tutorial structure used by `reComputer-Jetson-for-Beginners`.
 
-The source chapter is titled **ROS1-Noetic** and is organized around two main parts: core ROS1 basics and ROS1-based vision applications.
+# Module 7.2 Structure
 
-## Module 7.2 Structure
+- [7.2.1 ROS 1 Noetic Basics](./7.2.1-ROS1-Basics/README.md)
+- [7.2.2 ROS 1 Noetic Vision Applications](./7.2.2-ROS1-Vision-Applications/README.md)
 
-| **Chapter** | **Content** |
-|:-----------:|:------------|
-| Module 7.2.1 | [ROS1 Basics](./7.2.1-ROS1-Basics/README.md) |
-| Module 7.2.2 | [ROS1 Vision Applications](./7.2.2-ROS1-Vision-Applications/README.md) |
-
-## Merge Notes
-
-- Keep the lesson narrative in each subchapter `README.md`.
-- Export images into each subchapter `images/` folder.
-- Put runnable demos, scripts, and example code into each subchapter `code/` folder.
-- The detailed lesson files from `xiaobai-lesson/Chapter8` will be grouped under these two subchapters during content migration.
+Each subchapter keeps related figures in `images/` and runnable example files in `code/`.
