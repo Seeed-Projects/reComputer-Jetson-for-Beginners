@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="package_name" type="executable_file" name="node_name"/>
+    <node pkg="another_package" type="another_executable" name="another_node"></node>...
+</launch>

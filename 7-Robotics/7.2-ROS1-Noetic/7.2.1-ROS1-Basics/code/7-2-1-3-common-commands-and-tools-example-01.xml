@@ -1,0 +1,11 @@
+<launch>                <!-- root tag -->
+<node>                  <!-- node and parameters to start -->
+<include>               <!-- include another launch file -->
+<machine>               <!-- target machine -->
+<env-loader>            <!-- set environment variables -->
+<param>                 <!-- define a parameter on the parameter server -->
+<rosparam>              <!-- load YAML parameters into the parameter server -->
+<arg>                   <!-- define an argument -->
+<remap>                 <!-- set topic remapping -->
+<group>                 <!-- set a group -->
+</launch>               <!-- root tag -->

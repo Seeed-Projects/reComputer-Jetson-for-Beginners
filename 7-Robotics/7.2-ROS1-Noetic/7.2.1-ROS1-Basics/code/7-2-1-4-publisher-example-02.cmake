@@ -1,0 +1,2 @@
+add_executable(turtle_velocity_publisher src/turtle_velocity_publisher.cpp)
+target_link_libraries(turtle_velocity_publisher ${catkin_LIBRARIES})
