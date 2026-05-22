@@ -2,7 +2,7 @@
 
 This chapter introduces offline Large Language Model (LLM) deployment on NVIDIA Jetson devices. Unlike cloud-based AI services that require internet connectivity, offline models run entirely on your local hardware—ensuring **data privacy**, low latency, and independence from network conditions. This is especially valuable for edge AI applications in robotics, industrial automation, and intelligent systems.
 
-<img src="/Users/chenzibo/data/project/reComputer-Jetson-for-Beginners/5-Offline-Large-Model-Development/images/5-banner.gif" alt="5-banner" style="zoom:150%;" />
+<img src="./images/5-banner.gif" alt="5-banner" style="zoom:150%;" />
 
 ## Learning Objectives
 
