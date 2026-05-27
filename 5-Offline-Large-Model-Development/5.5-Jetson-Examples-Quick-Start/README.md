@@ -7,10 +7,11 @@ The **jetson-examples** repository by Seeed Studios provides pre-built, ready-to
 This module shows you how to use the `jetson-examples` CLI tool to quickly deploy LLMs and other AI models on your Jetson device.
 
 <p align="center">
-  <img src="../images/5-5-jetson-examples-01.png" alt="Jetson Examples" width="800">
+  <img src="../images/5-5-jetson-examples-01.png" alt="Jetson Examples" width="1000">
   <br>
   <sub>jetson-examples - One-Command AI Deployment</sub>
 </p>
+
 
 ## What is jetson-examples?
 
@@ -231,9 +232,6 @@ docker exec -it <container-name> bash
 # Monitor container resource usage
 docker stats
 
-# Check GPU usage
-nvidia-smi
-
 # Check disk usage
 docker system df
 ```
@@ -308,15 +306,6 @@ docker run -d \
 
 Models load faster from SSD than SD card or eMMC.
 
-### 4. Monitor and Optimize
-
-```bash
-# Check what's consuming resources
-htop        # CPU and memory
-nvidia-smi  # GPU
-df -h       # Disk
-```
-
 ## Common Issues and Solutions
 
 ### Issue 1: Docker Permission Denied
@@ -333,27 +322,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-### Issue 2: GPU Not Available in Container
-
-**Problem**: `nvidia-smi` fails inside the container
-
-**Solution**:
-```bash
-# Install NVIDIA Container Toolkit
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
-
-curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-sudo apt-get update
-sudo apt-get install -y nvidia-container-toolkit
-
-# Restart Docker
-sudo systemctl restart docker
-```
-
-### Issue 3: Container Won't Start
+### Issue 2: Container Won't Start
 
 **Problem**: Container exits immediately after starting
 
@@ -390,12 +359,6 @@ Features: Live camera feed processing with AI understanding
 Real-time face swap and processing:
 ```bash
 reComputer run deep-live-cam
-```
-
-### ultralytics-yolo
-Object detection with YOLO:
-```bash
-reComputer run ultralytics-yolo
 ```
 
 ## Practice Exercise

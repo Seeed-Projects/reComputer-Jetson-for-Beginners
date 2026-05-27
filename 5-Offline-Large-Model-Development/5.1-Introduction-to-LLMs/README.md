@@ -240,35 +240,8 @@ Between and around these two stages, two important safeguards keep the deep netw
 
 - **Layer Normalization:** After the residual addition, all values are rescaled to a stable range. Think of it as a voltage regulator in an electrical circuit — it prevents the signal from "exploding" after passing through 28 consecutive amplification stages.
 
-The complete structure of one Transformer Block looks like this:
+![Transformer_block](../images/Transformer_block.png)	
 
-```
-┌──────────────────────────────────────────────┐
-│              Transformer Block                │
-│                                               │
-│  Input (vector representation of each word)   │
-│         ↓                                     │
-│  ┌────────────────────────────────────────┐  │
-│  │  Multi-Head Self-Attention              │  │
-│  │  (Each word gathers context from all)  │  │
-│  └────────────────────────────────────────┘  │
-│         ↓                                     │
-│  Add original input (Residual Connection)     │
-│         ↓                                     │
-│  Layer Normalization                          │
-│         ↓                                     │
-│  ┌────────────────────────────────────────┐  │
-│  │  Feed-Forward Network                   │  │
-│  │  (Each word processed independently)   │  │
-│  └────────────────────────────────────────┘  │
-│         ↓                                     │
-│  Add original input (Residual Connection)     │
-│         ↓                                     │
-│  Layer Normalization                          │
-│         ↓                                     │
-│  Output → fed into the next block             │
-└──────────────────────────────────────────────┘
-```
 
 The critical insight is that **each successive block builds a deeper level of abstraction**. Early blocks capture basic syntax — which words are neighbors, which words are subjects or objects. Middle blocks begin assembling semantics — "the ball" is a noun phrase, "was heavy" is a description. By the final blocks, the model has built a rich, multi-layered understanding of the entire input, ready for accurate next-token prediction.
 
@@ -276,11 +249,11 @@ The critical insight is that **each successive block builds a deeper level of ab
 
 The original Transformer architecture described in "Attention Is All You Need" (2017) actually had **two halves**, each with a different job. Understanding this split helps explain why modern LLMs are built the way they are.
 
-**The Encoder — the reader.** The Encoder's job is to read an entire input sentence in one pass and build a deep understanding of every word in context. It uses **bidirectional attention** — meaning each word can look at every other word, both to its left and to its right. Because it sees the full sentence at once, the Encoder excels at **comprehension tasks**: summarizing a paragraph, classifying sentiment, or extracting the main topic of a document. **BERT** is the best-known Encoder-only model, and **Qwen** and **Gemma** also offer Encoder variants.
+**The Encoder — the reader.** The Encoder's job is to read an entire input sentence in one pass and build a deep understanding of every word in context. It uses **bidirectional attention** — meaning each word can look at every other word, both to its left and to its right. Because it sees the full sentence at once, the Encoder excels at **comprehension tasks**: summarizing a paragraph, classifying sentiment, or extracting the main topic of a document. **BERT** is the best-known Encoder-only model, and **Qwen** and **Gemma** also offer Encoder variants.。
 
 **The Decoder — the writer.** The Decoder's job is fundamentally different: it generates text **one token at a time**, from left to right. It uses **masked self-attention**, which means when predicting the third word, it can only see the first and second words — never the future. This enforced blindness is essential: if the model could "cheat" by peeking at the answer, it would never learn to generate on its own. **GPT, Llama, and DeepSeek** all use this Decoder-only architecture.
 
-**Encoder-Decoder — both together.** Some tasks require both understanding and generation: translating a sentence from English to Chinese, for example, requires reading the entire English sentence first (Encoder), then generating the Chinese translation word by word (Decoder). **T5** and **Whisper** (the speech recognition model you encountered earlier in this chapter) use this combined architecture.
+**Encoder-Decoder — both together.** Some tasks require both understanding and generation: translating a sentence from English to Chinese, for example, requires reading the entire English sentence first (Encoder), then generating the Chinese translation word by word (Decoder). The **Whisper** (the speech recognition model you encountered earlier in this chapter) use this combined architecture.
 
 The reason modern LLMs like Llama, GPT, Qwen, and DeepSeek settled on **Decoder-only** is elegantly simple: a Decoder trained on enough data learns to both understand and generate text. When it predicts the next token, it must implicitly understand everything that came before — and that implicit understanding turns out to be sufficient for a remarkably wide range of tasks.
 
@@ -347,6 +320,7 @@ Steps 4 and 5 repeat many times (28 times for Llama 3.2 3B). Each layer builds a
 
 **Step 7 — Output Prediction**
 The final token's representation is projected onto the entire vocabulary, and the token with the highest probability is selected as the model's prediction for the next word:
+
 ```
 {"NVIDIA": 0.92, "AI": 0.03, "a": 0.02, ...}
 → Prediction: "NVIDIA" (highest probability)
@@ -403,7 +377,7 @@ Meta's open-source LLM — currently the most active community and the richest e
 
 ### Qwen (Alibaba Cloud)
 Alibaba's open-source LLM, leading among open models in Chinese language capability.
-- **Qwen3** spans from 0.6B to 32B parameters; the 0.6B variant is ideal for resource-constrained edge scenarios
+- **Qwen3.5** spans from 0.8B to 122B parameters; the 0.8B variant is ideal for resource-constrained edge scenarios
 - Excellent bilingual support in both Chinese and English
 - Natively supports tool use and chain-of-thought reasoning
 
@@ -421,7 +395,7 @@ Microsoft's compact model family, built on the philosophy of "fewer parameters, 
 
 ### Gemma (Google)
 Google's lightweight open-source model family, covering 1B to 27B parameters.
-- **Gemma 3** in its 1B and 4B variants runs very well on Jetson
+- **Gemma 4** in its 2B and 4B variants runs very well on Jetson
 - Strong performance on both language understanding and code generation
 - Available in both pre-trained and instruction-tuned versions
 
@@ -592,7 +566,7 @@ Response time depends on the model size and your hardware. On a Jetson Orin NX 1
 
 - [Attention Is All You Need (Original Transformer Paper)](https://arxiv.org/abs/1706.03762)
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - Visual guide by Jay Alammar
-- [The LLM Course](https://fullstackdeeplearning.com/llm-bootcamp/) - Free comprehensive LLM course
+- https://huggingface.co/blog/Esmail-AGumaan/attention-is-all-you-need 
 - [Hugging Face LLM Course](https://huggingface.co/learn/nlp-course) - NLP and LLM fundamentals
 - [Llama 3.2 Model Card](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/)
 - [Qwen3 Documentation](https://qwenlm.github.io/)

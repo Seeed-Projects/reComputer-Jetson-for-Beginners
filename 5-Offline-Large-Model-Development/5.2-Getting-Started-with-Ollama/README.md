@@ -125,18 +125,20 @@ Ollama runs a local HTTP server on port 11434, making it easy to integrate with 
 ```bash
 # Simple text generation
 curl http://localhost:11434/api/generate -d '{
-  "model": "llama3.2:3b",
+  "model": "qwen3.5:2b",
   "prompt": "What is edge computing?",
   "stream": false
 }'
 ```
+
+<img src="../images/curl_test.png" alt="curl_test" style="zoom: 50%;" />
 
 ### Python Integration
 
 ```python
 import requests
 
-def chat_with_ollama(prompt, model="llama3.2:3b"):
+def chat_with_ollama(prompt, model="qwen3.5:2b"):
     """Send a prompt to Ollama and get a response."""
     response = requests.post(
         "http://localhost:11434/api/generate",
@@ -155,6 +157,11 @@ print(response)
 
 ### OpenAI-Compatible API
 
+```bash
+#install openai sdk
+pip install openai
+```
+
 Ollama provides an OpenAI-compatible endpoint, allowing you to use existing OpenAI client libraries:
 
 ```python
@@ -167,7 +174,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="llama3.2:3b",
+    model="qwen3.5:4b",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Explain quantum computing in simple terms."}
@@ -176,6 +183,20 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ```
+
+
+
+### VLM find object in image
+
+```bash
+pip install ollama
+cd reComputer-Jetson-for-Beginners/5-Offline-Large-Model-Development/code
+python vlm_object_detector.py
+```
+
+wait a minute you can see the result in img folder
+
+![vlm_find_obj](../images/vlm_find_obj.jpg)
 
 ## Setting Up Open WebUI
 
@@ -188,7 +209,7 @@ print(response.choices[0].message.content)
 docker pull ghcr.io/open-webui/open-webui:main
 
 # Create data directory
-mkdir -p /opt/seeed/open-webui/data
+sudo mkdir -p /opt/seeed/open-webui/data
 
 # Run the container
 docker run -d \
@@ -212,11 +233,8 @@ Once the container is running:
 3. Create an admin account on first access
 4. Select your model from the dropdown and start chatting!
 
-<p align="center">
-  <img src="../images/5-2-ollama-02.png" alt="Open WebUI Interface" width="800">
-  <br>
-  <sub>Open WebUI Chat Interface</sub>
-</p>
+![web_ui](../images/web_ui.png)
+
 
 
 ### Features of Open WebUI
@@ -227,28 +245,6 @@ Once the container is running:
 - **RAG Support**: Upload and chat with documents
 - **Image Generation**: Integrate with image generation models
 - **Plugin System**: Extend functionality with community plugins
-
-## Performance Optimization
-
-### Adjust Model Parameters
-
-```bash
-# Run with custom parameters
-ollama run llama3.2:3b \
-  --num-ctx 4096 \        # Context window size (default: 2048)
-  --num-gpu 99 \          # Percentage of layers to offload to GPU
-  --num-thread 4          # Number of CPU threads
-```
-
-### Monitor Resource Usage
-
-```bash
-# Watch GPU and memory usage in real-time
-watch -n 1 nvidia-smi
-
-# Check Ollama's memory usage
-ps aux | grep ollama
-```
 
 ### Tips for Better Performance
 
@@ -265,6 +261,7 @@ ps aux | grep ollama
 **Problem**: `Error: pull model manifest: Get https://registry.ollama.ai/...`
 
 **Solution**:
+
 ```bash
 # Check internet connection
 ping google.com
@@ -289,7 +286,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 # Use a smaller model
-ollama run llama3.2:1b
+ollama run qwen3.5:2b
 ```
 
 ### Issue 3: Slow Response Times
@@ -299,10 +296,10 @@ ollama run llama3.2:1b
 **Solution**:
 ```bash
 # Use a smaller model
-ollama run llama3.2:1b
+ollama run qwen3.5:0.8b
 
 # Reduce context window
-ollama run llama3.2:3b --num-ctx 2048
+ollama run qwen3.5:0.8b --num-ctx 2048
 
 # Ensure GPU is being used (check nvidia-smi during inference)
 ```
@@ -312,6 +309,7 @@ ollama run llama3.2:3b --num-ctx 2048
 **Problem**: `System has not been booted with systemd as init system`
 
 **Solution** (for Docker environments):
+
 ```bash
 # Start Ollama manually
 ollama serve &
@@ -325,7 +323,7 @@ nohup ollama serve > ollama.log 2>&1 &
 Complete these steps to verify your setup:
 
 1. **Install Ollama** and verify the installation
-2. **Run a model**: `ollama run llama3.2:3b`
+2. **Run a model**: `ollama run qwen3.5:2b`
 3. **Have a conversation**: Ask it about Jetson platforms
 4. **Try a different model**: Switch to `qwen3:4b`
 5. **Use the API**: Send a request via curl
@@ -337,7 +335,6 @@ Complete these steps to verify your setup:
 - [Ollama GitHub Repository](https://github.com/ollama/ollama)
 - [Ollama Model Library](https://ollama.com/library)
 - [Open WebUI Documentation](https://docs.openwebui.com/)
-- [Jetson Examples - Ollama](https://github.com/Seeed-Projects/jetson-examples)
 
 ---
 

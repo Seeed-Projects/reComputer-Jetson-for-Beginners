@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**llama.cpp** is a lightweight, high-performance C/C++ implementation for running LLMs. It enables efficient LLM inference on consumer-grade hardware including ARM64 devices like NVIDIA Jetson. Originally created by Georgi Gerganov, it has become the de facto standard for local LLM inference due to its efficiency and wide format support.
+**llama.cpp** is a lightweight, high-performance C/C++ implementation for running LLMs. It enables efficient LLM inference on consumer-grade hardware including ARM64 devices like NVIDIA Jetson. It has become the default standard for local LLM inference due to its efficiency and wide format support.
 
 While Ollama provides a user-friendly wrapper around llama.cpp, understanding llama.cpp directly gives you:
 - Maximum control over inference parameters
@@ -11,10 +11,11 @@ While Ollama provides a user-friendly wrapper around llama.cpp, understanding ll
 - Support for custom quantization formats
 
 <p align="center">
-  <img src="../images/5-3-llama-cpp-01.png" alt="llama.cpp Architecture" width="800">
+  <img src="../images/5-3-llama-cpp-01.png" alt="llama.cpp Architecture" width="1000">
   <br>
   <sub>llama.cpp - Efficient LLM Inference in C/C++</sub>
 </p>
+
 
 
 ## Why llama.cpp?
@@ -41,7 +42,19 @@ sudo apt-get update
 # Install build essentials
 sudo apt-get install -y build-essential git cmake
 
-# Install CUDA toolkit (usually pre-installed with JetPack)
+# Add CUDA environment variables to .bashrc
+echo '
+# CUDA Environment
+export CUDA_HOME=/usr/local/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+export CUDACXX=$CUDA_HOME/bin/nvcc
+' >> ~/.bashrc
+
+# Reload shell configuration
+source ~/.bashrc
+
+# Verify CUDA installation
 nvcc --version
 ```
 
@@ -54,29 +67,27 @@ git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp
 
 # Build with CUDA support for Jetson
-make -j$(nproc) GGML_CUDA=1
+#make -j$(nproc) GGML_CUDA=1
 
 # Alternative: Use CMake
-# mkdir build && cd build
-# cmake .. -DGGML_CUDA=ON
-# cmake --build . --config Release -j$(nproc)
+mkdir build && cd build
+cmake .. -DGGML_CUDA=ON
+cmake --build . --config Release -j$(nproc)
 ```
+
+![builded_llamacpp](../images/builded_llamacpp.png)
 
 ### Verify Installation
 
 ```bash
 # Check if binaries were built
-ls -la llama-cli
-ls -la llama-server
+ls ~/llama.cpp/build/bin/llama-cli
 
 # Test version
-./llama-cli --version
+~/llama.cpp/build/bin/llama-cli --version
 ```
 
-Expected output:
-```
-version: 0.0.0 (at some commit)
-```
+![llama_v](../images/llama_v.png)
 
 ## Getting Your First Model
 
@@ -133,7 +144,7 @@ wget https://huggingface.co/bartowski/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b
 cd ~/llama.cpp
 
 # Basic inference
-./llama-cli \
+./build/bin/llama-cli \
   -m models/Llama-3.2-3B-Instruct-Q4_K_M.gguf \
   -p "The future of edge AI is"
 ```
@@ -142,7 +153,7 @@ cd ~/llama.cpp
 
 ```bash
 # Start an interactive chat session
-./llama-cli \
+./build/bin/llama-cli \
   -m models/Llama-3.2-3B-Instruct-Q4_K_M.gguf \
   -cnv \
   --chat-template llama3
@@ -173,7 +184,7 @@ Offloading model layers to GPU dramatically improves performance:
 ```bash
 # Determine optimal GPU layers
 # Start with -ngl 999 (offload all layers)
-./llama-cli \
+./build/bin/llama-cli \
   -m models/Llama-3.2-3B-Instruct-Q4_K_M.gguf \
   -p "Explain quantum computing" \
   -ngl 35 \
@@ -186,22 +197,17 @@ Offloading model layers to GPU dramatically improves performance:
 
 ```bash
 # Run with performance stats
-./llama-cli \
+./build/bin/llama-cli \
   -m models/Llama-3.2-3B-Instruct-Q4_K_M.gguf \
   -p "What is the capital of France?" \
   -n 50 \
   -ngl 35 \
-  --per-test
+  --perf
 ```
 
 You'll see:
-```
-llama_print_timings:        load time =   234.23 ms
-llama_print_timings:      sample time =    15.67 ms /   50 tokens
-llama_print_timings: prompt eval time =   45.23 ms /     7 tokens
-llama_print_timings:        eval time =   890.12 ms /    50 runs   (17.80 ms per token)
-llama_print_timings:       total time =  1185.25 ms
-```
+
+![llamacpp_test](../images/llamacpp_test.png)
 
 Key metric: **eval time per token** should be under 100ms for good real-time performance.
 

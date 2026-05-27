@@ -1,102 +1,104 @@
-# Offline Large Model Development
+# Module 5: Offline Large Model Development
 
-This chapter introduces offline Large Language Model (LLM) deployment on NVIDIA Jetson devices. Unlike cloud-based AI services that require internet connectivity, offline models run entirely on your local hardware—ensuring **data privacy**, low latency, and independence from network conditions. This is especially valuable for edge AI applications in robotics, industrial automation, and intelligent systems.
+
+
+This chapter walks you through running Large Language Models (LLMs) entirely on your Jetson device—no cloud, no API keys, no data leaving your hardware. You'll learn the core ideas behind LLMs, then get hands-on with three popular inference frameworks: **Ollama**, **llama.cpp**, and **vLLM**. By the end, you'll have built a fully offline voice assistant that listens, thinks, and speaks back.
 
 <img src="./images/5-banner.gif" alt="5-banner" style="zoom:150%;" />
 
-## Learning Objectives
+## What You Will Learn
 
-By the end of this chapter, you will be able to:
-- Understand the fundamentals of Large Language Models (LLMs)
-- Deploy and run LLMs using multiple inference frameworks: **Ollama**, **llama.cpp**, and **vLLM**
-- Quickly deploy pre-configured examples using the **jetson-examples** repository
-- Build a complete voice interaction pipeline combining **ASR (Automatic Speech Recognition) + LLM + TTS (Text-to-Speech)**
+- **LLM fundamentals** — what models are, how quantization works, and what "tokens" really mean
+- **Ollama** — one-command model deployment for quick experimentation
+- **llama.cpp** — lightweight C/C++ inference with fine-grained control over quantization
+- **vLLM** — production-grade serving with continuous batching and OpenAI-compatible API
+- **jetson-examples** — deploy pre-built AI demos with a single command
+- **Voice pipeline** — combine ASR + LLM + TTS into a complete offline voice assistant
 
-## Chapter Overview
+## Course Outline
 
-| **Module** | **Content** | **Difficulty** |
-|:----------:|:------------|:--------------:|
-| Module 5.1 | [Introduction to Large Language Models](./5.1-Introduction-to-LLMs/README.md) | Beginner |
-| Module 5.2 | [Getting Started with Ollama](./5.2-Getting-Started-with-Ollama/README.md) | Beginner |
-| Module 5.3 | [Running LLMs with llama.cpp](./5.3-Running-LLMs-with-llama.cpp/README.md) | Intermediate |
-| Module 5.4 | [High-Performance Inference with vLLM](./5.4-High-Performance-Inference-with-vLLM/README.md) | Advanced |
-| Module 5.5 | [Jetson Examples Quick Start](./5.5-Jetson-Examples-Quick-Start/README.md) | Beginner |
-| Module 5.6 | [Building ASR + LLM + TTS Pipeline](./5.6-ASR-LLM-TTS-Pipeline/README.md) | Intermediate |
+| Module | Topic | Difficulty |
+|:------:|:------|:----------:|
+| 5.1 | [Introduction to Large Language Models](./5.1-Introduction-to-LLMs/README.md) | Beginner |
+| 5.2 | [Getting Started with Ollama](./5.2-Getting-Started-with-Ollama/README.md) | Beginner |
+| 5.3 | [Running LLMs with llama.cpp](./5.3-Running-LLMs-with-llama.cpp/README.md) | Intermediate |
+| 5.4 | [High-Performance Inference with vLLM](./5.4-High-Performance-Inference-with-vLLM/README.md) | Advanced |
+| 5.5 | [Jetson Examples Quick Start](./5.5-Jetson-Examples-Quick-Start/README.md) | Beginner |
+| 5.6 | [Building ASR + LLM + TTS Pipeline](./5.6-ASR-LLM-TTS-Pipeline/README.md) | Intermediate |
 
 ## Suggested Learning Paths
 
-### Path 1: Quick Start (Beginner-Friendly)
-Perfect if you want to get LLMs running on Jetson with minimal setup:
-1. **5.1** → Understand LLM basics
-2. **5.2** → Deploy your first model with Ollama
-3. **5.5** → Explore pre-built examples from jetson-examples
+Pick a path based on your goal:
 
-### Path 2: Framework Deep Dive (Intermediate)
-For developers who want to understand different inference engines:
-1. **5.1** → LLM fundamentals
-2. **5.2** → Ollama for easy deployment
-3. **5.3** → llama.cpp for lightweight inference
-4. **5.4** → vLLM for high-performance serving
+### Quick Start — Get a model running today
 
-### Path 3: Building Voice Applications (Advanced)
-For creating complete voice-enabled AI systems:
-1. **5.1** → LLM basics
-2. **5.2** or **5.5** → Get LLMs running
-3. **5.6** → Build the complete voice pipeline
+1. [5.1 — Introduction to LLMs](./5.1-Introduction-to-LLMs/README.md) — build the mental model
+2. [5.2 — Getting Started with Ollama](./5.2-Getting-Started-with-Ollama/README.md) — first chat in two commands
+3. [5.5 — Jetson Examples Quick Start](./5.5-Jetson-Examples-Quick-Start/README.md) — explore pre-built demos
 
-## Hardware Requirements
+### Framework Deep Dive — Compare inference engines
+
+1. [5.1 — Introduction to LLMs](./5.1-Introduction-to-LLMs/README.md)
+2. [5.2 — Ollama](./5.2-Getting-Started-with-Ollama/README.md) — easy setup
+3. [5.3 — llama.cpp](./5.3-Running-LLMs-with-llama.cpp/README.md) — lightweight & customizable
+4. [5.4 — vLLM](./5.4-High-Performance-Inference-with-vLLM/README.md) — high-throughput serving
+
+### Voice Assistant — Build something that talks back
+
+1. [5.1 — Introduction to LLMs](./5.1-Introduction-to-LLMs/README.md)
+2. [5.2 — Ollama](./5.2-Getting-Started-with-Ollama/README.md) or [5.5 — jetson-examples](./5.5-Jetson-Examples-Quick-Start/README.md) — get a model running
+3. [5.6 — ASR + LLM + TTS Pipeline](./5.6-ASR-LLM-TTS-Pipeline/README.md) — assemble the full voice loop
+
+## Hardware & Prerequisites
+
+### Minimum Hardware
 
 | Component | Minimum | Recommended |
 |:----------|:--------|:------------|
-| **Device** | Jetson Orin Nano 8GB | Jetson Orin NX 16GB Super |
-| **Storage** | 64GB free space | 128GB+ SSD recommended |
-| **Swap** | 8GB | 16GB+ for larger models |
-| **Network** | Required for initial setup | Stable connection for model downloads |
+| Device | Jetson Orin Nano 8GB | Jetson Orin NX 16GB Super |
+| Storage | 64 GB free | 128 GB+ SSD |
+| Swap | 8 GB | 16 GB+ for larger models |
 
-## Prerequisites
+### Before You Start
 
-Before starting this chapter, ensure you have:
-1. Completed [Chapter 2: reComputer Jetson Platform Overview](../2-reComputer-Jetson-Platform-Overview/README.md)
-2. Completed [Chapter 3: Basic Tools and Getting Started](../3-Basic-Tools-and-Getting-Started/README.MD)
-4. Docker installed and configured (for containerized examples)
-5. Basic familiarity with Linux terminal commands
+1. [Chapter 2 — reComputer Jetson Platform Overview](../2-reComputer-Jetson-Platform-Overview/README.md)
+2. [Chapter 3 — Basic Tools and Getting Started](../3-Basic-Tools-and-Getting-Started/README.MD)
+3. Docker installed and configured (for containerized examples)
+4. Basic familiarity with the Linux terminal
 
-## Model Size Reference
+## Choosing a Model Size
 
-Understanding model sizes helps you choose appropriate models for your hardware:
+Not sure which model fits your device? Start here:
 
-| Model Size | RAM Required | Jetson Compatibility | Speed |
-|:-----------|:-------------|:-------------------|:------|
-| 1B - 3B | 4-6GB | Orin Nano 4GB+ | Fast |
-| 7B - 8B | 8-12GB | Orin Nano 8GB+ | Moderate |
-| 13B - 14B | 16-24GB | Orin NX 16GB+ | Slower |
-| 35B+ | 48GB+ | Not recommended for single-device | Very slow |
+| Model Size | RAM Needed | Works On | Typical Speed |
+|:-----------|:-----------|:---------|:--------------|
+| 1–3B | 4–6 GB | Orin Nano 4 GB+ | Fast, interactive |
+| 7–8B | 8–12 GB | Orin Nano 8 GB+ | Moderate, practical |
+| 13–14B | 16–24 GB | Orin NX 16 GB+ | Slower, higher quality |
+| 35B+ | 48 GB+ | Not recommended single-device | Very slow |
 
-## Key Terminology
+> **Tip:** Start small (3B) to learn the workflow, then scale up once you're comfortable.
 
-| Term | Definition |
-|:-----|:-----------|
-| **LLM** | Large Language Model - AI models trained on vast text data to understand and generate human-like text |
-| **Inference** | The process of running a trained model to generate outputs |
-| **Quantization** | Reducing model precision (e.g., from 16-bit to 4-bit) to save memory and speed up inference |
-| **Context Window** | The maximum amount of text (tokens) a model can process at once |
-| **Token** | A unit of text (word, subword, or character) that models process |
-| **ASR** | Automatic Speech Recognition - converting speech to text |
-| **TTS** | Text-to-Speech - converting text to spoken audio |
-| **GGUF** | A binary format for storing quantized models efficiently |
+## Key Terms
+
+| Term | What It Means |
+|:-----|:--------------|
+| **LLM** | Large Language Model — a neural network trained on massive text data to understand and generate language |
+| **Inference** | Running a trained model to produce outputs from new inputs |
+| **Quantization** | Compressing model weights (e.g. 16-bit → 4-bit) to fit in less memory |
+| **Context Window** | The maximum number of tokens a model can consider at once |
+| **Token** | A chunk of text (word, subword, or character) that the model processes |
+| **GGUF** | A file format for storing quantized models, optimized for llama.cpp |
+| **ASR** | Automatic Speech Recognition — speech to text |
+| **TTS** | Text-to-Speech — text to spoken audio |
 
 ## References
 
-- [jetson-examples Repository](https://github.com/Seeed-Projects/jetson-examples) - Ready-to-run AI examples for Jetson
+- [jetson-examples](https://github.com/Seeed-Projects/jetson-examples) — pre-built AI demos for Jetson
+- [Ollama](https://ollama.com/) — local LLM runner
+- [llama.cpp](https://github.com/ggerganov/llama.cpp) — C/C++ inference engine
+- [vLLM](https://docs.vllm.ai/) — high-throughput LLM serving
 
-- [Ollama Official Site](https://ollama.com/) - Get up and running with LLMs locally
+---
 
-- [llama.cpp GitHub](https://github.com/ggerganov/llama.cpp) - LLM inference in C/C++
-
-- [vLLM Documentation](https://docs.vllm.ai/) - High-throughput LLM serving
-
-  
-
-## Next Steps
-
-Start with [Module 5.1: Introduction to Large Language Models](./5.1-Introduction-to-LLMs/README.md) to build your foundation, or jump directly to [Module 5.2: Getting Started with Ollama](./5.2-Getting-Started-with-Ollama/README.md) if you're eager to run your first model!
+**Ready to start?** Jump into [Module 5.1: Introduction to Large Language Models](./5.1-Introduction-to-LLMs/README.md) to understand the fundamentals, or go straight to [Module 5.2: Getting Started with Ollama](./5.2-Getting-Started-with-Ollama/README.md) if you want to run your first model right away.
