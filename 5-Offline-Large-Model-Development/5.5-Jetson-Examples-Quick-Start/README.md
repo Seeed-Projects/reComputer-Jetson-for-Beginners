@@ -72,6 +72,10 @@ Here are the LLM-related examples available in the jetson-examples repository:
 | **nemotron-3-nano** | Text (LLM) | 24.5GB model | `reComputer run nemotron-3-nano` |
 | **text-generation-webui** | Text (LLM) | 3.9GB model | `reComputer run text-generation-webui` |
 
+**Note : Models with more than 9B parameters require the Seeed Jetson AGX Orin Kit (AGX Orin 32G/64G) device to be able to deploy ！**
+
+
+
 ### Vision-Language Models (VLM)
 
 | Example | Type | Model Size | Command |

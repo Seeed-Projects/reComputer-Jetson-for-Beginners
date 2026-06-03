@@ -1,0 +1,208 @@
+
+jetson-gpio (2.1.12-0ubuntu1) noble; urgency=medium
+
+  * Add Pinmux Register Address Lookup Tool
+  * Add a warning when the pinmux value is not correct for GPIO Input/Output
+
+ -- Linh Hoang <lhoang@nvidia.com> Tue, 23 Sep 2025 10:17:00 -0700
+
+jetson-gpio (2.1.11-0ubuntu1) noble; urgency=medium
+
+  * Support Jetson Thor Reference SKU80
+  * Support Jetson Thor Reference SKU89
+
+ -- Hiteshkumar Patel <hiteshkumarg@nvidia.com> Sun, 11 May 2025 9:51:00 -0700
+
+jetson-gpio (2.1.10-0ubuntu1) noble; urgency=medium
+
+  * Support Jetson Thor Reference
+
+ -- Hiteshkumar Patel <hiteshkumarg@nvidia.com> Thu, 20 Mar 2025 13:41:00 -0700
+
+jetson-gpio (2.1.9ubuntu1) jammy; urgency=medium
+
+  * Support Jetson Orin Nano and Jetson Orin NX Super
+
+ -- Linh Hoang <lhoang@nvidia.com> Friday, 7 Feb 2025 13:41:00 -0700
+
+
+jetson-gpio (2.1.8ubuntu1) focal; urgency=medium
+
+  * Support Jetson Orin Nano Super
+
+ -- Linh Hoang <lhoang@nvidia.com> Mon, 27 Jan 2025 13:41:00 -0700
+
+jetson-gpio (2.1.7ubuntu1) focal; urgency=medium
+
+  * Add PWM8 to Jetson Orin
+
+ -- Linh Hoang <lhoang@nvidia.com> Mon, 26 Feb 2024 13:41:00 -0700
+
+jetson-gpio (2.1.6ubuntu1) focal; urgency=medium
+
+  * Clean up blocking_wait_for_edge on return
+  * Change the timeout value in the test function as the timeout value is
+    supposed to be in seconds instead of milliseconds
+  * Update the README to correct the timeout unit
+
+ -- Linh Hoang <lhoang@nvidia.com> Tue, 9 Jan 2024 13:41:00 -0700
+
+jetson-gpio (2.1.5ubuntu1) focal; urgency=medium
+
+  * Update README and remove some unnessary warnings
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 15 Nov 2023 16:41:00 -0700
+
+jetson-gpio (2.1.4ubuntu1) focal; urgency=medium
+
+  * Update PWM directory list for new kernel version
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 12 Oct 2023 16:41:00 -0700
+
+jetson-gpio (2.1.3ubuntu1) focal; urgency=medium
+
+  * Add support for more variants of Jetson Orin
+
+ -- Linh Hoang <lhoang@nvidia.com>  Fri, 3 Aug 2023 16:41:00 -0700
+
+jetson-gpio (2.1.2ubuntu1) focal; urgency=medium
+
+  * Add some fixes for character device based implementation of Jetson.GPIO
+  * Update PWM pins list for Jetson Orin NX and Jetson Orin Nano
+  * Add tests for callbacks and epoll object dictionary for parallel events
+  * Update README and multiple comments in the code
+
+ -- Linh Hoang <lhoang@nvidia.com>  Fri, 31 Jul 2023 16:41:00 -0700
+
+jetson-gpio (2.1.1ubuntu1) focal; urgency=medium
+
+  * Add support for Jetson Orin Nano and Jetson Orin NX developer kit
+  * Fix Jetson Nano and Jetson TX1 implementation
+
+ -- Linh Hoang <lhoang@nvidia.com>  Fri, 08 Mar 2023 16:41:00 -0700
+
+jetson-gpio (2.1.0ubuntu1) focal; urgency=medium
+
+  * Switch to character device based implementation of Jetson.GPIO
+
+ -- Linh Hoang <lhoang@nvidia.com>  Fri, 10 Feb 2023 16:41:00 -0700
+
+jetson-gpio (2.0.210ubuntu1) focal; urgency=medium
+
+  * Add support for Jetson Orin NX
+  * Add Docker examples (from from pjueon/docekr-support)
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 06 Dev 2022 16:41:00 -0700
+
+jetson-gpio (2.0.200ubuntu1) focal; urgency=medium
+
+  * Add support for Jetson Orin SKU4
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 28 Jun 2022 12:39:00 -0700
+
+jetson-gpio (2.0.190ubuntu1) focal; urgency=medium
+
+  * Fix some typos in documentations
+  * Fix function returning ids on JP 5.0
+  * Fix pwm bug when the previous duty cycle is higher than the period
+  * Add NX 16GB support and update RAM info
+  * Fix some pins on Jetson AGX Orin
+  * Clean up before setup when setup is called twice
+  * Update tests for pwm for jetson nx
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 16 Jun 2022 08:53:12 -0700
+
+jetson-gpio (2.0.180ubuntu1) focal; urgency=medium
+
+  * Support Jetson AGX Orin board.
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 27 Aug 2021 21:53:12 -0700
+
+jetson-gpio (2.0.170ubuntu1) focal; urgency=medium
+
+  * Support Jetson AGX Xavier Industrial board.
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 19 Feb 2021 13:57:12 -0600
+
+jetson-gpio (2.0.16) bionic; urgency=medium
+
+  * Support Jetson TX2 NX board.
+
+ -- Linh Hoang <lhoang@nvidia.com>  Thu, 11 Feb 2021 17:57:12 -0600
+
+jetson-gpio (2.0.15) bionic; urgency=medium
+
+  * Fix typo in GPIO table for Clara AGX Xavier
+
+ -- Stephen Warren <swarren@nvidia.com>  Thu, 17 Dec 2020 13:21:33 -0600
+
+jetson-gpio (2.0.14) bionic; urgency=medium
+
+  * Improve GPIO/PWM perf by caching sysfs file handles.
+
+ -- Stephen Warren <swarren@nvidia.com>  Mon, 30 Nov 2020 16:11:27 -0600
+
+jetson-gpio (2.0.13) bionic; urgency=medium
+
+  * Warn when unimplemented pull_up_down argument is passed to setup().
+
+ -- Stephen Warren <swarren@nvidia.com>  Mon, 23 Nov 2020 12:05:05 -0600
+
+jetson-gpio (2.0.12) bionic; urgency=medium
+
+  * Support upstream kernel sysfs layout and GPIO naming/numbering.
+
+ -- Stephen Warren <swarren@nvidia.com>  Thu, 22 Oct 2020 17:15:35 -0600
+
+jetson-gpio (2.0.11) bionic; urgency=medium
+
+  * Support Jetson Nano 2GB board.
+  * Enhance API coverage in test_all_apis.py
+
+ -- Stephen Warren <swarren@nvidia.com>  Thu, 8 Oct 2020 14:15:59 -0600
+
+jetson-gpio (2.0.10) bionic; urgency=medium
+
+  * Support Clara AGX Xavier board.
+  * Fix some comments in simple_out sample.
+
+ -- Stephen Warren <swarren@nvidia.com>  Thu, 10 Sep 2020 11:54:50 -0600
+
+jetson-gpio (2.0.9) bionic; urgency=medium
+
+  * Don't install run_sample.sh.
+  * Provide links to L4T documentation.
+  * Fix locking following skipped event callback.
+
+ -- Stephen Warren <swarren@nvidia.com>  Tue, 11 Aug 2020 11:06:38 -0600
+
+jetson-gpio (2.0.8) bionic; urgency=medium
+
+  * Fix Bad PyPi upload.
+
+ -- Stephen Warren <swarren@nvidia.com>  Mon, 16 Mar 2020 17:29:00 -0600
+
+jetson-gpio (2.0.7) bionic; urgency=medium
+
+  * Fix PWM initial duty cycle issues.
+
+ -- Stephen Warren <swarren@nvidia.com>  Mon, 16 Mar 2020 17:25:00 -0600
+
+jetson-gpio (2.0.6) bionic; urgency=medium
+
+  * Rebuild to clean up source package.
+
+ -- Stephen Warren <swarren@nvidia.com>  Wed, 19 Feb 2020 15:40:48 -0600
+
+jetson-gpio (2.0.5) bionic; urgency=medium
+
+  * Enhance PWM sample to vary duty cycle.
+  * Add support for Jetson NX.
+
+ -- Stephen Warren <swarren@nvidia.com>  Wed, 19 Feb 2020 15:30:48 -0600
+
+jetson-gpio (2.0.4) bionic; urgency=medium
+
+  * Initial Debian packaging.
+
+ -- Stephen Warren <swarren@nvidia.com>  Thu, 10 Oct 2019 11:01:19 -0600
