@@ -1,0 +1,3 @@
+include LICENCE.txt
+include README.md
+include lib/python/Jetson/GPIO/99-gpio.rules
