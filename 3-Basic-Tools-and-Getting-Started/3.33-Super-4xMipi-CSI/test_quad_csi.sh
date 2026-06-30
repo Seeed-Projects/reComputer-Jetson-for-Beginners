@@ -1,192 +1,3 @@
-# 3.33 Super 4xMipi CSI
-
-> [!IMPORTANT]
-> This page is intended for the Seeed `reComputer Super` carrier-board family, such as [`reComputer Super J4011`](https://www.seeedstudio.com/reComputer-Super-J401-Carrier-Board-p-6642.html). The CSI connector count, camera orientation, and supported sensor overlays are specific to the Super family.
-
-## Introduction
-
-The reComputer Super features 4x MIPI CSI (Camera Serial Interface) ports, allowing you to connect up to 4 CSI cameras simultaneously. This makes it ideal for multi-camera applications such as 360-degree vision, stereo vision, and multi-angle object tracking.
-
-![reComputer Super](./images/super-product.png)
-
-## Hardware Requirements
-
-- reComputer Super with JetPack 6.2 installed
-- Compatible MIPI CSI cameras (up to 4)
-- CSI ribbon cables
-
-## Hardware Connection
-
-### Step 1: Power off the Device
-
-Before connecting or disconnecting CSI cameras, ensure the reComputer Super is powered off to avoid damage.
-
-### Step 2: Open the Back Cover
-
-Open the back cover of the reComputer Super to access the CSI ports.
-
-![CSI Connection](./images/super-csi-connection.jpg)
-
-### Step 3: Connect the Cameras
-
-Connect the MIPI CSI cameras to the appropriate CSI ports on the reComputer Super board. Ensure the connections are firm and properly seated.
-
-### Step 4: Secure the Cameras
-
-Secure the cameras and ensure all connections are properly tightened.
-
-## Enable the CSI Cameras
-
-### Step 1: Check Camera Recognition
-
-After powering on the device, open a terminal and check if the cameras are recognized:
-
-```bash
-ls /dev/video*
-```
-
-### Step 2: Install Video Utilities (if needed)
-
-If not already present, install video utilities:
-
-```bash
-sudo apt install v4l-utils
-```
-
-## Preview the Cameras
-
-![CSI Preview](./images/super-csi-preview.png)
-
-### Preview a Single Camera
-
-Use `nvgstcapture-1.0` to preview the CSI stream from a specific camera:
-
-```bash
-nvgstcapture-1.0 --sensor-id=0
-```
-
-### Preview Multiple Cameras
-
-To preview a different camera, change the `--sensor-id` parameter:
-
-```bash
-nvgstcapture-1.0 --sensor-id=1  # For the second camera
-nvgstcapture-1.0 --sensor-id=2  # For the third camera
-nvgstcapture-1.0 --sensor-id=3  # For the fourth camera
-```
-
-## Common Preview Options
-
-### Specify Resolution
-
-You can specify a custom preview resolution:
-
-```bash
-nvgstcapture-1.0 --sensor-id=0 --cus-prev-res=1280x720
-```
-
-### Capture Images
-
-To capture an image, press the `c` key while in the preview window.
-
-### Record Video
-
-To start recording video, press the `r` key while in the preview window.
-
-## Quad CSI Cameras Setup
-
-This section describes how to connect, configure, and test four CSI cameras simultaneously on the reComputer Super.
-
-### Step 1: Quad CSI Connection
-
-Connect four MIPI CSI cameras to the four CSI ports on the reComputer Super board. Ensure each camera is firmly seated and the ribbon cables are properly aligned.
-
-![Quad CSI Connection](./images/quad-csi-connection.jpg)
-
-### Step 2: Configure Device Tree for Quad CSI
-
-After connecting the cameras, you need to configure the device tree to enable all four CSI ports.
-
-1. Open a terminal and run:
-
-```bash
-sudo /opt/nvidia/jetson-io/jetson-io.py
-```
-
-2. Select **"Configure Jetson Nano CSI Connector"**.
-
-3. Choose **"Configure for compatible hardware"**.
-
-4. In the list, select the camera mode that matches your cameras (e.g., IMX219).
-
-5. Save and reboot the device.
-
-### Step 3: Verify Camera Recognition
-
-After rebooting, verify that all four cameras are recognized:
-
-```bash
-ls /dev/video*
-```
-
-You should see 8 video devices (4 capture devices + 4 metadata devices):
-
-```
-/dev/video0  /dev/video2  /dev/video4  /dev/video6
-/dev/video1  /dev/video3  /dev/video5  /dev/video7
-```
-
-![Quad CSI Check](./images/quad-csi-check.jpg)
-
-### Step 4: Quad CSI Test Script
-
-We provide a comprehensive test script `test_quad_csi.sh` that supports multiple testing modes. The script automatically detects the camera backend (nvargus or v4l2) and provides the following commands:
-
-| Command | Description |
-|---------|-------------|
-| `./test_quad_csi.sh check` | Test all 4 cameras one by one (default) |
-| `./test_quad_csi.sh preview` | 2x2 grid real-time preview of all 4 cameras |
-| `./test_quad_csi.sh single <0-3>` | Preview a single camera |
-| `./test_quad_csi.sh capture` | Capture one JPEG from each camera |
-| `./test_quad_csi.sh info` | Show device and environment information |
-
-**Environment Variables:**
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `DISPLAY` | X11 display | Auto-detect :1 / :0 |
-| `NUM_BUFFERS` | Frames to capture in check mode | 30 |
-| `PREVIEW_MODE` | Preview mode: `cpu` or `nv` | `cpu` |
-| `CAMERA_MODE` | Camera backend: `auto`, `nvargus`, or `v4l2` | `auto` |
-
-**Usage Examples:**
-
-```bash
-# Test all 4 cameras
-./test_quad_csi.sh check
-
-# 2x2 grid preview (software compositor)
-./test_quad_csi.sh preview
-
-# Preview a single camera (sensor-id 2)
-./test_quad_csi.sh single 2
-
-# Capture one JPEG from each camera
-./test_quad_csi.sh capture
-
-# Use V4L2 backend explicitly
-CAMERA_MODE=v4l2 ./test_quad_csi.sh check
-
-# Use hardware nvcompositor for preview (nvargus only)
-PREVIEW_MODE=nv ./test_quad_csi.sh preview
-
-# Capture fewer frames for quick check
-NUM_BUFFERS=10 ./test_quad_csi.sh check
-```
-
-**Script Code:**
-
-```bash
 #!/usr/bin/env bash
 # 四路 IMX219 CSI 摄像头测试脚本 (Jetson)
 # 支持 nvarguscamerasrc 和 v4l2src 两种模式
@@ -240,6 +51,7 @@ require_gstreamer() {
 }
 
 check_hardware_access() {
+    # 检查是否在容器/沙箱中运行
     if [[ -f "/.dockerenv" ]] || grep -q "docker\|lxc\|container" /proc/1/cgroup 2>/dev/null; then
         log_fail "检测到容器/沙箱环境"
         log_fail "摄像头需要直接访问硬件，请在宿主机上直接运行此脚本"
@@ -290,6 +102,8 @@ detect_camera_backend() {
 
 # 检查 nvargus 所需的设备节点 (兼容 Jetson Nano/Xavier/Orin)
 check_nvargus_devices() {
+    # Orin: /dev/nvhost-ctrl-vi0, /dev/nvmap
+    # Xavier/Nano: /dev/nvhost-ctrl, /dev/nvmap
     if [[ -e "/dev/nvmap" ]]; then
         if [[ -e "/dev/nvhost-ctrl" ]] || [[ -e "/dev/nvhost-ctrl-vi0" ]]; then
             return 0
@@ -317,11 +131,13 @@ detect_v4l2_devices() {
     local -a i2c_addrs=()
     local -a vdevs=()
 
+    # 查找 imx219 相关的 video 设备
     for vdev in /dev/video[0-9]*; do
         [[ -e "$vdev" ]] || continue
         local product
         product=$(udevadm info --query=all --name="$vdev" 2>/dev/null | grep "ID_V4L_PRODUCT" | cut -d= -f2 || true)
         if [[ "$product" == *"imx219"* ]] && [[ "$product" == *"vi-output"* ]]; then
+            # 提取 I2C 地址部分 (如 "imx219 9-0010" -> "9-0010")
             local i2c_addr
             i2c_addr=$(echo "$product" | grep -oP '\d+-\d+' || echo "unknown")
             i2c_addrs+=("$i2c_addr")
@@ -339,11 +155,13 @@ detect_v4l2_devices() {
         V4L2_DEVICES[2]="/dev/video4"
         V4L2_DEVICES[3]="/dev/video6"
     else
+        # 按 I2C 地址排序 (提取总线号进行排序)
         local -a sorted_indices=()
         for i in $(seq 0 $((found - 1))); do
             sorted_indices+=("$i")
         done
 
+        # 冒泡排序按 I2C 地址
         for ((i = 0; i < found - 1; i++)); do
             for ((j = 0; j < found - i - 1; j++)); do
                 local idx1=${sorted_indices[$j]}
@@ -358,6 +176,7 @@ detect_v4l2_devices() {
             done
         done
 
+        # 按排序后的顺序填充 V4L2_DEVICES
         for ((i = 0; i < found && i < 4; i++)); do
             local idx=${sorted_indices[$i]}
             V4L2_DEVICES[$i]="${vdevs[$idx]}"
@@ -374,12 +193,14 @@ get_v4l2_device() {
         detect_v4l2_devices
     fi
 
+    # 尝试按索引获取
     local devices=("${V4L2_DEVICES[@]}")
     if [[ $id -lt ${#devices[@]} ]]; then
         echo "${devices[$id]}"
         return 0
     fi
 
+    # 回退到默认映射
     local default_devices=("/dev/video0" "/dev/video2" "/dev/video4" "/dev/video6")
     if [[ $id -lt ${#default_devices[@]} ]] && [[ -e "${default_devices[$id]}" ]]; then
         echo "${default_devices[$id]}"
@@ -460,6 +281,7 @@ cmd_check() {
 }
 
 # 2x2 四宫格实时预览
+# compositor 需要系统内存；其后必须用 videoconvert，不能用 nvvidconv（会 NvVicCompose Failed）
 cmd_preview() {
     require_display
     local mode="${PREVIEW_MODE:-cpu}"
@@ -709,6 +531,8 @@ check_camera_devices() {
         return 1
     fi
 
+    # 统计实际的摄像头采集设备 (排除 metadata 设备)
+    # metadata 设备通常名称中包含 "metadata" 且没有 capture 能力
     local camera_count=0
     local total_count
     total_count=$(ls /dev/video* 2>/dev/null | wc -l)
@@ -722,54 +546,47 @@ check_camera_devices() {
         fi
     done
 
+    # 如果无法通过 udev 判断，使用经验法则：偶数号是采集设备
     if [[ $camera_count -eq 0 ]]; then
         camera_count=$((total_count / 2))
     fi
 
+    log_info "检测到 ${total_count} 个 video 设备，其中 ${camera_count} 个摄像头采集设备"
+
     if [[ $camera_count -lt 4 ]]; then
-        log_warn "仅检测到 ${camera_count} 个摄像头采集设备 (预期 4 个)"
-        log_warn "请检查摄像头连接和设备树配置"
-        return 1
+        log_warn "预期 4 个摄像头，但只检测到 ${camera_count} 个"
     fi
 
-    log_ok "检测到 ${camera_count} 个摄像头采集设备"
     return 0
 }
 
-# 主入口
 main() {
+    require_gstreamer
+    check_hardware_access
+    detect_camera_backend
+    detect_display || true
+    check_camera_devices || true
+
     local cmd="${1:-check}"
+    shift || true
 
     case "$cmd" in
-        check)
-            check_hardware_access
-            check_camera_devices
-            detect_camera_backend
+        check|test)
             cmd_check
             ;;
-        preview)
-            check_hardware_access
-            check_camera_devices
-            detect_camera_backend
+        preview|quad)
             cmd_preview
             ;;
-        single)
-            check_hardware_access
-            check_camera_devices
-            detect_camera_backend
-            cmd_single "${2:-0}"
+        single|one)
+            cmd_single "${1:-0}"
             ;;
-        capture)
-            check_hardware_access
-            check_camera_devices
-            detect_camera_backend
+        capture|snap|photo|captures)
             cmd_capture
             ;;
-        info)
-            detect_camera_backend
+        info|status)
             cmd_info
             ;;
-        help|-h|--help)
+        -h|--help|help)
             usage
             ;;
         *)
@@ -781,38 +598,3 @@ main() {
 }
 
 main "$@"
-```
-
-### Step 5: Quad Preview
-
-After running the test script in preview mode, you will see a 2x2 grid showing all four camera feeds simultaneously:
-
-![Quad CSI Preview](./images/quad-csi-preview.jpg)
-
-## Multi-Camera Applications
-
-The reComputer Super's 4x CSI ports enable a variety of multi-camera applications:
-
-- **360-degree vision**: Use four cameras to capture a complete view of the surroundings
-- **Stereo vision**: Use two cameras for depth perception and 3D reconstruction
-- **Multi-angle object tracking**: Track objects from multiple perspectives
-- **Simultaneous surveillance**: Monitor multiple areas at once
-
-## Troubleshooting
-
-### Camera Not Recognized
-
-- Ensure the camera is properly connected
-- Check that the camera driver is installed
-- Verify that the camera is compatible with JetPack 6.2
-
-### Poor Image Quality
-
-- Ensure the camera lens is clean
-- Adjust the camera focus if necessary
-- Check for proper lighting conditions
-
-## Further Reading
-
-- [reComputer Super Hardware and Interfaces Usage](https://wiki.seeedstudio.com/recomputer_jetson_super_hardware_interfaces_usage/)
-- [NVIDIA Jetson Camera Documentation](https://developer.nvidia.com/embedded/learn/tutorials/first-picture-csi-camera)
