@@ -146,7 +146,7 @@ python compare_yolo26_pt_vs_engine.py --video ./cat.mp4
 
 > 🚀 Observe the changes in the inference delay of the optimized model
 
-![4月3日](images/4%E6%9C%883%E6%97%A5.gif)
+![apr3 demo](images/apr3-demo.gif)
 
 ## Common Misunderstandings
 

@@ -97,7 +97,7 @@ python powerful_neural_network.py
 
 
 
-![Input Shape : (1, 9, 9) - Output Shape : (1, 7, 7) - K : (3, 3) - P : (0, 0) - S : (1, 1) - D : (1, 1) - G : 1.gif](https://github.com/AxelThevenot/GIF_convolutions/blob/master/GIFS/Input%20Shape%20:%20(1,%209,%209)%20-%20Output%20Shape%20:%20(1,%207,%207)%20-%20K%20:%20(3,%203)%20-%20P%20:%20(0,%200)%20-%20S%20:%20(1,%201)%20-%20D%20:%20(1,%201)%20-%20G%20:%201.gif?raw=true)
+![convolution demo](images/convolution_demo.gif)
 
 A CNN usually has a **layered structure** for turning an image into higher-level visual understanding. It starts with an **input image**, then passes it through several **convolution layers** that learn local patterns such as edges, textures, and shapes. These are often followed by **activation functions** like ReLU and **pooling layers** that reduce spatial size while keeping important information. After several such blocks, the feature maps are **flattened** or pooled into a compact representation, and then passed to one or more **fully connected layers** to produce the final prediction, such as a class label. In short, a common CNN looks like: 
 
