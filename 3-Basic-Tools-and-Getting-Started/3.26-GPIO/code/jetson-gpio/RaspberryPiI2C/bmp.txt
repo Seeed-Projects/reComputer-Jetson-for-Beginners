@@ -1,0 +1,2 @@
+.\ffmpeg.exe -i .\input.flv -s 128x128 -c:a copy .\output128.mp4
+.\ffmpeg.exe -i .\output128.mp4 -r 30/1 -pix_fmt monow -y .\frame128\$frame%d.bmp

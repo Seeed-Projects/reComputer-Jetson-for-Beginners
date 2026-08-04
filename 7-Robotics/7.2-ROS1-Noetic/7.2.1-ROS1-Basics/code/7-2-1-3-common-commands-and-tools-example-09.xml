@@ -1,0 +1,7 @@
+<group ns="rosbot">
+    <remap from="chatter" to="talker"/>       # applies to following nodes in this group
+    <node... />
+    <node... >
+        <remap from="chatter" to="talker1"/>  # each node can override the remap
+    </node>
+</group>

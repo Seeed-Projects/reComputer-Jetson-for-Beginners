@@ -21,6 +21,7 @@ In engineering practice, that means you cannot look at the board number alone. Y
 | [reComputer Mini J501](https://www.seeedstudio.com/reComputer-Mini-J501-Carrier-Board-with-GMSL-Bundle-for-Jetson-AGX-Orintm.html) | AGX Orin | 2x USB 3.2, 8x GMSL2, 2x GbE, 2x CAN, M.2 Key M, M.2 Key E, 1x RS-485 | Compact form factor, very high compute, embodied AI |
 | [reComputer Super J401](https://www.seeedstudio.com/reComputer-Super-J401-Carrier-Board-p-6642.html) | Orin Nano / Orin NX | Dual RJ45, 4x CSI, 4x USB 3.2, HDMI 2.1, Mini-PCIe, M.2 Key E/M, CAN | Higher-performance, stronger-IO production platform |
 | [reComputer Robotics J401](https://www.seeedstudio.com/reComputer-Robotics-J401-Carrier-Board-optional-accessories.html) | Orin Nano / Orin NX | Dual GbE, 6x USB 3.2, M.2 Key B/E/M, 2x CAN, optional GMSL2, I2C, UART | Robot-body integration, multi-sensor fusion, 5G expansion |
+| Seeed Jetson AGX Orin Kit | AGX Orin | 2x USB 3.2, Dual GbE, 4x DI 4x DO,  2x CAN, RS-485,I2S | Robot-body integration,  very high compute, embodied AI |
 
 ## Section Summary
 

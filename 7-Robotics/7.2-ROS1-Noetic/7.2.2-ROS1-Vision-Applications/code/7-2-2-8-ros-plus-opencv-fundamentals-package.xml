@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_opencv_demo</name>
+  <version>0.0.1</version>
+  <description>
+    ROS + OpenCV sample package that uses cv_bridge to subscribe to USB camera images and process them with OpenCV.
+  </description>
+
+  <!-- maintainer information -->
+  <maintainer email="you@example.com">your_name</maintainer>
+
+  <!-- open-source license -->
+  <license>BSD</license>
+
+  <!-- build tool -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- ================= core dependencies ================= -->
+
+  <!-- Python / ROS -->
+  <depend>rospy</depend>
+
+  <!-- ROS messages -->
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+  <!-- image-related dependencies -->
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+
+  <!-- Optional: enable this if you use PCL later. -->
+  <!-- <depend>pcl_ros</depend> -->
+
+  <!-- ================= optional exports ================= -->
+  <export>
+  </export>
+
+</package>

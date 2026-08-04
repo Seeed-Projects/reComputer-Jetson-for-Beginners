@@ -1,0 +1,3 @@
+<arg name="gui" default="true" />
+<!-- set a default value; use it when no override is provided -->
+<param name="use_gui" value="$(arg gui)"/>

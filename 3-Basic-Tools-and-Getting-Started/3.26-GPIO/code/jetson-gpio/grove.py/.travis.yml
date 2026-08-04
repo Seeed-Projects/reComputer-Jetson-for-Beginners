@@ -1,0 +1,16 @@
+deploy:
+  true:
+    python: 3.5
+    repo: Seeed-Studio/grove.py
+    tags: true
+  distributions: sdist
+  password:
+    secure: BC2DA00laVUWzpUcD2RO1qVDq2fvuqiJXrbSs8Y5OOWV/zJ+0FRvxNQA8lC9jG1jNmkvlbXDPCX7kJSjoJmYHVOGDNKVQLsaWS5SBiiTe+LgBTeAAynMvwMBBC1e6fVEIA3wKvhhZNwc1G8rTgnHiJ3ZSdIrGioW1aodLaGR5Va8WQzcFC2W5LpKE6AwWQCjhTYhFqDQL6HALvHVPLqZazrHl+CHrW0hoNbDyNAcyGh3YH4OEx8QAy1fQ5T3syj50GFNfrBqthYYcxaXluib7Dgf2Xx0yXPcwb9imuFTST6XPVjoQJ1b4CMBRCWFSUvtqEIpr+luXibOAWs3vYnK3F0NsNYeNELwwOEw+uiifbyknBzvIgVyj7xk1+wDyPKcOoCmInei8TxrAcDUIsZgh+sbmPHBh1RuCJjvBhSQ/TDEgS1mj+qDNHIp5cPrVoqGfuZiuQpZlekKlNMd/msfo9c8VibVDRBxUQeOqX2O8TtFUXT/0JmsU4mYJNFW3XN/C1Gw9ccdavTRM7A8tDvtVtcu1tPGDHxHZkhU8azzbd1/73mF2V9elEIW+W58U/qH0AaD5xXESLW8ZNxcwgqeSocZREZ4l0wIIRJlMXqG/wMA8DQ25Q8ZQ7nWMW37OkFbDoMK6FCoxieodIiJhb3iuxexauPLL0QMjy0M1araYBM=
+  provider: pypi
+  user: yihui
+install: pip install .
+language: python
+python:
+- 3.5
+- 3.4
+script: echo 'test'

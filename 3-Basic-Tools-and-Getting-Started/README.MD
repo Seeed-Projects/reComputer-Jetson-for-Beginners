@@ -1,6 +1,6 @@
 ## 📚 Table of Basic Tools and Getting Started
 
-Module 3 now serves as the unified entry point for Jetson beginner tooling. It keeps the original Jetson beginner topics together with the practical setup workflow that was previously split across separate beginner handouts.
+Module 3 covers Jetson beginner tooling, AI framework setup, and practical development workflows.
 
 | **Chapter** |                         **Content**                          |
 | :---------: | :----------------------------------------------------------: |
@@ -29,16 +29,12 @@ Module 3 now serves as the unified entry point for Jetson beginner tooling. It k
 | Module 3.23 | **[SSD Expansion](./3.23-SSD-Expansion/README.md)** |
 | Module 3.24 | **[CSI Camera](./3.24-CSI-Camera/README.md)** |
 | Module 3.25 | **[USB Camera](./3.25-USB-Camera/README.md)** |
-| Module 3.26 | **[GPIO Basics](./3.26-GPIO-Basics/README.md)** |
-| Module 3.27 | **[Installing the GPIO Library](./3.27-Installing-the-GPIO-Library/README.md)** |
-| Module 3.28 | **[GPIO Input](./3.28-GPIO-Input/README.md)** |
-| Module 3.29 | **[GPIO Output](./3.29-GPIO-Output/README.md)** |
-| Module 3.30 | **[UART Serial Communication](./3.30-UART-Serial-Communication/README.md)** |
-| Module 3.31 | **[I2C Communication](./3.31-I2C-Communication/README.md)** |
-| Module 3.32 | **[Super GPIO](./3.32-Super-GPIO/README.md)** |
-| Module 3.33 | **[Super 4xMipi CSI](./3.33-Super-4xMipi-CSI/README.md)** |
-| Module 3.34 | **[Super Dual Ethernet](./3.34-Super-Dual-Ethernet/README.md)** |
-| Module 3.35 | **[Super Chassis Extension](./3.35-Super-Chassis-Extension/README.md)** |
+| Module 3.26 | **[GPIO](./3.26-GPIO/README.md)** |
+| Module 3.27 | **[UART Serial Communication](./3.27-UART-Serial-Communication/README.md)** |
+| Module 3.28 | **[I2C Communication](./3.28-I2C-Communication/README.md)** |
+| Module 3.29 | **[Super 4xMipi CSI](./3.29-Super-4xMipi-CSI/README.md)** |
+| Module 3.30 | **[Super Dual Ethernet](./3.30-Super-Dual-Ethernet/README.md)** |
+| Module 3.31 | **[Super Chassis Extension](./3.31-Super-Chassis-Extension/README.md)** |
 
 ## Beginner Topic Coverage
 
