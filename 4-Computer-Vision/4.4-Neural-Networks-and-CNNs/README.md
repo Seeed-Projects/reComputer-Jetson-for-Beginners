@@ -167,7 +167,7 @@ This distinction is crucial because the later deployment chapters focus mainly o
 ### What does a CNN look like in code?
 
 ```python
-mport torch
+import torch
 import torch.nn as nn
 
 class TinyCNN(nn.Module):
