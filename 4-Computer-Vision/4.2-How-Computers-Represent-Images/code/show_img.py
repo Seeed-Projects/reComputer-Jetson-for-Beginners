@@ -1,10 +1,12 @@
 import cv2
+from pathlib import Path
 
 # Load the input image from disk. If the file cannot be found,
 # raise a clear error message immediately.
-image = cv2.imread("./sources/cv_world.png")
+img_path = str(Path(__file__).resolve().parent / "sources" / "cv_world.png")
+image = cv2.imread(img_path)
 if image is None:
-    raise FileNotFoundError("Unable to load image: ./imgs/cv_world.png")
+    raise FileNotFoundError(f"Unable to load image: {img_path}")
 
 # Print the loaded image shape and data type for quick verification.
 print("Shape:", image.shape)

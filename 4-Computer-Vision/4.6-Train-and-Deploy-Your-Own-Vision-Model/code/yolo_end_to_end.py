@@ -6,9 +6,18 @@ from tkinter import ttk, messagebox
 # We'll import specialized modules later as we build them out
 import cv2
 from PIL import Image, ImageTk
+# Compatibility for Pillow >= 10.0 where Image.LANCZOS was moved to Image.Resampling.LANCZOS
+PIL_RESAMPLING = getattr(Image, "Resampling", Image)
 import time
 import os
 import shutil
+
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    yaml = None
+    YAML_AVAILABLE = False
 
 # Use ultralytics for YOLO11 (YOLO26 is not a real version yet, YOLO11 is the latest stable YOLO from Ultralytics)
 try:
@@ -135,8 +144,8 @@ class YoloEndToEndApp(tk.Tk):
                 target_w = self.video_label.winfo_width()
                 target_h = self.video_label.winfo_height()
                 if target_w > 10 and target_h > 10:
-                    img = img.resize((target_w, target_h), Image.LANCZOS)
-                    
+                    img = img.resize((target_w, target_h), PIL_RESAMPLING.LANCZOS)
+
                 imgtk = ImageTk.PhotoImage(image=img)
                 self.video_label.imgtk = imgtk
                 self.video_label.configure(image=imgtk)
@@ -282,7 +291,7 @@ class YoloEndToEndApp(tk.Tk):
         target_w = self.canvas_anno.winfo_width()
         target_h = self.canvas_anno.winfo_height()
         if target_w > 10 and target_h > 10:
-            img = img.resize((target_w, target_h), Image.LANCZOS)
+            img = img.resize((target_w, target_h), PIL_RESAMPLING.LANCZOS)
             self.disp_w = target_w
             self.disp_h = target_h
         else:
@@ -564,8 +573,9 @@ class YoloEndToEndApp(tk.Tk):
                 
         copy_files(train_imgs, "train")
         copy_files(val_imgs, "val")
-        
-        import yaml
+
+        if not YAML_AVAILABLE:
+            raise ImportError("PyYAML is required for dataset splitting. Install it with: pip install pyyaml")
         with open(yaml_path, 'r') as f:
             orig_data = yaml.safe_load(f)
             
@@ -762,10 +772,10 @@ class YoloEndToEndApp(tk.Tk):
                 target_w = self.infer_video_label.winfo_width()
                 target_h = self.infer_video_label.winfo_height()
                 if target_w > 10 and target_h > 10:
-                    img = img.resize((target_w, target_h), Image.LANCZOS)
-                    
+                    img = img.resize((target_w, target_h), PIL_RESAMPLING.LANCZOS)
+
                 imgtk = ImageTk.PhotoImage(image=img)
-                
+
                 self.infer_video_label.imgtk = imgtk
                 self.infer_video_label.configure(image=imgtk)
                 

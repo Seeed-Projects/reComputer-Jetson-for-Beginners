@@ -300,7 +300,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--image",
         type=str,
-        default="./img/cat.jpg",
+        default=str(Path(__file__).resolve().parent / "img" / "cat.jpg"),
     )
     parser.add_argument("--size", type=int, default=160)
     parser.add_argument("--max-channels", type=int, default=8)
