@@ -31,7 +31,7 @@ This is why computer vision has evolved from simple image processing to deep lea
 
 ### Major Tasks in Computer Vision
 
-![img](https://cdn.qwenlm.ai/output/f2e12b73-d112-488c-8ce3-f8a97a92141d/t2i/bb552fae-97ae-40f9-af93-20494a0ad9c6/1774863738a06c.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiZjJlMTJiNzMtZDExMi00ODhjLThjZTMtZjhhOTdhOTIxNDFkIiwicmVzb3VyY2VfaWQiOiIxNzc0ODYzNzM4YTA2YyIsInJlc291cmNlX2NoYXRfaWQiOiIyODA1OTA1Mi00NjdjLTRkOTctOGExOS02MDQxNTI5MjFhMDAifQ.bbVOK-tZ9ZtXUPfjQZGj6ux7PXpLo_H_l9zlOWn43Dw)
+![img](images/cv-tasks-overview.png)
 
 The field can be divided into several major tasks:
 
@@ -92,9 +92,4 @@ Although implementations vary, many computer vision systems follow a common logi
 
 ## Summary
 
-Computer vision is about turning raw visual data into useful understanding. It includes many tasks, from classification and detection to OCR and event reasoning. 
-
-## 
-
-
-
+Computer vision is about turning raw visual data into useful understanding. It includes many tasks, from classification and detection to OCR and event reasoning.
