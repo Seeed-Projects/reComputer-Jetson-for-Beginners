@@ -2,8 +2,6 @@
 
 ## Why This Matters
 
-In the previous chapter, we explained how to train a custom YOLO model and successfully run inference on Jetson. At that stage, the model was still stored in `.pt` format, which is the native format commonly used in the PyTorch ecosystem. This is a good starting point because it proves that the training results are correct and that the model can already perform object detection on the target device.
-
 In the previous chapter, we explained how to train a custom YOLO model and successfully run inference on Jetson. At that stage, the model was still stored in **`.pt` format**, which is the native format commonly used in the PyTorch ecosystem. This is a good starting point because it proves that the training results are correct and that the model can already perform object detection on the target device.
 
 <img src="images/image-20260402114356086.png" alt="image-20260402114356086" style="zoom: 80%;" />
@@ -92,8 +90,6 @@ In this workflow:
 This process shows that TensorRT is not just a converter, but a key optimization and execution layer for embedded AI deployment.
 
 From an engineering perspective, TensorRT is important because it turns a model that is merely *trainable and testable* into one that is truly *deployable and efficient*. For Jetson users, TensorRT is often the most important step in achieving practical real-time performance.
-
-In other words, a trained checkpoint is only part of the deployment pipeline. To make a YOLO model truly suitable for real-world Jetson applications, we usually need to convert it into a more deployment-friendly format and further optimize it for embedded inference. This is the key step that bridges the gap between **computer vision development** and **edge engineering**.
 
 ### Common Model Formats
 
