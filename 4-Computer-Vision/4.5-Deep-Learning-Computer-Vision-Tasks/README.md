@@ -6,7 +6,7 @@ Deep learning computer vision covers many tasks that help machines understand im
 
 In simple terms, these tasks move from answering **“what is in the image?”** to **“where is it?”**, **“what shape is it?”**, and **“how is it moving?”** .
 
-## ![cv-tasks](images/cv-tasks.gif)
+![cv-tasks](images/cv-tasks.gif)
 
 ### 1. Image Classification
 

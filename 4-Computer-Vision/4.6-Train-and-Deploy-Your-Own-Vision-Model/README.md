@@ -26,7 +26,7 @@ For the convenience of demonstration, we have provided a script that can assist 
 
 > 🚀Just give it a try and run it yourself!
 
-```python
+```bash
 cd 4.6-Train-and-Deploy-Your-Own-Vision-Model/code
 python yolo_end_to_end.py
 ```
