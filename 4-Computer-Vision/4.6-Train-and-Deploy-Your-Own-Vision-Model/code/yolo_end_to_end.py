@@ -428,7 +428,9 @@ class YoloEndToEndApp(tk.Tk):
         if not self.anno_image_path or not self.drawn_rects:
             if show_msg: messagebox.showwarning("Warning", "Please select an image and draw a bounding box.")
             return
-            
+
+        label_path = self.labels_dir / (self.anno_image_path.stem + ".txt")
+        label_existed_before = label_path.exists()
         self._rewrite_label_file_from_rects()
         if show_msg:
             messagebox.showinfo("Saved", f"Annotation saved for {self.anno_image_path.name}")
