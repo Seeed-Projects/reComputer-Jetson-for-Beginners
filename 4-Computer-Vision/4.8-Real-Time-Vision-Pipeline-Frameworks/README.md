@@ -142,3 +142,81 @@ Continue to [4.9 DeepStream and Jetson](../4.9-DeepStream-and-Jetson/README.md).
 
 - [OpenCV Documentation](https://docs.opencv.org/4.x/index.html)
 - [GStreamer Documentation](https://gstreamer.freedesktop.org/documentation/)
+
+## MediaPipe
+
+[MediaPipe](https://developers.google.com/mediapipe) is Google's open-source framework for building real-time multimodal ML perception pipelines.
+
+### Setup
+
+```bash
+uv venv .mediapipe --python 3.10.12
+source .mediapipe/bin/activate
+uv pip install mediapipe opencv-python dlib
+```
+
+![MediaPipe installation](images/mediapipe-dlib-install.png)
+![MediaPipe verification](images/mediapipe-verify.png)
+
+> **Note:** `dlib` compilation may take several minutes. Be patient.
+
+### Hand Detection
+
+Detect 21 hand keypoints in real-time:
+
+![Hand keypoints diagram](images/mediapipe-hand-keypoints.png)
+![Hand detection USB](images/mediapipe-hand-usb.png)
+
+### Face Detection
+
+![Face detection](images/mediapipe-face-usb.png)
+
+### Pose Estimation
+
+Detect 32 body keypoints:
+
+![Pose keypoints](images/mediapipe-pose-keypoints.png)
+![Pose estimation](images/mediapipe-pose-usb.png)
+
+### Holistic Detection
+
+Simultaneously detect body, hand, and face keypoints:
+
+![Holistic multi-person](images/mediapipe-holistic-multi.png)
+![Holistic detection](images/mediapipe-holistic-usb.png)
+
+### Other MediaPipe Features
+
+- **Face Mesh** — 3D face mesh with 468 landmarks
+- **Virtual Brush** — Draw with finger gestures
+- **Gesture Recognition** — Recognize 14+ hand gestures
+- **Finger Control** — Control UI with finger distance
+- **3D Object Detection** — Detect shoes, chairs, cameras, cups
+- **Background Removal** — Segment and replace backgrounds
+
+![Face mesh](images/mediapipe-face-mesh-usb.png)
+![Virtual brush](images/mediapipe-brush-usb.png)
+![Gesture recognition](images/mediapipe-gesture-usb.png)
+![Finger control](images/mediapipe-finger-control-usb.png)
+![Objectron](images/mediapipe-objectron-usb.png)
+![Background removal](images/mediapipe-bg-removal-usb.png)
+
+## QR Code Recognition
+
+### Generate QR Codes
+
+```bash
+cd 4-Computer-Vision/4.8-Real-Time-Vision-Pipeline-Frameworks/code
+python qr_code_generate.py
+```
+
+![QR code generated](images/qr-code-generated.png)
+
+### Detect QR Codes
+
+```bash
+cd 4-Computer-Vision/4.8-Real-Time-Vision-Pipeline-Frameworks/code
+python qr_code_detect.py
+```
+
+![QR code detection](images/qr-detection-result.jpg)

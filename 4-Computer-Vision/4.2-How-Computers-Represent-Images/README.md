@@ -87,6 +87,8 @@ pip install opencv-python
 python show_img.py
 ```
 
+![OpenCV installation](images/opencv-install-terminal.png)
+
 **You will see the output:**
 
 ![image-20260331113129592](images/image-20260331113129592.png)
@@ -111,6 +113,43 @@ python show_video.py
 ## Summary
 
 Images are structured numeric data, not just pictures. Understanding pixels, channels, resolution, and video frames is essential because every later algorithm, from thresholding to CNNs, operates on these representations.
+
+## Basic Image Operations
+
+### Save an Image
+
+Use `cv2.imwrite()` to save an image to disk:
+
+```bash
+cd 4-Computer-Vision/4.2-How-Computers-Represent-Images/code
+python img_write.py
+```
+
+![Saved image result](images/opencv-imwrite-saved.png)
+
+### Modify Image Pixels
+
+Since OpenCV images are NumPy arrays, you can modify pixels directly:
+
+```bash
+cd 4-Computer-Vision/4.2-How-Computers-Represent-Images/code
+python img_modify.py
+```
+
+![Pixel modification result](images/opencv-pixel-modify.png)
+
+### Preview Camera Feed
+
+Use `cv2.VideoCapture()` to capture live camera feed:
+
+```bash
+cd 4-Computer-Vision/4.2-How-Computers-Represent-Images/code
+python show_camera.py
+```
+
+![Camera preview](images/opencv-camera-preview.png)
+
+> **Note:** Connect a USB or CSI camera to your Jetson device before running this script.
 
 ## Suggested Next Step
 

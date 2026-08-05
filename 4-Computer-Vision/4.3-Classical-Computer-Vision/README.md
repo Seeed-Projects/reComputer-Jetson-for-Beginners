@@ -191,6 +191,151 @@ python feature_detection_matching.py
 
 Classical computer vision gives learners a transparent way to understand image transformations. It also remains useful in real systems for preprocessing, filtering, shape reasoning, and lightweight visual logic.
 
+## Geometric Transformations
+
+### Resize
+
+Use `cv2.resize()` to scale images:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_resize.py
+```
+
+![Resize comparison](images/opencv-resize-compare.png)
+
+### Crop
+
+Use NumPy slicing to crop a region of interest:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_crop.py
+```
+
+![Crop comparison](images/opencv-crop-compare.png)
+
+### Translate
+
+Use a translation matrix with `cv2.warpAffine()` to shift an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_translate.py
+```
+
+![Translate comparison](images/opencv-translate-compare.png)
+
+### Flip
+
+Use `cv2.flip()` to mirror an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_flip.py
+```
+
+![Flip comparison](images/opencv-flip-compare.png)
+
+### Grayscale
+
+Use `cv2.cvtColor()` to convert an image to grayscale:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_gray.py
+```
+
+![Grayscale comparison](images/opencv-grayscale-compare.png)
+
+### Binarize
+
+Use `cv2.threshold()` to convert an image to black and white:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_binarize.py
+```
+
+### Edge Detection
+
+Use `cv2.Canny()` to detect edges in an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_edge.py
+```
+
+![Canny edge detection](images/opencv-canny-edge.png)
+
+## Drawing on Images
+
+### Draw a Line
+
+Use `cv2.line()` to draw a line on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_line.py
+```
+
+![Line drawing](images/opencv-draw-line.png)
+
+### Draw a Rectangle
+
+Use `cv2.rectangle()` to draw a rectangle on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_rectangle.py
+```
+
+![Rectangle drawing](images/opencv-draw-rectangle.png)
+
+### Draw a Circle
+
+Use `cv2.circle()` to draw a circle on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_circle.py
+```
+
+![Circle drawing](images/opencv-draw-circle.png)
+
+### Draw an Ellipse
+
+Use `cv2.ellipse()` to draw an ellipse on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_ellipse.py
+```
+
+![Ellipse drawing](images/opencv-draw-ellipse.png)
+
+### Draw a Polygon
+
+Use `cv2.polylines()` to draw a polygon on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_polygon.py
+```
+
+![Polygon drawing](images/opencv-draw-polygon.png)
+
+### Draw Text
+
+Use `cv2.putText()` to draw text on an image:
+
+```bash
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
+python img_draw_text.py
+```
+
+![Text drawing](images/opencv-draw-text.png)
+
 ## Suggested Next Step
 
 Continue to [4.4 Neural Networks and CNNs](../4.4-Neural-Networks-and-CNNs/README.md).

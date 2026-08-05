@@ -100,4 +100,117 @@ Continue to [4.7 Model Export and Edge Deployment](../4.7-Model-Export-and-Edge-
 
 - https://github.com/ultralytics/ultralytics
 
-  
+## Environment Setup
+
+Before training YOLO models, set up your Python environment using the `uv` package manager:
+
+### Install uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
+uv --version
+```
+
+![uv installation](images/uv-install-result.png)
+
+### Create Virtual Environment
+
+```bash
+uv venv .yolo --python 3.10.12
+source .yolo/bin/activate
+python --version
+```
+
+![Virtual environment](images/uv-venv-create.png)
+![Activate environment](images/uv-venv-activate.png)
+
+### Install PyTorch (GPU)
+
+```bash
+uv pip install torch --index-url https://pypi.jetson-ai-lab.io/jp6/cu126
+```
+
+![PyTorch verification](images/pytorch-verify.png)
+
+> **Note:** Seeed's Jetson development kits come with pre-configured environments. Check if the `.yolo` environment already exists before creating a new one.
+
+## YOLO11 Task Examples
+
+YOLO11 supports multiple computer vision tasks. Below are examples for each.
+
+### Object Detection
+
+Detect and locate objects in images or video:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_object_detection.py
+```
+
+![Object detection result](images/yolo-detect-giraffe.jpg)
+
+### Instance Segmentation
+
+Identify objects at the pixel level:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_instance_segmentation.py
+```
+
+![Instance segmentation](images/yolo-segment-result.png)
+
+### Pose Estimation
+
+Detect human body keypoints:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_pose_estimation.py
+```
+
+![Pose estimation](images/yolo-pose-result.png)
+
+### Image Classification
+
+Classify the main subject in an image:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_image_classification.py
+```
+
+![Image classification](images/yolo-classify-result.png)
+
+### Oriented Object Detection (OBB)
+
+Detect objects with rotated bounding boxes:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_obb_detection.py
+```
+
+![OBB detection](images/yolo-obb-result.png)
+
+### Model Training
+
+Train a YOLO model on your custom dataset:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_train.py
+```
+
+![Training output](images/yolo-train-output.png)
+![Training results](images/yolo-train-results.png)
+
+### Dataset Annotation with Label Studio
+
+Use Label Studio (Docker-based) to annotate your training data:
+
+![Label Studio start](images/label-studio-start.png)
+![Label Studio annotation](images/label-studio-annotate.png)
+![Dataset structure](images/label-studio-dataset-structure.png)
+
