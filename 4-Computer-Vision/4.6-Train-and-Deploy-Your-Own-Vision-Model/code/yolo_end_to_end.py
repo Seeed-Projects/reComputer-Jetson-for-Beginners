@@ -480,8 +480,8 @@ class YoloEndToEndApp(tk.Tk):
         form_frame.pack(fill="x", padx=20, pady=20)
         
         ttk.Label(form_frame, text="Pre-trained Model:").grid(row=0, column=0, sticky="w", pady=5)
-        self.model_name_var = tk.StringVar(value="yolo26n.pt")
-        ttk.Combobox(form_frame, textvariable=self.model_name_var, values=["yolo26n.pt", "yolo26s.pt", "yolo26m.pt"]).grid(row=0, column=1, sticky="w", pady=5)
+        self.model_name_var = tk.StringVar(value="yolo11n.pt")
+        ttk.Combobox(form_frame, textvariable=self.model_name_var, values=["yolo11n.pt", "yolo11s.pt", "yolo11m.pt"]).grid(row=0, column=1, sticky="w", pady=5)
         
         ttk.Label(form_frame, text="Epochs:").grid(row=1, column=0, sticky="w", pady=5)
         self.epochs_var = tk.StringVar(value="5")

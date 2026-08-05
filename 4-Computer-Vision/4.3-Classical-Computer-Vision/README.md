@@ -187,10 +187,6 @@ python feature_detection_matching.py
 3. Try erosion and dilation on the same binary mask. What happens to small regions?
 4. Reflect on one situation where a simple classical method may be better than a deep model.
 
-## Summary
-
-Classical computer vision gives learners a transparent way to understand image transformations. It also remains useful in real systems for preprocessing, filtering, shape reasoning, and lightweight visual logic.
-
 ## Geometric Transformations
 
 ### Resize
@@ -257,7 +253,7 @@ cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python img_binarize.py
 ```
 
-### Edge Detection
+### Canny Edge Detection
 
 Use `cv2.Canny()` to detect edges in an image:
 
@@ -335,6 +331,10 @@ python img_draw_text.py
 ```
 
 ![Text drawing](images/opencv-draw-text.png)
+
+## Summary
+
+Classical computer vision gives learners a transparent way to understand image transformations. It also remains useful in real systems for preprocessing, filtering, shape reasoning, and lightweight visual logic.
 
 ## Suggested Next Step
 

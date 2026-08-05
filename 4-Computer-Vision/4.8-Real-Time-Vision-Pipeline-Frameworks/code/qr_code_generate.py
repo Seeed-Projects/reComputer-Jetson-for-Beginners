@@ -7,6 +7,9 @@ from pathlib import Path
 import qrcode
 from PIL import Image
 
+# Pillow >= 10.0 compatibility
+PIL_RESAMPLING = getattr(Image, "Resampling", Image)
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
@@ -35,7 +38,7 @@ def add_logo(img, logo_path):
         icon_h = size_h
 
     # 调整 Logo 大小
-    icon = icon.resize((icon_w, icon_h), Image.Resampling.LANCZOS)
+    icon = icon.resize((icon_w, icon_h), PIL_RESAMPLING.LANCZOS)
 
     # 将 Logo 居中粘贴到二维码上
     w = int((img_w - icon_w) / 2)

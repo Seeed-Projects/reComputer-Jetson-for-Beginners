@@ -58,7 +58,7 @@ Split your datasets and select a pretrain model to train.
 > The **training set** is used to teach the model by adjusting its parameters. The **validation set** is used during development to check how well the model is generalizing, compare different settings, and decide when to stop training. In short, dataset splitting helps us train the model, improve the model, and evaluate the model in a trustworthy way.
 >
 
-![tarin](images/tarin.gif)
+![train](images/tarin.gif)
 
 Training is the stage where the model **learns from the dataset** and gradually improves its predictions. Usually, we begin with a **starting checkpoint**, which means using a pretrained model instead of starting from zero. This helps the model learn faster and often gives better results. 
 
@@ -93,12 +93,6 @@ Training a custom vision model is not only about running a command. It is a data
 ## Suggested Next Step
 
 Continue to [4.7 Model Export and Edge Deployment](../4.7-Model-Export-and-Edge-Deployment/README.md).
-
-## References
-
-- [Ultralytics Train Mode](https://docs.ultralytics.com/modes/train/)
-
-- https://github.com/ultralytics/ultralytics
 
 ## Environment Setup
 
@@ -135,9 +129,15 @@ uv pip install torch --index-url https://pypi.jetson-ai-lab.io/jp6/cu126
 
 > **Note:** Seeed's Jetson development kits come with pre-configured environments. Check if the `.yolo` environment already exists before creating a new one.
 
-## YOLO11 Task Examples
+### Install YOLO26/Ultralytics
 
-YOLO11 supports multiple computer vision tasks. Below are examples for each.
+```bash
+uv pip install ultralytics opencv-python pillow pyyaml
+```
+
+## YOLO26 Task Examples
+
+YOLO26 supports multiple computer vision tasks. Below are examples for each.
 
 ### Object Detection
 
@@ -213,4 +213,10 @@ Use Label Studio (Docker-based) to annotate your training data:
 ![Label Studio start](images/label-studio-start.png)
 ![Label Studio annotation](images/label-studio-annotate.png)
 ![Dataset structure](images/label-studio-dataset-structure.png)
+
+## References
+
+- [Ultralytics Train Mode](https://docs.ultralytics.com/modes/train/)
+
+- https://github.com/ultralytics/ultralytics
 

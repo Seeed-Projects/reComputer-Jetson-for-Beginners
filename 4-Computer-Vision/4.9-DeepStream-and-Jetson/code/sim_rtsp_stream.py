@@ -14,20 +14,23 @@ import tempfile
 import socket
 import platform
 import tarfile
+from pathlib import Path
 
-VIDEO_DIR = "./videos"
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+VIDEO_DIR = str(SCRIPT_DIR / "videos")
 RTSP_BASE_URL = "rtsp://127.0.0.1:8554"
 NUM_STREAMS = 8
 FFMPEG_CMD = "ffmpeg"
 FFPROBE_CMD = "ffprobe"
-MEDIAMTX_CONFIG = "./mediamtx.yml"
+MEDIAMTX_CONFIG = str(SCRIPT_DIR / "mediamtx.yml")
 MEDIAMTX_VERSION = "1.8.0"
 OS_NAME = platform.system().lower()
 ARCH_NAME = platform.machine().lower()
 IS_WINDOWS = OS_NAME.startswith("win")
 IS_LINUX = OS_NAME.startswith("linux")
 IS_MACOS = OS_NAME.startswith("darwin")
-MEDIAMTX_EXE = "./mediamtx.exe" if IS_WINDOWS else "./mediamtx"
+MEDIAMTX_EXE = str(SCRIPT_DIR / "mediamtx.exe") if IS_WINDOWS else str(SCRIPT_DIR / "mediamtx")
 
 processes = []
 

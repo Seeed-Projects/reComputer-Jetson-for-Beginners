@@ -110,10 +110,6 @@ python show_video.py
 3. Resize one image to two different resolutions and compare file size or processing time.
 4. Open a short video and count approximately how many frames are displayed in 10 seconds.
 
-## Summary
-
-Images are structured numeric data, not just pictures. Understanding pixels, channels, resolution, and video frames is essential because every later algorithm, from thresholding to CNNs, operates on these representations.
-
 ## Basic Image Operations
 
 ### Save an Image
@@ -150,6 +146,10 @@ python show_camera.py
 ![Camera preview](images/opencv-camera-preview.png)
 
 > **Note:** Connect a USB or CSI camera to your Jetson device before running this script.
+
+## Summary
+
+Images are structured numeric data, not just pictures. Understanding pixels, channels, resolution, and video frames is essential because every later algorithm, from thresholding to CNNs, operates on these representations.
 
 ## Suggested Next Step
 

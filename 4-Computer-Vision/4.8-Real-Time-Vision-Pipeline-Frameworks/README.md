@@ -130,19 +130,6 @@ gst-launch-1.0 rtspsrc location=rtsp://<camera-ip>/<path> latency=200 ! \
 3. Compare a video file input and a live camera input. What practical differences do you observe?
 4. Explain why end-to-end latency is often more important than model inference time alone.
 
-## Summary
-
-Real-time computer vision depends on pipeline design, not only on models. Understanding input, decode, preprocessing, inference, post-processing, and output prepares the learner for more advanced edge frameworks such as `DeepStream`.
-
-## Suggested Next Step
-
-Continue to [4.9 DeepStream and Jetson](../4.9-DeepStream-and-Jetson/README.md).
-
-## References
-
-- [OpenCV Documentation](https://docs.opencv.org/4.x/index.html)
-- [GStreamer Documentation](https://gstreamer.freedesktop.org/documentation/)
-
 ## MediaPipe
 
 [MediaPipe](https://developers.google.com/mediapipe) is Google's open-source framework for building real-time multimodal ML perception pipelines.
@@ -205,6 +192,12 @@ Simultaneously detect body, hand, and face keypoints:
 
 ### Generate QR Codes
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install qrcode pillow opencv-python numpy pyzbar
+> ```
+
 ```bash
 cd 4-Computer-Vision/4.8-Real-Time-Vision-Pipeline-Frameworks/code
 python qr_code_generate.py
@@ -220,3 +213,16 @@ python qr_code_detect.py
 ```
 
 ![QR code detection](images/qr-detection-result.jpg)
+
+## Summary
+
+Real-time computer vision depends on pipeline design, not only on models. Understanding input, decode, preprocessing, inference, post-processing, and output prepares the learner for more advanced edge frameworks such as `DeepStream`.
+
+## Suggested Next Step
+
+Continue to [4.9 DeepStream and Jetson](../4.9-DeepStream-and-Jetson/README.md).
+
+## References
+
+- [OpenCV Documentation](https://docs.opencv.org/4.x/index.html)
+- [GStreamer Documentation](https://gstreamer.freedesktop.org/documentation/)

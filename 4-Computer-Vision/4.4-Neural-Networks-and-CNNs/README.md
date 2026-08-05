@@ -30,6 +30,12 @@ Each layer learns parameters. During training, those parameters are adjusted so 
 
 ### What does NN look like in code?
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install torch torchvision numpy pillow
+> ```
+
 ```python
 import torch
 import torch.nn as nn
@@ -77,12 +83,6 @@ class SimpleMLP(nn.Module):
 model = SimpleMLP()
 print(model)
 ```
-
-> **Prerequisites:** Install the required dependencies:
->
-> ```bash
-> pip install torch torchvision numpy pillow
-> ```
 
 ### Have a try
 

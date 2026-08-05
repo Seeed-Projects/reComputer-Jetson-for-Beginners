@@ -1,9 +1,9 @@
-# YOLO11 TensorRT 模型预测示例
+# YOLO26 TensorRT 模型预测示例
 # 本脚本演示如何使用训练好的 TensorRT 引擎模型（best.engine）进行实时物体检测。
 # TensorRT 引擎模型经过优化，在 Jetson 等边缘设备上具有更快的推理速度。
 #
 # 使用前请确保已通过模型转换将 .pt 模型导出为 .engine 模型。
-# 参考 7.02.10 模型转换 章节。
+# See Chapter 4.7 Model Export section above
 
 from pathlib import Path
 
@@ -20,13 +20,13 @@ def predict_with_tensorrt(engine_path: str = None):
         engine_path: TensorRT 引擎模型文件路径（best.engine）
     """
     if engine_path is None:
-        engine_path = str(SCRIPT_DIR / "best.engine")
+        engine_path = str(SCRIPT_DIR / "yolo11s.engine")
 
     # 检查模型文件是否存在
     if not Path(engine_path).exists():
         print(f"错误：未找到模型文件 {engine_path}")
         print("请先训练模型并导出为 TensorRT 引擎格式（.engine）。")
-        print("参考 7.02.10 模型转换 章节将 .pt 模型导出为 .engine 模型。")
+        print("See Chapter 4.7 Model Export section above to export the .pt model to .engine format.")
         return
 
     # 加载 TensorRT 引擎模型
