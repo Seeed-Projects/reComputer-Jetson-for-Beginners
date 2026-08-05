@@ -32,9 +32,7 @@ This part applies the earlier knowledge to edge AI deployment.
 
 ## Appendix
 
-- [AI NVR on reComputer](./Appendix-AI-NVR-on-reComputer/README.md)
-
-This appendix is not part of the main 10-section spine. It is a practical project that extends the Jetson deployment half and gives learners a complete end-to-end example.
+The AI NVR on reComputer appendix has been moved. Check the main repository for updates.
 
 ## Recommended Baseline for the Jetson Practice Half
 

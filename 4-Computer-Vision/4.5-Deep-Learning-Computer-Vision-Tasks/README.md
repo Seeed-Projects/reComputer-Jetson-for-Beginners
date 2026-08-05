@@ -6,7 +6,7 @@ Deep learning computer vision covers many tasks that help machines understand im
 
 In simple terms, these tasks move from answering **“what is in the image?”** to **“where is it?”**, **“what shape is it?”**, and **“how is it moving?”** .
 
-## ![cv-tasks](images/cv-tasks.gif)
+![cv-tasks](images/cv-tasks.gif)
 
 ### 1. Image Classification
 
@@ -156,14 +156,10 @@ Continue to [4.6 Train and Deploy Your Own Vision Model](../4.6-Train-and-Deploy
 
 
 
-## Reference:
+## References
 
-https://github.com/NVIDIA/semantic-segmentation
-
-https://github.com/yehengchen/Object-Detection-and-Tracking
-
-https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation
-
-https://github.com/ageitgey/face_recognition
-
-https://github.com/RapidAI/RapidOCR
+- [NVIDIA Semantic Segmentation](https://github.com/NVIDIA/semantic-segmentation)
+- [Object Detection and Tracking](https://github.com/yehengchen/Object-Detection-and-Tracking)
+- [Realtime Multi-Person Pose Estimation](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
+- [Face Recognition](https://github.com/ageitgey/face_recognition)
+- [RapidOCR](https://github.com/RapidAI/RapidOCR)

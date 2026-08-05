@@ -91,7 +91,7 @@ Computer vision is expanding beyond fixed tasks into richer multimodal and actio
 
 ## Suggested Next Step
 
-Explore the [AI NVR on reComputer appendix](../Appendix-AI-NVR-on-reComputer/README.md) for a complete project, or revisit any earlier section to deepen your understanding.
+Revisit any earlier section to deepen your understanding, or review the [course overview](../README.md).
 
 ## Course Wrap-Up
 

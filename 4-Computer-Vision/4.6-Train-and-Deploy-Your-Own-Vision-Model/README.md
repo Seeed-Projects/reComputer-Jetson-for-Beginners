@@ -24,10 +24,16 @@ Examples:
 
 For the convenience of demonstration, we have provided a script that can assist us in completing the process from data collection to model deployment.
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install ultralytics opencv-python pillow pyyaml
+> ```
+
 > 🚀Just give it a try and run it yourself!
 
-```python
-cd 4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
 python yolo_end_to_end.py
 ```
 
@@ -52,7 +58,7 @@ Split your datasets and select a pretrain model to train.
 > The **training set** is used to teach the model by adjusting its parameters. The **validation set** is used during development to check how well the model is generalizing, compare different settings, and decide when to stop training. In short, dataset splitting helps us train the model, improve the model, and evaluate the model in a trustworthy way.
 >
 
-![tarin](images/tarin.gif)
+![train](images/train.gif)
 
 Training is the stage where the model **learns from the dataset** and gradually improves its predictions. Usually, we begin with a **starting checkpoint**, which means using a pretrained model instead of starting from zero. This helps the model learn faster and often gives better results. 
 
@@ -80,6 +86,126 @@ Select the model weights that have been trained previously and observe its perfo
 3. Explain the difference between validation results and real deployment performance.
 4. After running a training job, inspect three failure cases and describe what kind of data might fix them.
 
+## Environment Setup
+
+Before training YOLO models, set up your Python environment using the `uv` package manager:
+
+### Install uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc
+uv --version
+```
+
+![uv installation](images/uv-install-result.png)
+
+### Create Virtual Environment
+
+```bash
+uv venv .yolo --python 3.10.12
+source .yolo/bin/activate
+python --version
+```
+
+![Virtual environment](images/uv-venv-create.png)
+![Activate environment](images/uv-venv-activate.png)
+
+### Install PyTorch (GPU)
+
+```bash
+uv pip install torch --index-url https://pypi.jetson-ai-lab.io/jp6/cu126
+```
+
+![PyTorch verification](images/pytorch-verify.png)
+
+> **Note:** Seeed's Jetson development kits come with pre-configured environments. Check if the `.yolo` environment already exists before creating a new one.
+
+### Install YOLO26/Ultralytics
+
+```bash
+uv pip install ultralytics opencv-python pillow pyyaml
+```
+
+## YOLO26 Task Examples
+
+YOLO26 supports multiple computer vision tasks. Below are examples for each.
+
+### Object Detection
+
+Detect and locate objects in images or video:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_object_detection.py
+```
+
+![Object detection result](images/yolo-detect-giraffe.jpg)
+
+### Instance Segmentation
+
+Identify objects at the pixel level:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_instance_segmentation.py
+```
+
+![Instance segmentation](images/yolo-segment-result.png)
+
+### Pose Estimation
+
+Detect human body keypoints:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_pose_estimation.py
+```
+
+![Pose estimation](images/yolo-pose-result.png)
+
+### Image Classification
+
+Classify the main subject in an image:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_image_classification.py
+```
+
+![Image classification](images/yolo-classify-result.png)
+
+### Oriented Object Detection (OBB)
+
+Detect objects with rotated bounding boxes:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_obb_detection.py
+```
+
+![OBB detection](images/yolo-obb-result.png)
+
+### Model Training
+
+Train a YOLO model on your custom dataset:
+
+```bash
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+python yolo_train.py
+```
+
+![Training output](images/yolo-train-output.png)
+![Training results](images/yolo-train-results.png)
+
+### Dataset Annotation with Label Studio
+
+Use Label Studio (Docker-based) to annotate your training data:
+
+![Label Studio start](images/label-studio-start.png)
+![Label Studio annotation](images/label-studio-annotate.png)
+![Dataset structure](images/label-studio-dataset-structure.png)
+
 ## Summary
 
 Training a custom vision model is not only about running a command. It is a data-driven process involving task definition, annotation, training, validation, and error analysis. In the next section, we move from the first successful model to export and edge deployment.
@@ -94,4 +220,3 @@ Continue to [4.7 Model Export and Edge Deployment](../4.7-Model-Export-and-Edge-
 
 - https://github.com/ultralytics/ultralytics
 
-  

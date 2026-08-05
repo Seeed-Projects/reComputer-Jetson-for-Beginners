@@ -11,6 +11,12 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BASELINE="$SCRIPT_DIR/../baseline/simple_inference.py"
 
+if [ ! -f "$BASELINE" ]; then
+    echo "ERROR: Baseline script not found at $BASELINE"
+    echo "Please create the baseline inference script first."
+    exit 1
+fi
+
 # 参数: 流数量
 NUM_STREAMS=${1:-4}
 
@@ -20,7 +26,7 @@ if [ -z "$RTSP_SERVER_IP" ]; then
 fi
 
 # YOLO 模型路径（优先使用环境变量，默认 Jetson 上常见的路径）
-YOLO_MODEL=${YOLO_MODEL:-/home/seeed/test/yolo26s.pt}
+YOLO_MODEL=${YOLO_MODEL:-yolo26s.pt}
 
 SOURCES=""
 for i in $(seq 1 $NUM_STREAMS); do
@@ -33,6 +39,12 @@ echo "流数量: $NUM_STREAMS"
 echo "源: $SOURCES"
 echo "模型: $YOLO_MODEL"
 echo "=============================================="
+
+if [ ! -f "$YOLO_MODEL" ]; then
+    echo "WARNING: Model file '$YOLO_MODEL' not found."
+    echo "Set YOLO_MODEL environment variable to your model path."
+    echo "Example: YOLO_MODEL=/path/to/your/model.pt $0"
+fi
 
 python3 "$BASELINE" --sources $SOURCES \
     --model "$YOLO_MODEL" \
