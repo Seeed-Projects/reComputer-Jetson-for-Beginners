@@ -1,6 +1,6 @@
 # YOLO11 图像分类示例
 # 本脚本演示如何使用 Ultralytics YOLO11 进行实时图像分类。
-# 使用 yolo11n-cls.pt 模型，在 ImageNet 数据集上训练，可识别 1000 个不同类别。
+# 使用 yolo26n-cls.pt 模型，在 ImageNet 数据集上训练，可识别 1000 个不同类别。
 
 import cv2
 from ultralytics import YOLO
@@ -12,7 +12,7 @@ def classify_camera():
     # '-cls' 表示这是分类模型，在 ImageNet 数据集上训练
     # 可识别 1000 个不同的物体类别（动物、日常物品、交通工具、食物等）
     # 如果本地没有模型文件，程序会自动从 Ultralytics 服务器下载
-    model = YOLO("yolo11n-cls.pt")
+    model = YOLO("yolo26n-cls.pt")
 
     # 初始化视频捕获设备，参数 0 打开系统默认的摄像头
     cap = cv2.VideoCapture(0)

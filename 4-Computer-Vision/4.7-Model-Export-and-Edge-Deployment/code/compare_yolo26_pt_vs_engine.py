@@ -11,8 +11,8 @@ from typing import Dict, List, Optional, Tuple
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_PT_MODEL = SCRIPT_DIR / "yolo11s.pt"
-DEFAULT_ENGINE_MODEL = SCRIPT_DIR / "yolo11s.engine"
+DEFAULT_PT_MODEL = SCRIPT_DIR / "yolo26s.pt"
+DEFAULT_ENGINE_MODEL = SCRIPT_DIR / "yolo26s.engine"
 BASE_CANVAS_WIDTH = 1920
 BASE_CANVAS_HEIGHT = 1080
 

@@ -1,6 +1,6 @@
 # YOLO11 定向物体检测示例
 # 本脚本演示如何使用 Ultralytics YOLO11 进行定向物体检测（Oriented Object Detection）。
-# 使用 yolo11n-obb.pt 模型，使用旋转边界框（Rotated Bounding Box）来表示物体的位置和方向。
+# 使用 yolo26n-obb.pt 模型，使用旋转边界框（Rotated Bounding Box）来表示物体的位置和方向。
 
 import cv2
 from ultralytics import YOLO
@@ -9,10 +9,10 @@ from ultralytics import YOLO
 def detect_obb_camera():
     """使用摄像头进行实时定向物体检测。"""
     # 加载预训练的 YOLO 定向物体检测模型
-    # "yolo11n" 表示 YOLO 版本 11 的纳米（nano）模型，适合边缘设备
+    # "yolo26n" 表示 YOLO 版本 26 的纳米（nano）模型，适合边缘设备
     # "obb" 代表 Oriented Bounding Boxes（定向边界框），支持检测带有方向的物体
     # 如果本地没有该模型文件，程序会尝试从 Ultralytics 的官方服务器下载
-    model = YOLO("yolo11n-obb.pt")
+    model = YOLO("yolo26n-obb.pt")
 
     # 初始化视频捕获设备，参数 0 表示使用计算机的默认摄像头
     cap = cv2.VideoCapture(0)

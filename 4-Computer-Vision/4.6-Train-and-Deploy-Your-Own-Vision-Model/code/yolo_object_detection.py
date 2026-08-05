@@ -13,7 +13,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 def detect_image(image_path: str = "image1.jpg"):
     """对单张图片进行物体检测推理，并显示和保存结果。"""
     # 加载预训练的 YOLO11n 模型（轻量级版本，适合边缘设备和实时应用）
-    model = YOLO("yolo11n.pt")
+    model = YOLO("yolo26n.pt")
 
     # 对图像列表进行批量推理，返回 Results 对象列表
     results = model([image_path])
@@ -37,14 +37,14 @@ def detect_image(image_path: str = "image1.jpg"):
         result.save(filename=str(SCRIPT_DIR / "result.jpg"))
 
         # 注意：以上属性（masks, keypoints, probs, obb）可能为 None，
-        # 取决于模型类型。yolo11n.pt 是目标检测模型，通常只包含 boxes。
+        # 取决于模型类型。yolo26n.pt 是目标检测模型，通常只包含 boxes。
 
 
 def detect_camera():
     """使用摄像头进行实时物体检测。"""
     # 加载预训练 YOLO11n 模型
-    # 如需更高精度可替换为 'yolo11s.pt'、'yolo11m.pt' 或 'yolo11x.pt'
-    model = YOLO("yolo11n.pt")
+    # 如需更高精度可替换为 'yolo26s.pt'、'yolo26m.pt' 或 'yolo26x.pt'
+    model = YOLO("yolo26n.pt")
 
     # 初始化视频捕获设备，参数 0 表示系统默认摄像头
     cap = cv2.VideoCapture(0)

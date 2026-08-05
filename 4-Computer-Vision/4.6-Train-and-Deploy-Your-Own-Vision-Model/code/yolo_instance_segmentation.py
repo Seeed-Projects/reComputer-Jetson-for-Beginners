@@ -1,6 +1,6 @@
 # YOLO11 实例分割示例
 # 本脚本演示如何使用 Ultralytics YOLO11 进行实时实例分割。
-# 使用 yolo11n-seg.pt 模型，不仅绘制边界框，还为每个物体实例生成像素级掩码。
+# 使用 yolo26n-seg.pt 模型，不仅绘制边界框，还为每个物体实例生成像素级掩码。
 
 import cv2
 from ultralytics import YOLO
@@ -11,8 +11,8 @@ def segment_camera():
     # 加载预训练的 YOLO 实例分割模型
     # 模型文件后缀为 '-seg'，表示专门用于分割的模型
     # 可根据精度和速度需求替换为：
-    # 'yolo11s-seg.pt' (小型), 'yolo11m-seg.pt' (中型), 'yolo11l-seg.pt' (大型), 'yolo11x-seg.pt' (超大型)
-    model = YOLO("yolo11n-seg.pt")
+    # 'yolo26s-seg.pt' (小型), 'yolo26m-seg.pt' (中型), 'yolo26l-seg.pt' (大型), 'yolo26x-seg.pt' (超大型)
+    model = YOLO("yolo26n-seg.pt")
 
     # 初始化视频捕获设备，参数 0 代表系统默认摄像头
     cap = cv2.VideoCapture(0)

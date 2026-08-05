@@ -26,7 +26,7 @@ if [ -z "$RTSP_SERVER_IP" ]; then
 fi
 
 # YOLO 模型路径（优先使用环境变量，默认 Jetson 上常见的路径）
-YOLO_MODEL=${YOLO_MODEL:-yolo11s.pt}
+YOLO_MODEL=${YOLO_MODEL:-yolo26s.pt}
 
 SOURCES=""
 for i in $(seq 1 $NUM_STREAMS); do

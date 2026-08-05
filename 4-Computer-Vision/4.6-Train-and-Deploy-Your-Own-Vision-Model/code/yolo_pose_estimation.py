@@ -1,6 +1,6 @@
 # YOLO11 姿态估计示例
 # 本脚本演示如何使用 Ultralytics YOLO11 进行实时人体姿态估计。
-# 使用 yolo11n-pose.pt 模型，检测人体的 17 个关键点并绘制骨架连接线。
+# 使用 yolo26n-pose.pt 模型，检测人体的 17 个关键点并绘制骨架连接线。
 
 import cv2
 from ultralytics import YOLO
@@ -9,10 +9,10 @@ from ultralytics import YOLO
 def estimate_pose():
     """使用摄像头进行实时姿态估计。"""
     # 加载预训练的 YOLO 姿态估计模型
-    # 'yolo11n-pose.pt' 是纳米（nano）版本，专为姿态估计任务设计
+    # 'yolo26n-pose.pt' 是纳米（nano）版本，专为姿态估计任务设计
     # 该模型在 COCO 数据集上训练，能够检测人体的 17 个关键点
     # 文件会自动从 Ultralytics 服务器下载（如果本地不存在）
-    model = YOLO("yolo11n-pose.pt")
+    model = YOLO("yolo26n-pose.pt")
 
     # 初始化视频捕获设备，参数 0 表示打开系统默认的摄像头
     cap = cv2.VideoCapture(0)
