@@ -78,10 +78,16 @@ model = SimpleMLP()
 print(model)
 ```
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install torch torchvision numpy pillow
+> ```
+
 ### Have a try
 
 ```bash
-cd 4.4-Neural-Networks-and-CNNs/code
+cd 4-Computer-Vision/4.4-Neural-Networks-and-CNNs/code
 python powerful_neural_network.py
 ```
 
@@ -149,7 +155,7 @@ This helps:
 ### Have a try
 
 ```bash
-cd 4.4-Neural-Networks-and-CNNs/code
+cd 4-Computer-Vision/4.4-Neural-Networks-and-CNNs/code
 python cnn_process_visualization.py
 ```
 

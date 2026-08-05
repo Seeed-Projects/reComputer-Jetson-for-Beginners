@@ -24,10 +24,16 @@ Examples:
 
 For the convenience of demonstration, we have provided a script that can assist us in completing the process from data collection to model deployment.
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install ultralytics opencv-python pillow pyyaml
+> ```
+
 > 🚀Just give it a try and run it yourself!
 
 ```bash
-cd 4.6-Train-and-Deploy-Your-Own-Vision-Model/code
+cd 4-Computer-Vision/4.6-Train-and-Deploy-Your-Own-Vision-Model/code
 python yolo_end_to_end.py
 ```
 

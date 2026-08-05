@@ -67,6 +67,12 @@ Both are useful, but they serve different roles.
 
 ## Worked Example / Code Example
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install opencv-python
+> ```
+
 ### Simple OpenCV Live Pipeline
 
 ```python

@@ -9,6 +9,17 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 CONFIG_DIR="$SCRIPT_DIR/../configs"
 SERVICE_DIR="$SCRIPT_DIR/../service"
 
+if [ ! -d "$CONFIG_DIR" ]; then
+    echo "ERROR: Config directory not found at $CONFIG_DIR"
+    echo "Please create the required configuration files first."
+    exit 1
+fi
+if [ ! -d "$SERVICE_DIR" ]; then
+    echo "ERROR: Service directory not found at $SERVICE_DIR"
+    echo "Please create the required service files first."
+    exit 1
+fi
+
 # ---------------------------------------------------------------------------
 # 参数解析
 # ---------------------------------------------------------------------------

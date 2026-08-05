@@ -114,7 +114,15 @@ You often balance:
 
 Model precision means **how many bits are used to store numbers** inside the model, such as weights and activations. Higher precision, like **FP32**, keeps more numeric detail, while lower precision, like **FP16** or **INT8**, uses fewer bits. Lower precision can make inference **faster** and use **less memory**, which is very helpful on edge devices like Jetson. But if the precision is reduced too much, the model may lose some accuracy, so we need to balance speed and reliability.
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install ultralytics opencv-python torch
+> ```
+
 ##  Code Example
+
+> **Note:** Replace `yolo26s.pt` with your own trained model path from [Chapter 4.6](../4.6-Train-and-Deploy-Your-Own-Vision-Model/README.md), or use a pretrained model like `yolo11s.pt`.
 
 ### Export to ONNX
 
@@ -137,10 +145,12 @@ sudo nvpmodel -m 0
 sudo jetson_clocks
 ```
 
+> **Note:** This script requires `yolo26s.pt` and `yolo26s.engine` model files. Generate them first using the export commands above, or specify your own model paths with `--pt-model` and `--engine-model` arguments.
+
 ## Have a try
 
 ```bash
-cd 4.7-Model-Export-and-Edge-Deployment/code
+cd 4-Computer-Vision/4.7-Model-Export-and-Edge-Deployment/code
 python compare_yolo26_pt_vs_engine.py --video ./cat.mp4
 ```
 

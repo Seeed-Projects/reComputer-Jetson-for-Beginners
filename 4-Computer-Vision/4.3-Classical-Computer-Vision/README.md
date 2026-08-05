@@ -29,10 +29,16 @@ Examples:
 
 These filters are useful because real camera images often contain noise, small brightness fluctuations, or unstable details that need to be either smoothed or enhanced before later vision steps.
 
+> **Prerequisites:** Install the required dependencies:
+>
+> ```bash
+> pip install opencv-python numpy
+> ```
+
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python filtering.py
 ```
 
@@ -55,7 +61,7 @@ This is useful in:
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python thresholding.py
 ```
 
@@ -80,7 +86,7 @@ Edge detection helps reveal:
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python edge_detection.py
 ```
 
@@ -105,7 +111,7 @@ They are useful for:
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python contours.py
 ```
 
@@ -131,7 +137,7 @@ These are especially useful when masks are noisy or fragmented.
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python morphological_operate.py
 ```
 
@@ -157,7 +163,7 @@ This idea is important for:
 **Have a try:**
 
 ```bash
-cd 4.3-Classical-Computer-Vision/code
+cd 4-Computer-Vision/4.3-Classical-Computer-Vision/code
 python feature_detection_matching.py
 ```
 

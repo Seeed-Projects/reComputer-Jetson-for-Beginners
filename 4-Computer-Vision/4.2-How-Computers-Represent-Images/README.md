@@ -93,7 +93,7 @@ python show_img.py
 
 ### Reading Video
 
-```python
+```bash
 python show_video.py
 ```
 
