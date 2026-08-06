@@ -77,6 +77,17 @@ That is the system mindset this section introduces.
 
 ## Worked Example / Code Example
 
+### Code Examples
+
+This section includes helper scripts under `code/`:
+
+- `sim_rtsp_stream.py` — Simulates RTSP camera streams for testing
+- `ai-nvr/scripts/run_baseline.sh` — Runs baseline inference benchmark
+- `ai-nvr/scripts/run_nvr.sh` — Starts DeepStream NVR pipeline with services
+- `ai-nvr/scripts/setup_jetson.sh` — Sets up Jetson environment
+
+> **Note:** The NVR scripts require additional files (configs, service code) that are part of a complete AI NVR deployment. Please refer to the NVIDIA Jetson Platform Services documentation for full setup instructions.
+
 ### Start Core Services
 
 ```bash
@@ -128,7 +139,7 @@ gst-launch-1.0 rtspsrc location=rtsp://<jetson-ip>:8554/<stream> latency=200 ! \
 
 ## Suggested Next Step
 
-Continue to [4.10 Frontier Vision Technologies and Outlook](../4.10-Frontier-Vision-Technologies-and-Outlook/README.md), then explore the [AI NVR on reComputer appendix](../Appendix-AI-NVR-on-reComputer/README.md).
+Continue to [4.10 Frontier Vision Technologies and Outlook](../4.10-Frontier-Vision-Technologies-and-Outlook/README.md).
 
 ## References
 

@@ -25,7 +25,7 @@ Before connecting or disconnecting CSI cameras, ensure the reComputer Super is p
 
 Open the back cover of the reComputer Super to access the CSI ports.
 
-![CSI Connection](./images/super-csi-connection.jpg)
+![CSI Connection](./images/quad-csi-connection.jpg)
 
 ### Step 3: Connect the Cameras
 
@@ -55,7 +55,7 @@ sudo apt install v4l-utils
 
 ## Preview the Cameras
 
-![CSI Preview](./images/super-csi-preview.png)
+![CSI Preview](./images/quad-csi-preview.jpg)
 
 ### Preview a Single Camera
 
@@ -92,6 +92,103 @@ To capture an image, press the `c` key while in the preview window.
 ### Record Video
 
 To start recording video, press the `r` key while in the preview window.
+
+## Quad CSI Cameras Setup
+
+This section describes how to connect, configure, and test four CSI cameras simultaneously on the reComputer Super.
+
+### Step 1: Quad CSI Connection
+
+Connect four MIPI CSI cameras to the four CSI ports on the reComputer Super board. Ensure each camera is firmly seated and the ribbon cables are properly aligned.
+
+![Quad CSI Connection](./images/quad-csi-connection.jpg)
+
+### Step 2: Configure Device Tree for Quad CSI
+
+After connecting the cameras, you need to configure the device tree to enable all four CSI ports.
+
+1. Open a terminal and run:
+
+```bash
+sudo /opt/nvidia/jetson-io/jetson-io.py
+```
+
+2. Select **"Configure for compatible hardware"**.
+
+3. In the list, select the camera mode that matches your cameras (e.g., IMX219).
+
+4. Save and reboot the device.
+
+### Step 3: Verify Camera Recognition
+
+After rebooting, verify that all four cameras are recognized:
+
+```bash
+ls /dev/video*
+```
+
+You should see 8 video devices (4 capture devices + 4 metadata devices):
+
+```
+/dev/video0  /dev/video2  /dev/video4  /dev/video6
+/dev/video1  /dev/video3  /dev/video5  /dev/video7
+```
+
+![Quad CSI Check](./images/quad-csi-check.jpg)
+
+### Step 4: Quad CSI Test Script
+
+We provide a comprehensive test script `test_quad_csi.sh` that supports multiple testing modes. The script automatically detects the camera backend (nvargus or v4l2) and provides the following commands:
+
+| Command | Description |
+|---------|-------------|
+| `./test_quad_csi.sh check` | Test all 4 cameras one by one (default) |
+| `./test_quad_csi.sh preview` | 2x2 grid real-time preview of all 4 cameras |
+| `./test_quad_csi.sh single <0-3>` | Preview a single camera |
+| `./test_quad_csi.sh capture` | Capture one JPEG from each camera |
+| `./test_quad_csi.sh info` | Show device and environment information |
+
+**Environment Variables:**
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DISPLAY` | X11 display | Auto-detect :1 / :0 |
+| `NUM_BUFFERS` | Frames to capture in check mode | 30 |
+| `PREVIEW_MODE` | Preview mode: `cpu` or `nv` | `cpu` |
+| `CAMERA_MODE` | Camera backend: `auto`, `nvargus`, or `v4l2` | `auto` |
+
+**Usage Examples:**
+
+```bash
+# Test all 4 cameras
+./test_quad_csi.sh check
+
+# 2x2 grid preview (software compositor)
+./test_quad_csi.sh preview
+
+# Preview a single camera (sensor-id 2)
+./test_quad_csi.sh single 2
+
+# Capture one JPEG from each camera
+./test_quad_csi.sh capture
+
+# Use V4L2 backend explicitly
+CAMERA_MODE=v4l2 ./test_quad_csi.sh check
+
+# Use hardware nvcompositor for preview (nvargus only)
+PREVIEW_MODE=nv ./test_quad_csi.sh preview
+
+# Capture fewer frames for quick check
+NUM_BUFFERS=10 ./test_quad_csi.sh check
+```
+
+The complete script source code is available at [`test_quad_csi.sh`](./test_quad_csi.sh).
+
+### Step 5: Quad Preview
+
+After running the test script in preview mode, you will see a 2x2 grid showing all four camera feeds simultaneously:
+
+![Quad CSI Preview](./images/quad-csi-preview.jpg)
 
 ## Multi-Camera Applications
 
